@@ -1,0 +1,25 @@
+{
+  "passed": true,
+  "videos": [
+    {
+      "duration": 47.833333,
+      "width": 1280,
+      "height": 720,
+      "playback_and_seek": true
+    },
+    {
+      "duration": 25.541667,
+      "width": 1280,
+      "height": 720,
+      "playback_and_seek": true
+    },
+    {
+      "duration": 10,
+      "width": 1280,
+      "height": 720,
+      "playback_and_seek": true
+    }
+  ],
+  "images": 10,
+  "page_errors": []
+}

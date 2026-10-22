@@ -1,0 +1,96 @@
+{
+  "source_repository": "../shopping-robot-digital-twin",
+  "purpose": "reference existing assets without modifying/copying them",
+  "files": [
+    {
+      "path": "assets/robots/pinky_pro/usd/pinky_pro/payloads/base.usda",
+      "bytes": 23964,
+      "sha256": "2af7f257d7f9a1362949c6a60c6d58fe23a30aa679518eb1a52a579b1bc97c6e"
+    },
+    {
+      "path": "assets/robots/pinky_pro/usd/pinky_pro/payloads/geometries.usd",
+      "bytes": 7108809,
+      "sha256": "e500ce55f93e196cad692825aaa1636d1f1c74d3bb2b0c03edc303c1efc5d8c4"
+    },
+    {
+      "path": "assets/robots/pinky_pro/usd/pinky_pro/payloads/instances.usda",
+      "bytes": 29483,
+      "sha256": "871c415136557039c9484dfcbeec1d8a5dc9225ad376b65fcdb628ff0109d5a8"
+    },
+    {
+      "path": "assets/robots/pinky_pro/usd/pinky_pro/payloads/materials.usda",
+      "bytes": 46611,
+      "sha256": "70ec22b40a4a215dce8ec1a60908d2be82326e10d0e9e1b0b133c589bba10f33"
+    },
+    {
+      "path": "assets/robots/pinky_pro/usd/pinky_pro/payloads/Physics/mujoco.usda",
+      "bytes": 2282,
+      "sha256": "87faca3d7cbb442fcde4bd598a8ab81651c46e8973fa42133fa1d583b6624221"
+    },
+    {
+      "path": "assets/robots/pinky_pro/usd/pinky_pro/payloads/Physics/physics.usda",
+      "bytes": 12645,
+      "sha256": "e9d876d3e5aa1f58bd4e4745153cc72eac9b26956eb6b182ad07e311fb878b1c"
+    },
+    {
+      "path": "assets/robots/pinky_pro/usd/pinky_pro/payloads/Physics/physx.usda",
+      "bytes": 796,
+      "sha256": "7d94239b2be53a8d5050fa39c658fcc7e722efb3e952ab71c3a92b4a12faf9f5"
+    },
+    {
+      "path": "assets/robots/pinky_pro/usd/pinky_pro/payloads/robot.usda",
+      "bytes": 5423,
+      "sha256": "082689563b7513fd02604a442c52f754edf37df5ce57df679b0ac5c10fda1faa"
+    },
+    {
+      "path": "assets/robots/pinky_pro/usd/pinky_pro/pinky_pro.usda",
+      "bytes": 780,
+      "sha256": "6bc3f04a157316510c660cf3a0270781f6477eaec2c4bdf63de58a49005b5764"
+    },
+    {
+      "path": "assets/robots/omx_f/usd/omx_f/omx_f.usda",
+      "bytes": 780,
+      "sha256": "492819027ce4159a112e790194dfa58917fdaa8475f032252b697355e51be257"
+    },
+    {
+      "path": "assets/robots/omx_f/usd/omx_f/payloads/base.usda",
+      "bytes": 17868,
+      "sha256": "47eda6f66b927a28bc124a66b4aeb25ccb0f602a763595fe658813ebfb7848d9"
+    },
+    {
+      "path": "assets/robots/omx_f/usd/omx_f/payloads/geometries.usd",
+      "bytes": 1438453,
+      "sha256": "112697b11200139d77ad502a5673bf1f34742bddecc289a94c21a104b34bff3a"
+    },
+    {
+      "path": "assets/robots/omx_f/usd/omx_f/payloads/instances.usda",
+      "bytes": 10900,
+      "sha256": "994e453660e4de5fd9f4fcd9635ce480330c419538c549ce07cf2ca3e563b546"
+    },
+    {
+      "path": "assets/robots/omx_f/usd/omx_f/payloads/materials.usda",
+      "bytes": 2777,
+      "sha256": "f5297e9f47b5c48eeff45105ee3a2ed378e50ac764bffdc7912be2b246bbed8b"
+    },
+    {
+      "path": "assets/robots/omx_f/usd/omx_f/payloads/Physics/mujoco.usda",
+      "bytes": 3607,
+      "sha256": "a54e92054c11a16969526e83f6f473cd449883529027cc5f4c402b8f4174198a"
+    },
+    {
+      "path": "assets/robots/omx_f/usd/omx_f/payloads/Physics/physics.usda",
+      "bytes": 14976,
+      "sha256": "d35dde70fe89a47571cd8d15a313254cdc0d92294ee9ea5e6368794c5aedb960"
+    },
+    {
+      "path": "assets/robots/omx_f/usd/omx_f/payloads/Physics/physx.usda",
+      "bytes": 1093,
+      "sha256": "64ca366b4ecdbfb4744c6328ea494af482037dc34f3d695fc955f4d6b5ed761b"
+    },
+    {
+      "path": "assets/robots/omx_f/usd/omx_f/payloads/robot.usda",
+      "bytes": 4214,
+      "sha256": "2bc98c93b28f71a2de99f95a8d223bba5a828497cfa96c3e0c9e4a9632110dc8"
+    }
+  ]
+}

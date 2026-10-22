@@ -1,0 +1,94 @@
+{
+  "kind": "connected_geometric_reference_not_hardware_route",
+  "route_version": 3,
+  "geometry_source": "config/layout.json",
+  "loop_source": "pinky_motion.routes.loop_samples",
+  "loop_samples": 327,
+  "loop_samples_valid": true,
+  "in_place_rotation_diameter_m": 0.4790949541352782,
+  "lane_centres_wall_distance_m": [
+    0.95,
+    1.19
+  ],
+  "loop_turn_centre_radius_m": 0.12,
+  "station_branches": [
+    {
+      "station": "A",
+      "validation": "conservative geometric sweep, 20mm per-robot margin",
+      "entry_pose": [
+        0.45999999999999996,
+        -0.9500000000000001,
+        -3.141592653589793
+      ],
+      "merge_pose": [
+        0.26,
+        -1.0699999999999998,
+        -1.5707963267948966
+      ],
+      "shared_neck_exclusive": true,
+      "wait_pose": [
+        0.3,
+        -0.5059777993,
+        -1.5707963267948966
+      ]
+    },
+    {
+      "station": "B",
+      "validation": "conservative geometric sweep, 20mm per-robot margin",
+      "entry_pose": [
+        1.0599999999999998,
+        -0.9500000000000001,
+        -3.141592653589793
+      ],
+      "merge_pose": [
+        0.7399999999999999,
+        -0.9500000000000001,
+        -3.141592653589793
+      ],
+      "shared_neck_exclusive": true,
+      "wait_pose": [
+        0.8999999999999999,
+        -0.5059777993,
+        -1.5707963267948966
+      ]
+    },
+    {
+      "station": "handoff",
+      "validation": "conservative geometric sweep, 20mm per-robot margin",
+      "entry_pose": [
+        1.7400000000000002,
+        -1.0699999999999998,
+        1.5707963267948966
+      ],
+      "merge_pose": [
+        1.4400000000000002,
+        -0.9500000000000001,
+        -3.141592653589793
+      ],
+      "shared_neck_exclusive": true,
+      "wait_pose": null
+    }
+  ],
+  "home_queue": {
+    "front": [
+      0.8,
+      -1.375,
+      0.0
+    ],
+    "back": [
+      0.46,
+      -1.375,
+      0.0
+    ],
+    "rule": "front departs first; rear advances; return enters rear"
+  },
+  "parking_footprints": "target illustrations, not three robots simultaneously",
+  "not_drawn": [
+    "unknown real shelf footprints; assumed shelf boxes included in validation",
+    "unmeasured camera FOV"
+  ],
+  "basket_floor_contact": false,
+  "kinematic_exchange_validated": true,
+  "physical_route_tracking_validated": false,
+  "evidence": "C:\\Users\\cch97\\Desktop\\코덱스\\projects\\pinky-omx-sim2real\\outputs\\routes-v3-001\\result.json"
+}

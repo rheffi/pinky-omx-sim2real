@@ -1,0 +1,12 @@
+{
+  "passed": true,
+  "slider_updates_pose": true,
+  "merge_wait_visible": true,
+  "concurrent_reference_motion_visible": true,
+  "playback_advances": true,
+  "home_queue_departure_visible": true,
+  "returned_to_home_visible": true,
+  "stale_exit_stops_both": true,
+  "page_errors": [],
+  "input": "C:\\Users\\cch97\\Desktop\\코덱스\\projects\\pinky-omx-sim2real\\outputs\\route-figure-v3-001\\replay.html"
+}

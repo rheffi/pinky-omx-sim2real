@@ -1,0 +1,23 @@
+{
+  "archive": "Pinky2_주행전_사전조사_20261022.tar.gz",
+  "archive_sha256": "3b22f879d3234bc05ef28ae4470d641bc12447618fa7fe285c0eae2c558c51ad",
+  "files": {
+    "pinky_map_new.yaml": {
+      "member": "pinky_diagnostics_20261022_115032_robot2_check/maps/pinky_map_new.yaml",
+      "sha256": "3f1a1f1c2f3dc28167194c7c43a953b2bb949d3a72c0f4f668521a73d01c13dd",
+      "bytes": 135
+    },
+    "pinky_map_new.pgm": {
+      "member": "pinky_diagnostics_20261022_115032_robot2_check/maps/pinky_map_new.pgm",
+      "sha256": "3693a6f7275226cd8c72a764f98a2fc13fcd02ee1eb8d4731a790548a5930aa5",
+      "bytes": 34783
+    },
+    "pinky2_saved_nav2_params.yaml": {
+      "member": "pinky_diagnostics_20261022_115032_robot2_check/configs/pinky_navigation/params/nav2_params.yaml",
+      "sha256": "1fe32301d7b6fec8e102d5ab7731e43ead75ee9500732793f367d68b1dbf24a6",
+      "bytes": 16166
+    }
+  },
+  "runtime_override_applied": false,
+  "warning": "Saved baseline, not simulation config. Does not include rear basket footprint. Map-to-layout alignment unmeasured."
+}

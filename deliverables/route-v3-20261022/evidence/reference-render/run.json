@@ -1,0 +1,72 @@
+{
+  "status": "completed_media",
+  "kind": "isaac_rendered_reference_playback",
+  "route_version": 3,
+  "poses_assigned_from_reference": true,
+  "physics_route_tracking": false,
+  "hardware_connected": false,
+  "source_scene": "C:\\Users\\cch97\\Desktop\\코덱스\\projects\\pinky-omx-sim2real\\outputs\\smoke-005-raised-basket\\scene.usda",
+  "source_evidence": "C:\\Users\\cch97\\Desktop\\코덱스\\projects\\pinky-omx-sim2real\\outputs\\routes-v3-001",
+  "source_evidence_sha256": "69f754b4828ac15ada474e1d9d8f18eb7197e6dfe880803002a911d8bdf9e69e",
+  "script_sha256": "08b0dcd961396ca5ffb9c3796a31238a0d6de6accde357f970df448a2e035056",
+  "videos": [
+    {
+      "file": "01-route-overview.mp4",
+      "frames": 1148,
+      "fps": 24,
+      "duration_s": 47.833333333333336,
+      "resolution": [
+        1280,
+        720
+      ],
+      "chapters": [
+        {
+          "video_start_s": 0.0,
+          "scenario": "exchange",
+          "source_start_s": 0,
+          "source_end_s": 191.05,
+          "playback_speed": 4,
+          "title": "전체 운행 · 대기 → 적재 → 교대 하역 → 복귀"
+        }
+      ]
+    },
+    {
+      "file": "02-key-moments.mp4",
+      "frames": 613,
+      "fps": 24,
+      "duration_s": 25.541666666666668,
+      "resolution": [
+        1280,
+        720
+      ],
+      "chapters": [
+        {
+          "video_start_s": 0.0,
+          "scenario": "exchange",
+          "source_start_s": 0,
+          "source_end_s": 16,
+          "playback_speed": 2,
+          "title": "대기줄 · 앞차 출발과 뒤차 전진"
+        },
+        {
+          "video_start_s": 8.041666666666666,
+          "scenario": "exchange",
+          "source_start_s": 92,
+          "source_end_s": 114,
+          "playback_speed": 2,
+          "title": "교대 인계 · 바구니 이탈 확인 후 다음 차 진입"
+        },
+        {
+          "video_start_s": 19.083333333333332,
+          "scenario": "stale_exit",
+          "source_start_s": 102,
+          "source_end_s": 108.4,
+          "playback_speed": 1,
+          "title": "이상 대응 · 오래된 이탈 정보에서 정지와 점유 유지"
+        }
+      ]
+    }
+  ],
+  "rendered_frames": 1765,
+  "isaac_version": "6.1.0-rc.26+release.49347.2d230af4.gl"
+}

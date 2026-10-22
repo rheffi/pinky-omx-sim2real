@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Pinky 짧은 동선 · v4 검토안</title>
+<style>
+:root{font-family:'Malgun Gothic',system-ui,sans-serif;color:#172b37;background:#edf2f4;font-synthesis:none}*{box-sizing:border-box}
+body{margin:0}main{max-width:1500px;margin:auto;padding:24px 30px}header{display:flex;justify-content:space-between;align-items:center;gap:16px;margin-bottom:20px}
+h1{font-size:28px;letter-spacing:-1px;margin:7px 0}p{line-height:1.65;margin:5px 0;color:#52636c}.eyebrow{font-size:12px;letter-spacing:2px;color:#087f86;font-weight:bold}.badge{padding:8px 14px;border-radius:24px;border:1px solid #adc2c8;background:#fff;font-size:13px;white-space:nowrap}
+.layout{display:grid;grid-template-columns:minmax(0,1fr) 310px;gap:20px;align-items:start}.panel{border:1px solid #d5e0e3;background:white;border-radius:16px;overflow:hidden;box-shadow:0 6px 26px #19323e06}.toolbar{padding:16px 18px;display:flex;gap:12px;align-items:center;flex-wrap:wrap;border-bottom:1px solid #e2e9eb}button,select{font:inherit;font-size:14px;border:1px solid #c7d5db;border-radius:8px;background:white;padding:9px 12px;color:#243e49;cursor:pointer}button:hover{background:#edf7f7}button:focus-visible,select:focus-visible,input:focus-visible{outline:3px solid #21a2b0;outline-offset:2px}#play{background:#087f86;color:white;border-color:#087f86;min-width:86px}#scenario{max-width:100%}.controls-right{margin-left:auto;display:flex;gap:8px;align-items:center}#time{font-size:14px;font-variant-numeric:tabular-nums;white-space:nowrap}
+.seekbox{padding:9px 20px 14px}#seek{width:100%;accent-color:#087f86}.jump{display:flex;gap:6px;flex-wrap:wrap}.jump button{font-size:12px;padding:6px 9px}.mapwrap{position:relative;background:#fbfcfc}svg{width:100%;display:block;height:auto}svg text{font-family:'Malgun Gothic',sans-serif}aside{display:grid;gap:14px}.card{padding:17px 18px;border:1px solid #d5e0e3;background:#fff;border-radius:14px}.card h2{font-size:15px;margin:0 0 12px}.robot-title{display:flex;align-items:center;gap:8px;font-weight:bold}.dot{width:10px;height:10px;border-radius:50%;background:#087f86}.dot.two{background:#d66d32}.robot-state{margin:9px 0 0;font-size:16px;font-weight:bold;color:#172b37;min-height:24px}.muted{font-size:12px;color:#697a82}.permit{margin-top:12px;padding:10px;background:#edf6f6;border-radius:8px;font-size:13px;color:#17676c}#bay-status{font-size:13px;line-height:1.9;margin-top:8px;color:#52636c}.metric{font-size:25px;letter-spacing:-1px;font-weight:bold;color:#087f86}.metric small{font-size:13px;color:#687982;font-weight:normal;letter-spacing:0}.metrics-grid{display:grid;gap:12px}.compare{border-collapse:collapse;width:100%;font-size:12px}.compare th,.compare td{text-align:right;padding:8px 0;border-bottom:1px solid #edf0f2}.compare th:first-child,.compare td:first-child{text-align:left}.note{font-size:12px;line-height:1.7;color:#64767f}.legend{display:flex;gap:16px;padding:0 20px 17px;flex-wrap:wrap;font-size:12px;color:#5e7079}.legend span:before{content:'';display:inline-block;width:18px;height:3px;background:#159da3;vertical-align:middle;margin-right:6px}.legend span:nth-child(2):before{background:#d9a860}.legend span:nth-child(3):before{background:#9d91c1}.review-note{margin-top:17px;padding:16px 20px;border-left:3px solid #bacbd0;background:#f6f9fa;font-size:13px;color:#566d77}.review-note strong{color:#334e5b}.statusbar{padding:12px 20px;font-size:14px;background:#f1f8f8;color:#176a71;border-top:1px solid #e0eaec;min-height:47px}.fault .statusbar{background:#fff0ec;color:#9e3e24}.fault .permit{background:#fff0ec;color:#9e3e24}a{color:#087f86}footer{margin:15px 0;font-size:12px;color:#71818a}
+@media(max-width:1000px){.layout{grid-template-columns:1fr}aside{grid-template-columns:1fr 1fr}.comparison{grid-column:1/-1}main{padding:15px}h1{font-size:23px}}@media(max-width:620px){aside{grid-template-columns:1fr}.controls-right{margin-left:0}header{align-items:flex-start;flex-direction:column}}
+</style></head><body><main>
+<header><div><div class="eyebrow">PINKY × OMX · ROUTE REVIEW</div><h1>옆 작업대로 짧게, 인계는 한 대씩</h1><p>A → B → 인계 · 필요한 적재대만 방문 · 좌하단 대기줄 유지</p></div><div class="badge">v4 검토안 · 관제 미반영</div></header>
+<div class="layout"><section class="panel" id="main-panel">
+<div class="toolbar"><label for="scenario" class="muted">재생</label><select id="scenario"><option value="normal">v4 · 두 주문 모두 A/B 적재</option><option value="skip">v4 · 1번 A만 / 2번 B만</option><option value="stale">v4 · 이동 중 관측 소실</option><option value="baseline">v3 · 동일 주문으로 재계산</option></select><div class="controls-right"><button id="play">재생</button><select id="speed" aria-label="재생 속도"><option value="1">1배</option><option value="4" selected>4배</option><option value="8">8배</option></select></div></div>
+<div class="seekbox"><div style="display:flex;justify-content:space-between;align-items:center"><span class="muted">모사 시간 · 실측 시간 아님</span><output id="time"></output></div><input id="seek" type="range" min="0" max="1" step=".025" value="0" aria-label="모사 시간"><div class="jump"><button data-jump="start">처음</button><button data-jump="transfer">A → B 이동</button><button data-jump="wait">인계 대기</button><button data-jump="return">첫 로봇 복귀</button><button data-jump="end">마지막</button></div></div>
+<div class="mapwrap"><svg id="scene" viewBox="0 0 1200 940" role="img" aria-label="200×150cm 공간의 두 로봇 동선"><defs><marker id="arrow" markerWidth="7" markerHeight="7" refX="5" refY="3.5" orient="auto"><path d="M0 0L7 3.5L0 7" fill="none" stroke="#159da3" stroke-width="1.5"/></marker><marker id="return-arrow" markerWidth="7" markerHeight="7" refX="5" refY="3.5" orient="auto"><path d="M0 0L7 3.5L0 7" fill="none" stroke="#bd914d" stroke-width="1.5"/></marker></defs><g id="base"></g><g id="network"></g><g id="active-path"></g><g id="robots"></g><g id="labels"></g></svg></div>
+<div class="legend"><span>작업대 연결</span><span>하역 후 복귀</span><span>기본 대기 출발</span></div>
+<div class="statusbar" id="explanation"></div></section>
+<aside><div class="card"><div class="robot-title"><span class="dot"></span>Pinky 1</div><div class="robot-state" id="state1"></div><div class="muted" id="task1"></div><hr style="border:0;border-top:1px solid #e6edef;margin:16px 0"><div class="robot-title"><span class="dot two"></span>Pinky 2</div><div class="robot-state" id="state2"></div><div class="muted" id="task2"></div><div class="permit" id="permit"></div><div id="bay-status"></div></div>
+<div class="card comparison"><h2>같은 조건으로 비교</h2><div class="metrics-grid"><div><div class="muted">두 로봇의 총 이동 거리</div><div class="metric" id="distance"></div></div><div><div class="muted">두 주문 완료 + 기본 대기 복귀</div><div class="metric" id="duration"></div></div></div><table class="compare"><thead><tr><th>구간</th><th>v3</th><th>v4</th></tr></thead><tbody id="comparison"></tbody></table><p class="note" style="margin-top:12px">두 주문 모두 A/B 방문, 한 대씩 이동, 속도 상한 동일. 적재 12초/회·하역 45초/회는 비교용 가정입니다. 기존 v3 영상의 191초와는 다른 주문 조건입니다.</p></div>
+<div class="card"><h2>이번 검토 범위</h2><p class="note">바구니 포함 외곽 + 각 2cm 여유 가정으로 경계·칸막이·모델 선반·정지 로봇과의 간섭을 검사했습니다.</p><p class="note" style="margin-top:8px">계산된 자세의 2D 재생입니다. 실제 바퀴 추종, 영상 정밀주차, 팔 동작 영역, 제동 거리는 후속 검증 대상입니다.</p><p class="note" style="margin-top:8px"><a href="../../COMPACT_ROUTE_REVIEW.md">변경안과 검증 기록</a> · <a href="evidence/result.json">수치 원본</a></p></div></aside></div>
+<div class="review-note"><strong>검토 포인트</strong> · 옆 적재대로 갈 때 큰 우회가 사라졌는지, 하역 중인 로봇 때문에 기다리는 동작이 자연스러운지 확인하세요. 기본 대기에서 출발할 때는 90° 회전 후 후진 곡선으로 빠져나옵니다. 실기에서는 이 후진 구간의 위치 관측 수단도 확인해야 합니다.</div>
+<footer>2026-10-22 · 후보 검토용 · 기존 v3 자료 보존 · 관제 저장소/대화 세션에 반영하지 않음</footer>
+</main><script>
+const data=__REVIEW_DATA__;
+const el=id=>document.getElementById(id),ns='http://www.w3.org/2000/svg';
+const X=x=>120+x*480,Y=y=>110-y*480;
+const cfg=data.config, names={A:'적재 A',B:'적재 B',handoff:'인계',front:'대기 선두',back:'대기 후열'};
+const colors={pinky1:'#087f86',pinky2:'#d66d32'};
+let t=0,playing=false,last=null,scenario='normal',lastVersion=null;
+function tag(name,attrs={},parent=null,text=null){const n=document.createElementNS(ns,name);for(const[k,v]of Object.entries(attrs))n.setAttribute(k,v);if(text!==null)n.textContent=text;if(parent)parent.appendChild(n);return n;}
+function label(parent,x,y,text,size=17,color='#566d77',anchor='middle'){return tag('text',{x,y,'font-size':size,fill:color,'text-anchor':anchor},parent,text);}
+function path(parent,poses,color,width=3,dash=null){const n=tag('path',{d:poses.map((p,i)=>(i?'L':'M')+X(p[0])+','+Y(p[1])).join(' '),fill:'none',stroke:color,'stroke-width':width,'stroke-linejoin':'round','stroke-linecap':'round'},parent);if(dash)n.setAttribute('stroke-dasharray',dash);return n;}
+function rectWorld(parent,x,y,w,h,attrs={}){return tag('rect',{x:X(x),y:Y(y),width:w*480,height:h*480,...attrs},parent);}
+function base(){const g=el('base');g.replaceChildren();rectWorld(g,0,0,2,1.5,{rx:9,fill:'#fff',stroke:'#738a94','stroke-width':3});
+ for(let i=0;i<3;i++){const x=[.3,.9,1.6][i],left=[0,.6,1.2][i],w=cfg.station_widths[i];rectWorld(g,left,0,w,.75,{fill:i===2?'#f8f0e7':'#eef5f5'});label(g,X(x),72,['적재 A · 60cm','적재 B · 60cm','인계 · 80cm'][i],23,'#253f4d');rectWorld(g,x-.09,-.04,.18,.2,{fill:'#ccd9df',stroke:'#91a6b1','stroke-width':1.5,rx:5});tag('circle',{cx:X(x),cy:Y(-.14),r:13,fill:'#78939f'},g);label(g,X(x),Y(-.14)+36,'OMX',13);const dockY=-cfg.junction_wall_distances[i]+cfg.sim_asset.rear_x;rectWorld(g,x-.0835,dockY+.2509777993,.167,.3130278419,{fill:'none',stroke:'#a9bfc5','stroke-width':2,'stroke-dasharray':'7 6',rx:5});label(g,X(x),Y(-.68),'후진 진입 / 전진 출차',14);}
+ for(const x of [.6,1.2])tag('line',{x1:X(x),y1:Y(0),x2:X(x),y2:Y(-.75),stroke:'#80949f','stroke-width':5},g);
+ tag('line',{x1:X(0),y1:Y(-.75),x2:X(2),y2:Y(-.75),stroke:'#bfced4','stroke-width':1.5,'stroke-dasharray':'7 7'},g);
+ for(const [slot,x]of [['후열',.46],['선두',.8]]){rectWorld(g,x-.251,-1.2915,.313,.167,{rx:5,fill:'#f0edf7',stroke:'#b4a7cf','stroke-width':1.5});label(g,X(x-.08),Y(-1.375)+65,slot,16,'#756291');}
+ label(g,X(.63),Y(-1.375)-57,'기본 대기 · 선두부터 출발',16,'#756291');
+ label(g,1098,Y(-1.01),'통로',15,'#7a8d97','start');label(g,1098,Y(-1.08),'75cm',15,'#7a8d97','start');
+ label(g,65,Y(-.38),'75cm',15);label(g,600,915,'전체 200 × 150cm · 로봇과 바구니는 같은 축척',17,'#6a7e88');
+}
+function network(version){const g=el('network');g.replaceChildren();const paths=data.paths[version];
+ if(version===4){for(const key of ['A_to_B','B_to_handoff'])path(g,paths[key],'#b8dfe0',6);path(g,paths.handoff_to_home_back,'#e1cca7',5);path(g,paths.home_to_A,'#b9acd1',3,'6 7');
+  for(const x of [.59,1.22])tag('line',{x1:X(x-.10),y1:Y(-.9),x2:X(x+.10),y2:Y(-.9),stroke:'#159da3','stroke-width':2.5,'marker-end':'url(#arrow)'},g);
+  tag('line',{x1:X(1.35),y1:Y(-1.15),x2:X(1.05),y2:Y(-1.15),stroke:'#bd914d','stroke-width':2.5,'marker-end':'url(#return-arrow)'},g);
+ }else{for(const key of ['home_to_A','A_to_B','B_to_handoff','handoff_to_home_back'])path(g,paths[key],'#d3dce2',3);}
+}
+function routeKey(e){if(e.source==='back')return'queue_advance';if(e.source==='front')return'home_to_'+e.target;if(e.target==='front'||e.target==='back')return'handoff_to_home_'+e.target;return e.source+'_to_'+e.target;}
+function currentFrame(){const frames=data.runs[scenario].frames;let a=0,b=frames.length-1;while(a<b){const m=Math.ceil((a+b)/2);if(frames[m].t<=t)a=m;else b=m-1;}return frames[a];}
+function draw(){const run=data.runs[scenario],end=run.frames.at(-1).t;t=Math.max(0,Math.min(end,t));el('seek').max=end;el('seek').value=t;el('time').textContent=t.toFixed(1)+' / '+end.toFixed(1)+'초';const f=currentFrame();el('scene').dataset.time=f.t;
+ if(lastVersion!==run.route_version){network(run.route_version);lastVersion=run.route_version;}
+ el('robots').replaceChildren();el('labels').replaceChildren();el('active-path').replaceChildren();
+ const move=run.events.findLast(e=>e.event==='move_started'&&e.t<=t&&e.robot===f.move_owner);
+ if(move)path(el('active-path'),data.paths[run.route_version][routeKey(move)],colors[move.robot],5);
+ let fault=false;for(let i=0;i<2;i++){const rid='pinky'+(i+1),p=f.poses[rid],color=colors[rid],state=f.states[rid],loc=f.locations[rid];fault ||= state==='fault_stop';const g=tag('g',{id:rid,transform:`translate(${X(p[0])} ${Y(p[1])}) rotate(${-p[2]*180/Math.PI}) scale(480 -480)`},el('robots'));
+  tag('rect',{x:-.2309777993,y:-.0635,width:.155,height:.127,rx:.009,fill:color,opacity:.20,stroke:color,'stroke-width':.005},g);
+  tag('rect',{x:-.0759777993,y:-.055,width:.1180278419,height:.11,rx:.016,fill:color,stroke:'white','stroke-width':.004},g);
+  tag('path',{d:'M-.012 -.025L.022 0L-.012 .025',fill:'none',stroke:'white','stroke-width':.006},g);
+  const past=run.events.filter(e=>e.robot===rid&&e.event==='synthetic_arm_done'&&e.t<=t);const loaded=past.filter(e=>e.station!=='handoff').length,unloaded=past.some(e=>e.station==='handoff');
+  if(!unloaded)for(let k=0;k<loaded;k++)tag('rect',{x:-.198+k*.047,y:-.018,width:.032,height:.036,rx:.004,fill:color,stroke:'white','stroke-width':.002},g);
+  tag('circle',{cx:X(p[0])+17,cy:Y(p[1])-24,r:13,fill:'#fff',stroke:color,'stroke-width':2},el('labels'));label(el('labels'),X(p[0])+17,Y(p[1])-19,String(i+1),15,color);
+  const m=run.events.findLast(e=>e.robot===rid&&e.event==='move_started'&&e.t<=t);
+  let text={home_wait:'기본 대기',loading:names[loc]+' · 적재 중',unloading:'인계 · 하역 중',complete:'기본 대기 복귀 완료',wait_handoff:'인계 순서 대기',wait_move:'이동 허가 대기',fault_stop:'관측 소실 · 정지'}[state];
+  if(state==='moving')text=names[m.source]+' → '+names[m.target];
+  el('state'+(i+1)).textContent=text;el('state'+(i+1)).style.color=color;
+  const visits=run.orders?run.orders[i]:['A','B'];el('task'+(i+1)).textContent='방문: '+visits.map(x=>names[x]).join(' → ')+' → 인계';
+ }
+ document.body.classList.toggle('fault',fault);el('permit').textContent=fault?'이동 허가 유지 · 자동 재출발 금지':f.move_owner?'이동 허가: Pinky '+f.move_owner.slice(-1)+' 한 대':'이동 허가: 대기';
+ el('bay-status').textContent=['A','B','handoff'].map(s=>names[s]+': '+(f.bays[s]?'Pinky '+f.bays[s].slice(-1)+' 점유':'비어 있음')).join(' / ');
+ let explanation='한 대씩 이동하고, 정지한 로봇의 적재·하역은 병행합니다.';
+ if(Object.values(f.states).includes('wait_handoff'))explanation='하역 로봇이 복귀할 때까지 다음 로봇은 적재대에서 기다립니다.';
+ if(move&&f.move_owner&&move.target==='B')explanation='칸막이 끝을 벗어나 바로 옆 적재대로 이동합니다. 큰 순환 우회가 없습니다.';
+ if(scenario==='baseline')explanation='기존 v3 경로에 같은 두 주문·작업 시간·한 대씩 이동 규칙을 적용한 비교입니다.';
+ if(fault)explanation='이동 중 관측이 끊겼습니다. 두 로봇 정지, 이동 허가와 출발·목표 구역 점유를 유지합니다.';
+ if(Object.values(f.states).every(s=>s==='complete'))explanation='두 주문의 적재·하역과 기본 대기 복귀를 마쳤습니다.';
+ el('explanation').textContent=explanation;
+}
+function stop(){playing=false;last=null;el('play').textContent='재생';}
+function animate(now){if(!playing)return;if(last!==null)t+=(now-last)/1000*Number(el('speed').value);last=now;draw();if(t>=Number(el('seek').max)){stop();return;}requestAnimationFrame(animate);}
+el('play').onclick=()=>{if(playing){stop();return;}if(t>=Number(el('seek').max))t=0;playing=true;last=null;el('play').textContent='일시정지';requestAnimationFrame(animate);};
+el('seek').oninput=()=>{stop();t=Number(el('seek').value);draw();};el('scenario').onchange=()=>{stop();scenario=el('scenario').value;t=0;draw();};
+document.querySelectorAll('[data-jump]').forEach(b=>b.onclick=()=>{stop();const run=data.runs[scenario],kind=b.dataset.jump;let found;
+ if(kind==='start')t=0;else if(kind==='end')t=run.frames.at(-1).t;else if(kind==='wait'){found=run.frames.find(f=>Object.values(f.states).includes('wait_handoff'));t=found?found.t+1:run.frames.at(-1).t;}
+ else{found=run.events.find(e=>e.event==='move_started'&&(kind==='transfer'?e.source==='A'&&e.target==='B':e.source==='handoff'));t=found?(found.t+found.end)/2:0;}draw();});
+const normal=data.runs.normal,old=data.runs.baseline;
+el('distance').innerHTML=normal.distance_m.toFixed(1)+'m <small>← '+old.distance_m.toFixed(1)+'m · '+(100*(1-normal.distance_m/old.distance_m)).toFixed(0)+'% 감소</small>';
+el('duration').innerHTML=normal.elapsed_sim_seconds.toFixed(1)+'초 <small>← '+old.elapsed_sim_seconds.toFixed(1)+'초</small>';
+for(const[k,m]of Object.entries(data.summary.segment_distance_m)){const tr=document.createElement('tr');tr.innerHTML='<td>'+k.replace('_to_',' → ').replace('handoff','인계')+'</td><td>'+m.v3.toFixed(2)+'m</td><td>'+m.v4.toFixed(2)+'m</td>';el('comparison').appendChild(tr);}
+base();draw();
+</script></body></html>

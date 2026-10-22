@@ -1,0 +1,18 @@
+{
+  "route_version": 3,
+  "python_ast_files": 20,
+  "broken_local_links": [],
+  "unit_tests_passed": 36,
+  "route_evidence": "outputs/routes-v3-001/result.json",
+  "ui_evidence": "outputs/replay-check-v3/result.json",
+  "copied_artifacts_match_tested_files": true,
+  "source_sha256": {
+    "pinky_motion/route_paths.py": "911ca58a2459991dcf0e4d25604c2f1ad097052ee11c0c3b65805cab0260c439",
+    "pinky_motion/routes.py": "e934cd12cea3a3aaff88ef076d17379371ac9d0972a0af4ec5148425431349c4",
+    "pinky_motion/fleet_reference.py": "3696716339e14157b34d16c8d424f888b48381f44619e13bf391e5b847830c67",
+    "tools/check_routes.py": "dbfcb24019b08cc14555013671f4f6e5313e96ec17c02348bf7a8afa7be0e013",
+    "tools/draw_route_plan.py": "6288ea1c290e28bfd26d7398d1bb095d588deb8d5beba04b17e0175610b210f4",
+    "tools/build_route_replay.py": "b04a1bf8b75cf63520febf467f5c21ab03a14495d3daf83ef5d8735f31f1573a",
+    "tests/test_routes.py": "2e361e5af8dce1848e369674420b629fdae6edda918bb952ceda327e7890cff6"
+  }
+}

@@ -1,0 +1,506 @@
+{
+  "package": "pinky-route-v3-20261022",
+  "route_version": 3,
+  "created_date": "2026-10-22",
+  "reference_media_is_physics_tracking": false,
+  "physical_video_is_full_route": false,
+  "videos": [
+    {
+      "file": "videos/01-route-overview.mp4",
+      "title": "전체 운행 · 4배속",
+      "kind": "reference_playback",
+      "duration_s": 47.833333,
+      "resolution": [
+        1280,
+        720
+      ],
+      "codec": "h264",
+      "frames": 1148,
+      "full_decode_passed": true
+    },
+    {
+      "file": "videos/02-key-moments.mp4",
+      "title": "대기줄·교대·이상 정지",
+      "kind": "reference_playback",
+      "duration_s": 25.541667,
+      "resolution": [
+        1280,
+        720
+      ],
+      "codec": "h264",
+      "frames": 613,
+      "full_decode_passed": true
+    },
+    {
+      "file": "videos/03-wheel-physics.mp4",
+      "title": "단일 Pinky 바퀴 구동",
+      "kind": "physics_smoke",
+      "duration_s": 10.0,
+      "resolution": [
+        1280,
+        720
+      ],
+      "codec": "h264",
+      "frames": 300,
+      "full_decode_passed": true
+    }
+  ],
+  "keyframes": [
+    {
+      "file": "images/01-layout-home.png",
+      "title": "전체 배치와 기본 대기",
+      "scenario": "exchange",
+      "source_time_s": 0,
+      "description": "200 × 150cm 공간에 두 차로와 세 작업대를 배치했습니다. 기본 대기줄은 좌하단에 있습니다.",
+      "points": [
+        "차로 중심 간격 24cm",
+        "바구니 포함 외곽 검사",
+        "선두 출발 · 후열 전진"
+      ],
+      "kind": "reference_playback_keyframe",
+      "resolution": [
+        1920,
+        1080
+      ]
+    },
+    {
+      "file": "images/02-queue-departure.png",
+      "title": "앞차 출발과 대기줄 이동",
+      "scenario": "exchange",
+      "source_time_s": 4,
+      "description": "1번이 적재 A로 출발하면 2번이 앞으로 이동합니다. 두 차량의 전체 시간 경로를 함께 검사합니다.",
+      "points": [
+        "빨강 1번: 적재 A로 이동",
+        "파랑 2번: 선두 자리로 이동",
+        "본선 합류 전 필요한 시간 대기"
+      ],
+      "kind": "reference_playback_keyframe",
+      "resolution": [
+        1920,
+        1080
+      ]
+    },
+    {
+      "file": "images/03-handoff-wait.png",
+      "title": "한 대 하역 · 다른 한 대 대기",
+      "scenario": "exchange",
+      "source_time_s": 94,
+      "description": "1번이 인계 구역을 사용하는 동안 2번은 적재 B 내부에서 기다립니다. 하역 완료와 구역 이탈은 구분합니다.",
+      "points": [
+        "인계 구역은 한 대씩 사용",
+        "대기 차량은 출구를 막지 않음",
+        "적재·하역은 각 3초 사건으로 모사"
+      ],
+      "kind": "reference_playback_keyframe",
+      "resolution": [
+        1920,
+        1080
+      ]
+    },
+    {
+      "file": "images/04-handoff-exchange.png",
+      "title": "이탈 확인 후 교대 진입",
+      "scenario": "exchange",
+      "source_time_s": 110.9,
+      "description": "1번 바구니까지 구역을 비웠다는 합성 관측 후 예약을 해제합니다. 복귀 경로를 고려해 2번의 출발 시간을 조정합니다.",
+      "points": [
+        "1번: 기본 대기줄로 복귀",
+        "2번: 인계 구역으로 이동",
+        "이탈 후에도 추가 합류 대기 적용"
+      ],
+      "kind": "reference_playback_keyframe",
+      "resolution": [
+        1920,
+        1080
+      ]
+    },
+    {
+      "file": "images/05-home-return.png",
+      "title": "운행 종료와 기본 대기 복귀",
+      "scenario": "exchange",
+      "source_time_s": 191.05,
+      "description": "두 대가 하역을 마친 뒤 기본 대기줄로 복귀했습니다. 이 예제는 1번이 선두, 2번이 후열로 돌아오는 순서입니다.",
+      "points": [
+        "인계 예약 모두 해제",
+        "로봇별 고정 독립 주차석은 아님",
+        "계산된 소요시간은 실물 처리량이 아님"
+      ],
+      "kind": "reference_playback_keyframe",
+      "resolution": [
+        1920,
+        1080
+      ]
+    },
+    {
+      "file": "images/06-stale-stop.png",
+      "title": "오래된 이탈 정보에서 정지",
+      "scenario": "stale_exit",
+      "source_time_s": 108.4,
+      "description": "이탈 확인 정보가 오래되면 두 대를 정지시키고 기존 점유를 유지합니다. 타임아웃만으로 다음 차량을 들여보내지 않습니다.",
+      "points": [
+        "두 로봇 정지 자세 유지",
+        "1번 인계 점유 보존",
+        "2번 진입 보류"
+      ],
+      "kind": "reference_playback_keyframe",
+      "resolution": [
+        1920,
+        1080
+      ]
+    }
+  ],
+  "source_asset_hashes": "config/asset-manifest.json",
+  "checks": {
+    "physics_capture_passed": true,
+    "all_videos_fully_decoded": true,
+    "gallery_video_playback_and_seek_passed": true,
+    "gallery_page_errors": []
+  },
+  "files": [
+    {
+      "path": "config/asset-manifest.json",
+      "bytes": 3700,
+      "sha256": "ceb9de3c2f125abd812bf93258902d218c2744eec14855c0fe39fb5c54a036f3"
+    },
+    {
+      "path": "config/layout.json",
+      "bytes": 2319,
+      "sha256": "9bdf1352cc9e50806bb3dbc41820e961bb80812bd837898ed1f9074f4e2e905f"
+    },
+    {
+      "path": "evidence/gallery-ui-check.json",
+      "bytes": 416,
+      "sha256": "a49bed7b792db513c2fb65ba4270cccc288f2870d8bd9a2ed23e327b67a7b807"
+    },
+    {
+      "path": "evidence/history/replay-v2.html",
+      "bytes": 469511,
+      "sha256": "063f342a9ebaf97523b27a718845b95f547d100bb66b29ab0ac7e44a2bb7fa98"
+    },
+    {
+      "path": "evidence/INTEGRATION.md",
+      "bytes": 4783,
+      "sha256": "5ed68326852ae122d0ab8dec29f8b5a36fc5782c08edb9e63a384932c7302513"
+    },
+    {
+      "path": "evidence/physics/capture-frames.json",
+      "bytes": 64647,
+      "sha256": "1a73222c1cfdc456043b2a8be67d641b4af0ef680e0c0d1d0fec80442061c4ea"
+    },
+    {
+      "path": "evidence/physics/run.json",
+      "bytes": 7637,
+      "sha256": "fe58de23b224c86da40373a5cb04e94639b3bf98d90e69053f66d34ab949fea0"
+    },
+    {
+      "path": "evidence/physics/scene.usda",
+      "bytes": 29822,
+      "sha256": "aac553a8d894601910c0ef589504ef7ceec92a242d60c42685a8bfad915755bf"
+    },
+    {
+      "path": "evidence/physics/trajectory.json",
+      "bytes": 320861,
+      "sha256": "49dcc4372cdc6fc5c100100083fe7936cee1b2255f08f68ad9a457a9d20d87cf"
+    },
+    {
+      "path": "evidence/reference-render/reference-scene.usda",
+      "bytes": 124094,
+      "sha256": "5d4f8b5714577ba02403b95a917447e6f2f0b21825f9ece3acbec3e8a55ac4fc"
+    },
+    {
+      "path": "evidence/reference-render/run.json",
+      "bytes": 2327,
+      "sha256": "abee14d9ee3ba120f3bccc0644f868d02ce30cf12906764937d351bdf5a4fed6"
+    },
+    {
+      "path": "evidence/replay-ui-check.json",
+      "bytes": 411,
+      "sha256": "744a09302b4c5faf1b8eca81a87903b80d0cc26e63f61a1abbd91501a7c96951"
+    },
+    {
+      "path": "evidence/ROUTE_VALIDATION.md",
+      "bytes": 6842,
+      "sha256": "1b3bc253c028ceb9e826b8ea1eaec753e5a037e4f2a89dde4dd55d61611a9cfe"
+    },
+    {
+      "path": "evidence/routes/exchange-frames.json",
+      "bytes": 1421582,
+      "sha256": "02d1b93c5a4e04b3f1f3f6293ec374add4309247e4ae0cfbe8d68cf6629ab0d0"
+    },
+    {
+      "path": "evidence/routes/result.json",
+      "bytes": 13294,
+      "sha256": "69f754b4828ac15ada474e1d9d8f18eb7197e6dfe880803002a911d8bdf9e69e"
+    },
+    {
+      "path": "evidence/routes/route-graph.json",
+      "bytes": 299586,
+      "sha256": "17e47c47efda60d876c39f91a4eb381e59de58942602bf64fa5b7c2568f0121d"
+    },
+    {
+      "path": "evidence/routes/routes.json",
+      "bytes": 1310254,
+      "sha256": "368992eb13abb503205626a2a79e8d7349ce645bce1df34552b21dbcf23b3be8"
+    },
+    {
+      "path": "evidence/routes/stale_exit-frames.json",
+      "bytes": 861917,
+      "sha256": "996942597f8c55697fb5041777df773c60f197ddbce8a2349a645c3254db1bb8"
+    },
+    {
+      "path": "evidence/routes/verification.json",
+      "bytes": 1011,
+      "sha256": "b9a2f0b75133bdf284ba81d2c13673291de883fe66899ff502662443b3b41fe4"
+    },
+    {
+      "path": "HANDOFF.md",
+      "bytes": 7384,
+      "sha256": "4376b84097ebd61a74234d6a6bf8f5cbe0e247c38617ba08990ac7dd32dadc52"
+    },
+    {
+      "path": "images/01-layout-home.png",
+      "bytes": 145130,
+      "sha256": "f87f0ac44eabda2a52ecf7721900328efc9720e767e73e79f6ea483848f6d267"
+    },
+    {
+      "path": "images/02-queue-departure.png",
+      "bytes": 151251,
+      "sha256": "94a3d70c2ee972823b419e9adffd55ba595663bf2f395888e0b8e6ad94053dae"
+    },
+    {
+      "path": "images/03-handoff-wait.png",
+      "bytes": 148566,
+      "sha256": "5498be7ab1f9c279baa70ba49ec36d64e87966a0593786331750442890b6e202"
+    },
+    {
+      "path": "images/04-handoff-exchange.png",
+      "bytes": 146188,
+      "sha256": "365fe3ada12a4d3ed74551ba27886e9f89a70c2071f98b1331d7a7582c83493a"
+    },
+    {
+      "path": "images/05-home-return.png",
+      "bytes": 149195,
+      "sha256": "ad33c955c34a536b70c07889051339999be07a568ca88dcea511a2345a1ca992"
+    },
+    {
+      "path": "images/06-stale-stop.png",
+      "bytes": 147738,
+      "sha256": "35bfbd18064fd49f8647820d85257c8a9dbae84ac0ee8b1ea4f1531131185e2f"
+    },
+    {
+      "path": "images/isaac-handoff.png",
+      "bytes": 218171,
+      "sha256": "10f1c854bdf385c99a07da44f2d5ac7e9f676aba130fdf1fd84c9be33257c311"
+    },
+    {
+      "path": "images/isaac-home.png",
+      "bytes": 220073,
+      "sha256": "956038f256e8cdc6cf43807bfa694a047bf0247c46ff2af92673ebfacf315822"
+    },
+    {
+      "path": "images/isaac-stop.png",
+      "bytes": 216679,
+      "sha256": "f31f507d841654b261bd006e8dfe9d7bad884f5f9385df3770bd278b6f7d7860"
+    },
+    {
+      "path": "images/wheel-physics.png",
+      "bytes": 281140,
+      "sha256": "c715118f281301b59cc49dff3198bf729b9cda524d6943364fc908a8904d3e3e"
+    },
+    {
+      "path": "index.html",
+      "bytes": 6502,
+      "sha256": "afadfcfb82d7a57c450e2e8a90ce517fde0f3204af98e2be2773e71b05ebcff5"
+    },
+    {
+      "path": "keyframes.json",
+      "bytes": 3429,
+      "sha256": "2f1807f32d75d9479f44137cc3e1c818bfe3d2ae9868b8b34a423e48be785520"
+    },
+    {
+      "path": "README.md",
+      "bytes": 3050,
+      "sha256": "6e4bd0c38df476c022f0f66b3331fc6ced9a3e7e4113a7a1c28ec8bc147ef1ad"
+    },
+    {
+      "path": "replay/replay.html",
+      "bytes": 1142606,
+      "sha256": "681bb79aa9a1a944cc8434c9b72443fbef2486c1aeb7eac28ad0fe1f3dc20b81"
+    },
+    {
+      "path": "replay/route-plan.json",
+      "bytes": 2515,
+      "sha256": "55ccc63ca824d03e6f2b5ae9d8f4401f1d83b4cb947ef9277e8134dc8298e90e"
+    },
+    {
+      "path": "replay/route-plan.png",
+      "bytes": 178918,
+      "sha256": "d5e86f201fdbc77beec5c82d15b9ceb46cc16e140e2414831a489cd7704996bc"
+    },
+    {
+      "path": "replay/route-plan.svg",
+      "bytes": 115030,
+      "sha256": "fb1864a90d5aad3605520b18d6c9bc5a457fd0a040235685c0aa8e3836c62ece"
+    },
+    {
+      "path": "source/apps/pinky_motion.kit",
+      "bytes": 821,
+      "sha256": "398f045cb0aeee7f3f156cab601c779dbab0597172b93312535c751eb1c9914b"
+    },
+    {
+      "path": "source/config/asset-manifest.json",
+      "bytes": 3700,
+      "sha256": "ceb9de3c2f125abd812bf93258902d218c2744eec14855c0fe39fb5c54a036f3"
+    },
+    {
+      "path": "source/config/layout.json",
+      "bytes": 2319,
+      "sha256": "9bdf1352cc9e50806bb3dbc41820e961bb80812bd837898ed1f9074f4e2e905f"
+    },
+    {
+      "path": "source/pinky_motion/__init__.py",
+      "bytes": 73,
+      "sha256": "0416ea2274ee04b11dbc5777a538fda8d9a273b14974ccaf867dc88a4a9fa158"
+    },
+    {
+      "path": "source/pinky_motion/docking.py",
+      "bytes": 3349,
+      "sha256": "c0935d9c1dfc283dcb845236f25433d35d5565c493e27120e635784fc8e7728e"
+    },
+    {
+      "path": "source/pinky_motion/fleet_reference.py",
+      "bytes": 11165,
+      "sha256": "3696716339e14157b34d16c8d424f888b48381f44619e13bf391e5b847830c67"
+    },
+    {
+      "path": "source/pinky_motion/geometry.py",
+      "bytes": 1881,
+      "sha256": "b20885810d9f3299fe8950ba422bb5bf1d2b2c789bab73bd2317e8e507cc1fdf"
+    },
+    {
+      "path": "source/pinky_motion/ros_loopback.py",
+      "bytes": 5793,
+      "sha256": "f079a5c60594c769bb2337df84a8da3eff8bcceb79b1003c601f18328f4a84ec"
+    },
+    {
+      "path": "source/pinky_motion/route_paths.py",
+      "bytes": 6301,
+      "sha256": "911ca58a2459991dcf0e4d25604c2f1ad097052ee11c0c3b65805cab0260c439"
+    },
+    {
+      "path": "source/pinky_motion/route_validation.py",
+      "bytes": 2151,
+      "sha256": "6f89237dbf51f9e85eb1bd6b0befa807c6a0958775d7aeaad694c84e8e1de329"
+    },
+    {
+      "path": "source/pinky_motion/routes.py",
+      "bytes": 3820,
+      "sha256": "e934cd12cea3a3aaff88ef076d17379371ac9d0972a0af4ec5148425431349c4"
+    },
+    {
+      "path": "source/pinky_motion/traffic.py",
+      "bytes": 4284,
+      "sha256": "0b46b5cce716ac390fabd4a4239abff4fbf50553b8a15c5d474822f92da7b3c9"
+    },
+    {
+      "path": "source/tests/test_docking.py",
+      "bytes": 2199,
+      "sha256": "0f4a64fb3a6c846c574d69f6501fae944aadcfa47801d98eff6c91061b714da1"
+    },
+    {
+      "path": "source/tests/test_motion.py",
+      "bytes": 6255,
+      "sha256": "57948c39154b4ffd0503d847c7ab809a15ae9ebdc9c2c509a026a7aa5cc9312e"
+    },
+    {
+      "path": "source/tests/test_routes.py",
+      "bytes": 6290,
+      "sha256": "2e361e5af8dce1848e369674420b629fdae6edda918bb952ceda327e7890cff6"
+    },
+    {
+      "path": "source/tools/basket_sweep.py",
+      "bytes": 13601,
+      "sha256": "01b392796a9750aff7818be2b8a7cf8bf2f4965991fd7a16788b74e323a795a6"
+    },
+    {
+      "path": "source/tools/build_route_replay.py",
+      "bytes": 7327,
+      "sha256": "b04a1bf8b75cf63520febf467f5c21ab03a14495d3daf83ef5d8735f31f1573a"
+    },
+    {
+      "path": "source/tools/capture_keyframes.cjs",
+      "bytes": 5794,
+      "sha256": "d780611119a1f00fbdb4fd85afd484390795656b15655107a1f1d9cdb0c2b6b7"
+    },
+    {
+      "path": "source/tools/check_media_gallery.cjs",
+      "bytes": 2333,
+      "sha256": "f480e77a079e62ac14103c891d7088bbce677f9262326f4996eb000e68fd4d5b"
+    },
+    {
+      "path": "source/tools/check_route_replay.cjs",
+      "bytes": 3938,
+      "sha256": "cbb71f25d68a25ec1058b54c0a96435cbdfef6b151a9d2e97a3ace9898f0bc22"
+    },
+    {
+      "path": "source/tools/check_routes.py",
+      "bytes": 5897,
+      "sha256": "dbfcb24019b08cc14555013671f4f6e5313e96ec17c02348bf7a8afa7be0e013"
+    },
+    {
+      "path": "source/tools/draw_route_plan.py",
+      "bytes": 11645,
+      "sha256": "6288ea1c290e28bfd26d7398d1bb095d588deb8d5beba04b17e0175610b210f4"
+    },
+    {
+      "path": "source/tools/import_baseline.py",
+      "bytes": 2264,
+      "sha256": "e0c7a14383310d06bd98489e9c221639fac13048c12481896a6c89697b2b9fc3"
+    },
+    {
+      "path": "source/tools/launch_sim.py",
+      "bytes": 4515,
+      "sha256": "e86dc92d0193d70ec64b44cbf02d0f688919a82c87030ae6b572e3b780267654"
+    },
+    {
+      "path": "source/tools/media_capture.py",
+      "bytes": 2416,
+      "sha256": "a41545bdadcf10b5c76546b45e511130b4fa7a4c33c6d4111ddc6f10ceb64e1c"
+    },
+    {
+      "path": "source/tools/offline_check.py",
+      "bytes": 2213,
+      "sha256": "699836eb2ac2892fa763e7d58c872c14cfe0fd3a65aefa7084598bb89fd8527c"
+    },
+    {
+      "path": "source/tools/package_media.py",
+      "bytes": 12500,
+      "sha256": "35369ba70f59347d327a75eb6c2480187ce0d25398b93861e1003f7796b97100"
+    },
+    {
+      "path": "source/tools/render_route_media.py",
+      "bytes": 9833,
+      "sha256": "08b0dcd961396ca5ffb9c3796a31238a0d6de6accde357f970df448a2e035056"
+    },
+    {
+      "path": "source/tools/sim_smoke.py",
+      "bytes": 19531,
+      "sha256": "62a508289a06952ca4c0770f32f5902a3bb906eb02f348c6e93722e13e8c6e8d"
+    },
+    {
+      "path": "videos/01-route-overview.mp4",
+      "bytes": 3289245,
+      "sha256": "96cd129381b014ae3f045eff7d81b129130f5ac9976909f617b9bd4dd98895fb"
+    },
+    {
+      "path": "videos/02-key-moments.mp4",
+      "bytes": 1578527,
+      "sha256": "c62fe20f0d5c44681e16a0f3319419b485d7ab7d122e74f85fbe873047ddee16"
+    },
+    {
+      "path": "videos/03-wheel-physics.mp4",
+      "bytes": 817491,
+      "sha256": "ad7d3bab0351e0d737e9a22f7f309919483eae24f9ca5516c789e83d85594a24"
+    }
+  ]
+}

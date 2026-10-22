@@ -1,0 +1,15 @@
+{
+  "date": "2026-10-22",
+  "candidate_only": true,
+  "control_repo_modified": false,
+  "control_session_messaged": false,
+  "unit_test_command": "python -B -m unittest discover -s tests -v",
+  "unit_tests_passed": 45,
+  "new_test_methods": 9,
+  "loading_subset_order_pairs_checked": 9,
+  "static_paths_checked": 9,
+  "frozen_v3_files_hash_verified": 69,
+  "v3_core_modules_unchanged": 6,
+  "ui_scenarios_passed": 4,
+  "reference_only": true
+}

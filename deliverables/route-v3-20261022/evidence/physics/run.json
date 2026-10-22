@@ -1,0 +1,239 @@
+{
+  "status": "passed_smoke",
+  "hardware_connected": false,
+  "nav2_executed": false,
+  "physical_accuracy_validated": false,
+  "config": {
+    "schema_version": 1,
+    "units": "metres, radians, seconds",
+    "frame": "layout: origin at back-left floor; +X right, +Y towards back wall, +Z up. Floor is X=[0,2], Y=[-1.5,0]. Not the saved ROS map frame.",
+    "geometry_source": "user statements through 2026-10-22",
+    "width": 2.0,
+    "depth": 1.5,
+    "station_depth": 0.75,
+    "station_widths": [
+      0.6,
+      0.6,
+      0.8
+    ],
+    "junction_wall_distances": [
+      0.43,
+      0.43,
+      0.42
+    ],
+    "arm_wall_distance": 0.14,
+    "arm_mount_height": 0.11,
+    "camera_wall_distance": 0.12,
+    "camera_height": 0.8,
+    "basket_width": 0.127,
+    "basket_length": 0.155,
+    "basket_height": 0.043,
+    "connection": "127mm side taped rigidly against robot rear; simulation treats basket as slightly raised with negligible floor resistance per user instruction on 2026-10-22",
+    "assumptions": {
+      "partition_thickness": 0.005,
+      "partition_height": 0.15,
+      "basket_wall": 0.003,
+      "basket_mass": 0.05,
+      "basket_ground_clearance": 0.005,
+      "basket_floor_contact": false,
+      "basket_friction": 0.25,
+      "floor_friction": 0.6,
+      "camera_lateral_offset": -0.16,
+      "camera_hfov_degrees": 70.0,
+      "shelf_width_depth": [
+        0.18,
+        0.2
+      ],
+      "wheel_drive_damping": 0.2,
+      "wheel_max_torque": 0.3
+    },
+    "interpretation": "Station widths are coordinate spans within total 2m; partitions centred at X=.6,1.2 reduce clear widths. Camera left in plan = arm right when facing aisle. Arm 11cm means mounting surface. Basket 5mm lift is an illustrative modelling choice, not a measurement; only basket-floor contact is excluded, obstacle collision and footprint retained. Assumptions are not measured.",
+    "sim_asset": {
+      "source_repo": "../shopping-robot-digital-twin",
+      "pinky": "assets/robots/pinky_pro/usd/pinky_pro/pinky_pro.usda",
+      "omx": "assets/robots/omx_f/usd/omx_f/omx_f.usda",
+      "rear_x": -0.0759777993,
+      "front_x": 0.0420500426,
+      "wheel_radius": 0.028,
+      "contact_track": 0.0971,
+      "notes": "Geometry from converted source; source sphere wheel collisions retained. Real encoder config uses radius .027 / separation .0961. Neither is a calibrated dynamics model. Rear X is asset bbox assumption, not a measured robot-frame-to-junction transform."
+    },
+    "simulation": {
+      "dt": 0.016666666666666666,
+      "ros_domain_id": 83,
+      "namespace": "/pinky_sim/pinky_1",
+      "command_timeout": 0.3
+    }
+  },
+  "ros": {
+    "requested": false
+  },
+  "isaac_version": "6.1.0-rc.26+release.49347.2d230af4.gl",
+  "source_asset": "C:\\Users\\cch97\\Desktop\\코덱스\\projects\\shopping-robot-digital-twin\\assets\\robots\\pinky_pro\\usd\\pinky_pro\\pinky_pro.usda",
+  "source_sha256": "6bc3f04a157316510c660cf3a0270781f6477eaec2c4bdf63de58a49005b5764",
+  "script_sha256": "62a508289a06952ca4c0770f32f5902a3bb906eb02f348c6e93722e13e8c6e8d",
+  "checks": {
+    "basket_collision_filter": true,
+    "capture_does_not_advance_physics": true,
+    "forward_displacement": true,
+    "reverse_displacement": true,
+    "turn_response": true,
+    "bounded_stop_drift": true,
+    "stable_height": true,
+    "finite_trajectory": true,
+    "rendered_overview": true
+  },
+  "basket_present": true,
+  "basket_floor_model": {
+    "contact_enabled": false,
+    "nominal_clearance_m": 0.005,
+    "obstacle_collisions_retained": true,
+    "source": "user instruction 2026-10-22; clearance value is an illustrative assumption"
+  },
+  "basket_inertia_model": "diagonal compound approximation; off-diagonal terms omitted; not calibrated",
+  "camera_claim": "overview rendering and assumed station optics; no ACT processing or visual docking",
+  "dof_names": [
+    "l_wheel_joint",
+    "r_wheel_joint",
+    "caster_rotate_joint",
+    "caster_wheel_joint"
+  ],
+  "wheel_indices": [
+    0,
+    1
+  ],
+  "dof_efforts_semantics": "get_dof_efforts is commanded feedforward effort, not measured drive/contact torque",
+  "video_claim": "Actual wheel target commands and PhysX poses; no position assignment during the run. One robot only, no full-route tracking.",
+  "phases": [
+    {
+      "name": "settle",
+      "start": [
+        0.6499794721603394,
+        -1.1200003623962402,
+        0.027999987825751305,
+        -0.0005937187597968234
+      ],
+      "end": [
+        0.6499786376953125,
+        -1.1200002431869507,
+        0.0280000027269125,
+        -0.0007963630012909059
+      ],
+      "distance": 8.429369702178807e-07,
+      "yaw_change": -0.00020264424149408252
+    },
+    {
+      "name": "forward",
+      "start": [
+        0.6499786376953125,
+        -1.1200002431869507,
+        0.0280000027269125,
+        -0.0007963630012909059
+      ],
+      "end": [
+        0.8476902842521667,
+        -1.1211796998977661,
+        0.028000004589557648,
+        -0.01135019018628456
+      ],
+      "distance": 0.19771516457357322,
+      "yaw_change": -0.010553827184993654
+    },
+    {
+      "name": "stop1",
+      "start": [
+        0.8476902842521667,
+        -1.1211796998977661,
+        0.028000004589557648,
+        -0.01135019018628456
+      ],
+      "end": [
+        0.8480619192123413,
+        -1.1211823225021362,
+        0.027999799698591232,
+        -0.016246727900679644
+      ],
+      "distance": 0.00037164421383579935,
+      "yaw_change": -0.004896537714395084
+    },
+    {
+      "name": "reverse",
+      "start": [
+        0.8480619192123413,
+        -1.1211823225021362,
+        0.027999799698591232,
+        -0.016246727900679644
+      ],
+      "end": [
+        0.648318350315094,
+        -1.117161512374878,
+        0.028000008314847946,
+        -0.023464520726951245
+      ],
+      "distance": 0.19978403397140834,
+      "yaw_change": -0.0072177928262716
+    },
+    {
+      "name": "stop2",
+      "start": [
+        0.648318350315094,
+        -1.117161512374878,
+        0.028000008314847946,
+        -0.023464520726951245
+      ],
+      "end": [
+        0.6454653143882751,
+        -1.1170920133590698,
+        0.0279998779296875,
+        -0.027172905889784278
+      ],
+      "distance": 0.002853882287852352,
+      "yaw_change": -0.0037083851628330333
+    },
+    {
+      "name": "turn",
+      "start": [
+        0.6454653143882751,
+        -1.1170920133590698,
+        0.0279998779296875,
+        -0.027172905889784278
+      ],
+      "end": [
+        0.6450316309928894,
+        -1.1172008514404297,
+        0.027999524027109146,
+        0.9599262894129046
+      ],
+      "distance": 0.00044713198877669466,
+      "yaw_change": 0.9870991953026889
+    },
+    {
+      "name": "stop3",
+      "start": [
+        0.6450316309928894,
+        -1.1172008514404297,
+        0.027999524027109146,
+        0.9599262894129046
+      ],
+      "end": [
+        0.6449038982391357,
+        -1.1173783540725708,
+        0.027999982237815857,
+        0.9599896561456142
+      ],
+      "distance": 0.00021868434054252047,
+      "yaw_change": 6.336673270956883e-05
+    }
+  ],
+  "video": {
+    "file": "03-wheel-physics.mp4",
+    "frames": 300,
+    "fps": 30,
+    "duration_s": 10.0,
+    "resolution": [
+      1280,
+      720
+    ]
+  },
+  "claims": "Local wheel actuation and rigid basket smoke only; no localization, Nav2, camera docking, two-robot physics, or hardware validation."
+}

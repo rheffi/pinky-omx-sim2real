@@ -1,0 +1,814 @@
+{
+  "candidate": true,
+  "control_session_updated": false,
+  "route_version": 4,
+  "physical_simulation": false,
+  "margin_m": 0.02,
+  "geometry": {
+    "queue_advance": {
+      "valid": true,
+      "invalid_intervals": [],
+      "invalid_count": 0,
+      "interval_count": 114,
+      "margin_m": 0.02
+    },
+    "home_to_A": {
+      "valid": true,
+      "invalid_intervals": [],
+      "invalid_count": 0,
+      "interval_count": 794,
+      "margin_m": 0.02
+    },
+    "home_to_B": {
+      "valid": true,
+      "invalid_intervals": [],
+      "invalid_count": 0,
+      "interval_count": 794,
+      "margin_m": 0.02
+    },
+    "home_to_handoff": {
+      "valid": true,
+      "invalid_intervals": [],
+      "invalid_count": 0,
+      "interval_count": 797,
+      "margin_m": 0.02
+    },
+    "A_to_B": {
+      "valid": true,
+      "invalid_intervals": [],
+      "invalid_count": 0,
+      "interval_count": 988,
+      "margin_m": 0.02
+    },
+    "A_to_handoff": {
+      "valid": true,
+      "invalid_intervals": [],
+      "invalid_count": 0,
+      "interval_count": 1225,
+      "margin_m": 0.02
+    },
+    "B_to_handoff": {
+      "valid": true,
+      "invalid_intervals": [],
+      "invalid_count": 0,
+      "interval_count": 1025,
+      "margin_m": 0.02
+    },
+    "handoff_to_home_front": {
+      "valid": true,
+      "invalid_intervals": [],
+      "invalid_count": 0,
+      "interval_count": 1291,
+      "margin_m": 0.02
+    },
+    "handoff_to_home_back": {
+      "valid": true,
+      "invalid_intervals": [],
+      "invalid_count": 0,
+      "interval_count": 1177,
+      "margin_m": 0.02
+    }
+  },
+  "segment_distance_m": {
+    "A_to_B": {
+      "v3": 3.4686179083737994,
+      "v4": 1.3880444014000077
+    },
+    "B_to_handoff": {
+      "v3": 3.315652980574929,
+      "v4": 1.4980444013999912
+    },
+    "A_to_handoff": {
+      "v3": 2.799596378737432,
+      "v4": 2.0980444013999904
+    }
+  },
+  "scenarios": {
+    "normal": {
+      "route_version": 4,
+      "status": "completed_reference_pipeline",
+      "physical_simulation": false,
+      "elapsed_sim_seconds": 280.275,
+      "distance_m": 12.9971472685558,
+      "robots": {
+        "pinky1": {
+          "distance_m": 6.498573634277894,
+          "rotation_rad": 14.837490267846826,
+          "moving_seconds": 101.99414069982652
+        },
+        "pinky2": {
+          "distance_m": 6.498573634277907,
+          "rotation_rad": 14.837490267846826,
+          "moving_seconds": 101.99414069982666
+        }
+      },
+      "timing_assumptions": {
+        "load_seconds": 12.0,
+        "unload_seconds": 45.0,
+        "max_speed_m_s": 0.08,
+        "max_yaw_rad_s": 0.5,
+        "dt": 0.025
+      },
+      "orders": [
+        [
+          "A",
+          "B"
+        ],
+        [
+          "A",
+          "B"
+        ]
+      ],
+      "events": [
+        {
+          "t": 2.0,
+          "event": "move_started",
+          "robot": "pinky1",
+          "source": "front",
+          "target": "A",
+          "end": 19.251604580948356,
+          "distance_m": 1.1250349220184206
+        },
+        {
+          "t": 19.275,
+          "event": "observed_arrival",
+          "robot": "pinky1",
+          "source": "front",
+          "target": "A",
+          "evidence": "synthetic"
+        },
+        {
+          "t": 19.275,
+          "event": "move_started",
+          "robot": "pinky2",
+          "source": "back",
+          "target": "front",
+          "end": 23.524999999999995,
+          "distance_m": 0.34
+        },
+        {
+          "t": 23.525,
+          "event": "observed_arrival",
+          "robot": "pinky2",
+          "source": "back",
+          "target": "front",
+          "evidence": "synthetic"
+        },
+        {
+          "t": 31.275,
+          "event": "synthetic_arm_done",
+          "robot": "pinky1",
+          "station": "A"
+        },
+        {
+          "t": 31.275,
+          "event": "move_started",
+          "robot": "pinky1",
+          "source": "A",
+          "target": "B",
+          "end": 54.908740324679364,
+          "distance_m": 1.3880444014000077
+        },
+        {
+          "t": 54.925,
+          "event": "observed_arrival",
+          "robot": "pinky1",
+          "source": "A",
+          "target": "B",
+          "evidence": "synthetic"
+        },
+        {
+          "t": 54.925,
+          "event": "move_started",
+          "robot": "pinky2",
+          "source": "front",
+          "target": "A",
+          "end": 72.17660458094836,
+          "distance_m": 1.1250349220184206
+        },
+        {
+          "t": 66.95,
+          "event": "synthetic_arm_done",
+          "robot": "pinky1",
+          "station": "B"
+        },
+        {
+          "t": 72.2,
+          "event": "observed_arrival",
+          "robot": "pinky2",
+          "source": "front",
+          "target": "A",
+          "evidence": "synthetic"
+        },
+        {
+          "t": 72.2,
+          "event": "move_started",
+          "robot": "pinky1",
+          "source": "B",
+          "target": "handoff",
+          "end": 97.20874032467928,
+          "distance_m": 1.4980444013999912
+        },
+        {
+          "t": 84.2,
+          "event": "synthetic_arm_done",
+          "robot": "pinky2",
+          "station": "A"
+        },
+        {
+          "t": 97.225,
+          "event": "observed_arrival",
+          "robot": "pinky1",
+          "source": "B",
+          "target": "handoff",
+          "evidence": "synthetic"
+        },
+        {
+          "t": 97.225,
+          "event": "move_started",
+          "robot": "pinky2",
+          "source": "A",
+          "target": "B",
+          "end": 120.85874032467937,
+          "distance_m": 1.3880444014000077
+        },
+        {
+          "t": 120.875,
+          "event": "observed_arrival",
+          "robot": "pinky2",
+          "source": "A",
+          "target": "B",
+          "evidence": "synthetic"
+        },
+        {
+          "t": 132.875,
+          "event": "synthetic_arm_done",
+          "robot": "pinky2",
+          "station": "B"
+        },
+        {
+          "t": 142.25,
+          "event": "synthetic_arm_done",
+          "robot": "pinky1",
+          "station": "handoff"
+        },
+        {
+          "t": 142.25,
+          "event": "move_started",
+          "robot": "pinky1",
+          "source": "handoff",
+          "target": "front",
+          "end": 178.3500554695195,
+          "distance_m": 2.4874499094594738
+        },
+        {
+          "t": 178.375,
+          "event": "observed_arrival",
+          "robot": "pinky1",
+          "source": "handoff",
+          "target": "front",
+          "evidence": "synthetic"
+        },
+        {
+          "t": 178.375,
+          "event": "move_started",
+          "robot": "pinky2",
+          "source": "B",
+          "target": "handoff",
+          "end": 203.38374032467928,
+          "distance_m": 1.4980444013999912
+        },
+        {
+          "t": 203.4,
+          "event": "observed_arrival",
+          "robot": "pinky2",
+          "source": "B",
+          "target": "handoff",
+          "evidence": "synthetic"
+        },
+        {
+          "t": 248.4,
+          "event": "synthetic_arm_done",
+          "robot": "pinky2",
+          "station": "handoff"
+        },
+        {
+          "t": 248.4,
+          "event": "move_started",
+          "robot": "pinky2",
+          "source": "handoff",
+          "target": "back",
+          "end": 280.2500554695197,
+          "distance_m": 2.1474499094594868
+        },
+        {
+          "t": 280.275,
+          "event": "observed_arrival",
+          "robot": "pinky2",
+          "source": "handoff",
+          "target": "back",
+          "evidence": "synthetic"
+        }
+      ],
+      "checks": {
+        "all_home": true,
+        "all_bays_released": true,
+        "one_moving_at_a_time": true,
+        "continuous_reference_clear": true
+      }
+    },
+    "stale": {
+      "route_version": 4,
+      "status": "stopped_on_stale",
+      "physical_simulation": false,
+      "events": [
+        {
+          "t": 2.0,
+          "event": "move_started",
+          "robot": "pinky1",
+          "source": "front",
+          "target": "A",
+          "end": 19.251604580948356,
+          "distance_m": 1.1250349220184206
+        },
+        {
+          "t": 19.275,
+          "event": "observed_arrival",
+          "robot": "pinky1",
+          "source": "front",
+          "target": "A",
+          "evidence": "synthetic"
+        },
+        {
+          "t": 19.275,
+          "event": "move_started",
+          "robot": "pinky2",
+          "source": "back",
+          "target": "front",
+          "end": 23.524999999999995,
+          "distance_m": 0.34
+        },
+        {
+          "t": 23.525,
+          "event": "observed_arrival",
+          "robot": "pinky2",
+          "source": "back",
+          "target": "front",
+          "evidence": "synthetic"
+        },
+        {
+          "t": 31.275,
+          "event": "synthetic_arm_done",
+          "robot": "pinky1",
+          "station": "A"
+        },
+        {
+          "t": 31.275,
+          "event": "move_started",
+          "robot": "pinky1",
+          "source": "A",
+          "target": "B",
+          "end": 54.908740324679364,
+          "distance_m": 1.3880444014000077
+        },
+        {
+          "t": 43.1,
+          "event": "stale_observation_stop",
+          "robot": "pinky1",
+          "source": "A",
+          "target": "B"
+        }
+      ],
+      "move_owner": "pinky1",
+      "bay_owners": {
+        "A": "pinky1",
+        "B": "pinky1"
+      },
+      "checks": {
+        "permit_retained": true,
+        "both_bays_retained": true,
+        "both_stopped": true,
+        "continuous_reference_clear_until_stop": true
+      }
+    },
+    "skip": {
+      "route_version": 4,
+      "status": "completed_reference_pipeline",
+      "physical_simulation": false,
+      "elapsed_sim_seconds": 253.275,
+      "distance_m": 10.579790606768842,
+      "robots": {
+        "pinky1": {
+          "distance_m": 5.710529232877885,
+          "rotation_rad": 11.695897614257042,
+          "moving_seconds": 85.86040037514724
+        },
+        "pinky2": {
+          "distance_m": 4.869261373890956,
+          "rotation_rad": 10.237195767534914,
+          "moving_seconds": 75.29747673568227
+        }
+      },
+      "timing_assumptions": {
+        "load_seconds": 12.0,
+        "unload_seconds": 45.0,
+        "max_speed_m_s": 0.08,
+        "max_yaw_rad_s": 0.5,
+        "dt": 0.025
+      },
+      "orders": [
+        [
+          "A"
+        ],
+        [
+          "B"
+        ]
+      ],
+      "events": [
+        {
+          "t": 2.0,
+          "event": "move_started",
+          "robot": "pinky1",
+          "source": "front",
+          "target": "A",
+          "end": 19.251604580948356,
+          "distance_m": 1.1250349220184206
+        },
+        {
+          "t": 19.275,
+          "event": "observed_arrival",
+          "robot": "pinky1",
+          "source": "front",
+          "target": "A",
+          "evidence": "synthetic"
+        },
+        {
+          "t": 19.275,
+          "event": "move_started",
+          "robot": "pinky2",
+          "source": "back",
+          "target": "front",
+          "end": 23.524999999999995,
+          "distance_m": 0.34
+        },
+        {
+          "t": 23.525,
+          "event": "observed_arrival",
+          "robot": "pinky2",
+          "source": "back",
+          "target": "front",
+          "evidence": "synthetic"
+        },
+        {
+          "t": 23.525,
+          "event": "move_started",
+          "robot": "pinky2",
+          "source": "front",
+          "target": "B",
+          "end": 37.71368094148331,
+          "distance_m": 0.8837670630314783
+        },
+        {
+          "t": 31.275,
+          "event": "synthetic_arm_done",
+          "robot": "pinky1",
+          "station": "A"
+        },
+        {
+          "t": 37.725,
+          "event": "observed_arrival",
+          "robot": "pinky2",
+          "source": "front",
+          "target": "B",
+          "evidence": "synthetic"
+        },
+        {
+          "t": 37.725,
+          "event": "move_started",
+          "robot": "pinky1",
+          "source": "A",
+          "target": "handoff",
+          "end": 70.23374032467936,
+          "distance_m": 2.0980444013999904
+        },
+        {
+          "t": 49.725,
+          "event": "synthetic_arm_done",
+          "robot": "pinky2",
+          "station": "B"
+        },
+        {
+          "t": 70.25,
+          "event": "observed_arrival",
+          "robot": "pinky1",
+          "source": "A",
+          "target": "handoff",
+          "evidence": "synthetic"
+        },
+        {
+          "t": 115.25,
+          "event": "synthetic_arm_done",
+          "robot": "pinky1",
+          "station": "handoff"
+        },
+        {
+          "t": 115.25,
+          "event": "move_started",
+          "robot": "pinky1",
+          "source": "handoff",
+          "target": "front",
+          "end": 151.3500554695195,
+          "distance_m": 2.4874499094594738
+        },
+        {
+          "t": 151.375,
+          "event": "observed_arrival",
+          "robot": "pinky1",
+          "source": "handoff",
+          "target": "front",
+          "evidence": "synthetic"
+        },
+        {
+          "t": 151.375,
+          "event": "move_started",
+          "robot": "pinky2",
+          "source": "B",
+          "target": "handoff",
+          "end": 176.38374032467928,
+          "distance_m": 1.4980444013999912
+        },
+        {
+          "t": 176.4,
+          "event": "observed_arrival",
+          "robot": "pinky2",
+          "source": "B",
+          "target": "handoff",
+          "evidence": "synthetic"
+        },
+        {
+          "t": 221.4,
+          "event": "synthetic_arm_done",
+          "robot": "pinky2",
+          "station": "handoff"
+        },
+        {
+          "t": 221.4,
+          "event": "move_started",
+          "robot": "pinky2",
+          "source": "handoff",
+          "target": "back",
+          "end": 253.25005546951968,
+          "distance_m": 2.1474499094594868
+        },
+        {
+          "t": 253.275,
+          "event": "observed_arrival",
+          "robot": "pinky2",
+          "source": "handoff",
+          "target": "back",
+          "evidence": "synthetic"
+        }
+      ],
+      "checks": {
+        "all_home": true,
+        "all_bays_released": true,
+        "one_moving_at_a_time": true,
+        "continuous_reference_clear": true
+      }
+    },
+    "baseline": {
+      "route_version": 3,
+      "status": "completed_reference_pipeline",
+      "physical_simulation": false,
+      "elapsed_sim_seconds": 412.3,
+      "distance_m": 24.51588780031979,
+      "robots": {
+        "pinky1": {
+          "distance_m": 12.257943900159887,
+          "rotation_rad": 34.255895312891546,
+          "moving_seconds": 178.72566462480327
+        },
+        "pinky2": {
+          "distance_m": 12.257943900159901,
+          "rotation_rad": 34.255895312891546,
+          "moving_seconds": 178.72566462480316
+        }
+      },
+      "timing_assumptions": {
+        "load_seconds": 12.0,
+        "unload_seconds": 45.0,
+        "max_speed_m_s": 0.08,
+        "max_yaw_rad_s": 0.5,
+        "dt": 0.025
+      },
+      "orders": [
+        [
+          "A",
+          "B"
+        ],
+        [
+          "A",
+          "B"
+        ]
+      ],
+      "events": [
+        {
+          "t": 2.0,
+          "event": "move_started",
+          "robot": "pinky1",
+          "source": "front",
+          "target": "A",
+          "end": 46.36325960230953,
+          "distance_m": 2.9207387611544813
+        },
+        {
+          "t": 46.375,
+          "event": "observed_arrival",
+          "robot": "pinky1",
+          "source": "front",
+          "target": "A",
+          "evidence": "synthetic"
+        },
+        {
+          "t": 46.375,
+          "event": "move_started",
+          "robot": "pinky2",
+          "source": "back",
+          "target": "front",
+          "end": 50.62499999999999,
+          "distance_m": 0.34
+        },
+        {
+          "t": 50.625,
+          "event": "observed_arrival",
+          "robot": "pinky2",
+          "source": "back",
+          "target": "front",
+          "evidence": "synthetic"
+        },
+        {
+          "t": 58.375,
+          "event": "synthetic_arm_done",
+          "robot": "pinky1",
+          "station": "A"
+        },
+        {
+          "t": 58.375,
+          "event": "move_started",
+          "robot": "pinky1",
+          "source": "A",
+          "target": "B",
+          "end": 110.37216236395247,
+          "distance_m": 3.4686179083737994
+        },
+        {
+          "t": 110.375,
+          "event": "observed_arrival",
+          "robot": "pinky1",
+          "source": "A",
+          "target": "B",
+          "evidence": "synthetic"
+        },
+        {
+          "t": 110.375,
+          "event": "move_started",
+          "robot": "pinky2",
+          "source": "front",
+          "target": "A",
+          "end": 154.73825960230954,
+          "distance_m": 2.9207387611544813
+        },
+        {
+          "t": 122.375,
+          "event": "synthetic_arm_done",
+          "robot": "pinky1",
+          "station": "B"
+        },
+        {
+          "t": 154.75,
+          "event": "observed_arrival",
+          "robot": "pinky2",
+          "source": "front",
+          "target": "A",
+          "evidence": "synthetic"
+        },
+        {
+          "t": 154.75,
+          "event": "move_started",
+          "robot": "pinky1",
+          "source": "B",
+          "target": "handoff",
+          "end": 205.203551594936,
+          "distance_m": 3.315652980574929
+        },
+        {
+          "t": 166.75,
+          "event": "synthetic_arm_done",
+          "robot": "pinky2",
+          "station": "A"
+        },
+        {
+          "t": 205.225,
+          "event": "observed_arrival",
+          "robot": "pinky1",
+          "source": "B",
+          "target": "handoff",
+          "evidence": "synthetic"
+        },
+        {
+          "t": 205.225,
+          "event": "move_started",
+          "robot": "pinky2",
+          "source": "A",
+          "target": "B",
+          "end": 257.22216236395246,
+          "distance_m": 3.4686179083737994
+        },
+        {
+          "t": 250.225,
+          "event": "synthetic_arm_done",
+          "robot": "pinky1",
+          "station": "handoff"
+        },
+        {
+          "t": 257.225,
+          "event": "observed_arrival",
+          "robot": "pinky2",
+          "source": "A",
+          "target": "B",
+          "evidence": "synthetic"
+        },
+        {
+          "t": 257.225,
+          "event": "move_started",
+          "robot": "pinky1",
+          "source": "handoff",
+          "target": "front",
+          "end": 289.1366910636053,
+          "distance_m": 2.552934250056677
+        },
+        {
+          "t": 269.225,
+          "event": "synthetic_arm_done",
+          "robot": "pinky2",
+          "station": "B"
+        },
+        {
+          "t": 289.15,
+          "event": "observed_arrival",
+          "robot": "pinky1",
+          "source": "handoff",
+          "target": "front",
+          "evidence": "synthetic"
+        },
+        {
+          "t": 289.15,
+          "event": "move_started",
+          "robot": "pinky2",
+          "source": "B",
+          "target": "handoff",
+          "end": 339.603551594936,
+          "distance_m": 3.315652980574929
+        },
+        {
+          "t": 339.625,
+          "event": "observed_arrival",
+          "robot": "pinky2",
+          "source": "B",
+          "target": "handoff",
+          "evidence": "synthetic"
+        },
+        {
+          "t": 384.625,
+          "event": "synthetic_arm_done",
+          "robot": "pinky2",
+          "station": "handoff"
+        },
+        {
+          "t": 384.625,
+          "event": "move_started",
+          "robot": "pinky2",
+          "source": "handoff",
+          "target": "back",
+          "end": 412.2866910636052,
+          "distance_m": 2.21293425005669
+        },
+        {
+          "t": 412.3,
+          "event": "observed_arrival",
+          "robot": "pinky2",
+          "source": "handoff",
+          "target": "back",
+          "evidence": "synthetic"
+        }
+      ],
+      "checks": {
+        "all_home": true,
+        "all_bays_released": true,
+        "one_moving_at_a_time": true,
+        "continuous_reference_clear": true
+      }
+    }
+  },
+  "passed": true
+}

@@ -1,0 +1,29 @@
+[package]
+title = "Pinky Motion Development"
+version = "0.1.0"
+
+[dependencies]
+"isaacsim.simulation_app" = {}
+"isaacsim.core.experimental.prims" = {}
+"isaacsim.core.experimental.utils" = {}
+"isaacsim.core.rendering_manager" = {}
+"isaacsim.core.simulation_manager" = {}
+"isaacsim.sensors.experimental.rtx" = {}
+"omni.kit.loop-isaac" = {}
+"omni.hydra.rtx" = {}
+"omni.hydra.engine.stats" = {}
+"omni.replicator.core" = {}
+"omni.pip.cloud" = {}
+"isaacsim.robot.schema" = {}
+
+[settings]
+rtx.spg.enabled = true
+app.name = "Pinky-Motion-Development"
+app.settings.persistent = false
+app.settings.fabricDefaultStageFrameHistoryCount = 3
+app.vulkan = true
+app.asyncRendering = false
+omni.replicator.asyncRendering = false
+app.file.ignoreUnsavedStage = true
+app.exts.registryEnabled = false
+persistent.app.newStage.templatePath = []

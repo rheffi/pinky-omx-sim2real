@@ -1,0 +1,50 @@
+{
+  "kind": "current_design_not_executable_route",
+  "geometry_source": "config/layout.json",
+  "loop_source": "pinky_motion.routes.loop_samples",
+  "loop_samples": 361,
+  "loop_samples_valid": true,
+  "in_place_rotation_diameter_m": 0.4790949541352782,
+  "lane_centres_wall_distance_m": [
+    0.95,
+    1.3
+  ],
+  "loop_turn_centre_radius_m": 0.175,
+  "station_branches": [
+    {
+      "station": "A",
+      "validation": "topology_only",
+      "crosses_westbound_lane_at": [
+        0.1886363636363636,
+        -0.95
+      ],
+      "entry_connector": "not implemented; gap left in drawing"
+    },
+    {
+      "station": "B",
+      "validation": "topology_only",
+      "crosses_westbound_lane_at": [
+        0.7886363636363636,
+        -0.95
+      ],
+      "entry_connector": "not implemented; gap left in drawing"
+    },
+    {
+      "station": "handoff",
+      "validation": "topology_only",
+      "crosses_westbound_lane_at": [
+        1.4886363636363635,
+        -0.95
+      ],
+      "entry_connector": "not implemented; gap left in drawing"
+    }
+  ],
+  "parking_footprints": "target illustrations, not three robots simultaneously",
+  "not_drawn": [
+    "unimplemented waiting bays",
+    "unknown shelf footprints",
+    "unmeasured camera FOV"
+  ],
+  "basket_floor_contact": false,
+  "multi_robot_collision_validated": false
+}

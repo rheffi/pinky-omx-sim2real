@@ -1,0 +1,12 @@
+{
+  "pinky_motion/compact_routes.py": "fc56a773574d16db4d1f678a79f82b6931bea8231e3816787a07bf3e4cc99bfd",
+  "pinky_motion/compact_reference.py": "1c78be0892f58ace20b93753741707bae82085f63a703024ae1e783cf85c8a04",
+  "pinky_motion/route_paths.py": "911ca58a2459991dcf0e4d25604c2f1ad097052ee11c0c3b65805cab0260c439",
+  "pinky_motion/route_validation.py": "6f89237dbf51f9e85eb1bd6b0befa807c6a0958775d7aeaad694c84e8e1de329",
+  "pinky_motion/geometry.py": "b20885810d9f3299fe8950ba422bb5bf1d2b2c789bab73bd2317e8e507cc1fdf",
+  "pinky_motion/fleet_reference.py": "3696716339e14157b34d16c8d424f888b48381f44619e13bf391e5b847830c67",
+  "tools/build_compact_review.py": "ab305fdea94ce2b5ac607068d6e65f99e48f0456e018ba3590aa7270752cef5f",
+  "tools/compact_review_template.html": "0354b64c4653cfcdca08ec97c7cccd312d10fc65f90c835386c61ece6bd2f383",
+  "tests/test_compact_review.py": "21dc8f74d46efd382530d8525c4be00de40835d70d0b4b87ee7089a6bccc0c42",
+  "config/layout.json": "9bdf1352cc9e50806bb3dbc41820e961bb80812bd837898ed1f9074f4e2e905f"
+}

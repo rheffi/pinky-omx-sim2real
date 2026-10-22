@@ -1,0 +1,3 @@
+# This backup includes evidence manifests that hash original file bytes.
+# Keep source and evidence bytes unchanged across Windows and Linux clones.
+* -text

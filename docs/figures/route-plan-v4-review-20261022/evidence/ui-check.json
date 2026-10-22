@@ -1,0 +1,26 @@
+{
+  "passed": true,
+  "scenarios_checked": [
+    "normal",
+    "stale",
+    "skip",
+    "baseline"
+  ],
+  "controls": [
+    "play_pause",
+    "seek",
+    "jump",
+    "scenario",
+    "responsive_layout"
+  ],
+  "images": [
+    "01-overview.png",
+    "02-short-transfer.png",
+    "03-handoff-wait.png",
+    "04-return.png",
+    "05-stale-stop.png",
+    "06-v3-comparison.png",
+    "route-map.png"
+  ],
+  "page_errors": []
+}

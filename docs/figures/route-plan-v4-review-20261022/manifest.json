@@ -1,0 +1,95 @@
+{
+  "candidate_version": 4,
+  "files": [
+    {
+      "path": "evidence/baseline-frames.json",
+      "bytes": 5063668,
+      "sha256": "5ede3c9f7acb95fdf0b9fb675854ecfe28618494666279387a05c8b43f53043f"
+    },
+    {
+      "path": "evidence/layout.json",
+      "bytes": 2448,
+      "sha256": "a15c54bd77a41548a51c14cfe4defdda781a4a554234a8029c0c0668a7c66be6"
+    },
+    {
+      "path": "evidence/normal-frames.json",
+      "bytes": 3397499,
+      "sha256": "0ae784cdb41b21ef86d6719f0dfd76a3d2b169fd8c9f651c86c4ebc24144fc39"
+    },
+    {
+      "path": "evidence/paths.json",
+      "bytes": 590338,
+      "sha256": "bb9f31910ecb4fcb3bedfc5dbf7fdc235001d9847e68ba395d9b9d5ffae4e88f"
+    },
+    {
+      "path": "evidence/result.json",
+      "bytes": 21097,
+      "sha256": "da40e3e63543107b84f14cecf48718efad57f2650dc201468249f5792866d2b2"
+    },
+    {
+      "path": "evidence/skip-frames.json",
+      "bytes": 3109461,
+      "sha256": "eb2e7e86c4874d37a4d3596964f6f10bfd14b6e3e07f2cff064878305d4430b7"
+    },
+    {
+      "path": "evidence/source-hashes.json",
+      "bytes": 1039,
+      "sha256": "df22b6b8cc62ad71219afddf1bf738c91037b89d3c5297a3b39343109fa85db8"
+    },
+    {
+      "path": "evidence/stale-frames.json",
+      "bytes": 521501,
+      "sha256": "161bd067cff4ba031e5aed058273d42f6ae2fe4471c8a0267f724eeb94130197"
+    },
+    {
+      "path": "evidence/ui-check.json",
+      "bytes": 420,
+      "sha256": "5695182580d4676606b46599b0af2938e3c089506673742befa0206b649f923c"
+    },
+    {
+      "path": "evidence/verification.json",
+      "bytes": 457,
+      "sha256": "41a4a19d0de4710d9da80cb62c791250debfb0b3213da4218a5f944168e90949"
+    },
+    {
+      "path": "images/01-overview.png",
+      "bytes": 118182,
+      "sha256": "2451adabfa3c799b915208f825255122802250a79dbb8bf848596afd2ed1a660"
+    },
+    {
+      "path": "images/02-short-transfer.png",
+      "bytes": 120823,
+      "sha256": "e0684fac74f35e19f41074d94f53c433301475e8b77f94e33bf6b9b5d0994273"
+    },
+    {
+      "path": "images/03-handoff-wait.png",
+      "bytes": 121436,
+      "sha256": "769cd6dd8a182403511ed9750b3825b8876a21968b2cecbca2ffb87dcafdfb6a"
+    },
+    {
+      "path": "images/04-return.png",
+      "bytes": 121230,
+      "sha256": "fc2e8a1b72f94c66461d0e2572ec6e923b75f598105235d8ee768e102c617375"
+    },
+    {
+      "path": "images/05-stale-stop.png",
+      "bytes": 121386,
+      "sha256": "67c79ac2b0593754447b09b502f65c1d1873bcfedaa1bf54f57142509ef375cd"
+    },
+    {
+      "path": "images/06-v3-comparison.png",
+      "bytes": 131115,
+      "sha256": "78bdb91f473fe13b1edd8c82b7708fe40d9ecd4044ad9debec461131bb088181"
+    },
+    {
+      "path": "images/route-map.png",
+      "bytes": 36687,
+      "sha256": "bd1f2f4af54334346bd8d4ef36c637012c85e2fd6bb7786cc22ef95dba8ed42d"
+    },
+    {
+      "path": "replay.html",
+      "bytes": 3644378,
+      "sha256": "0f39e9950a3e21fd486525a8899f9ddd01979f002f0ea95c25cddd43b6f9dca9"
+    }
+  ]
+}

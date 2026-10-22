@@ -1,0 +1,956 @@
+#usda 1.0
+(
+    defaultPrim = "World"
+    endTimeCode = 100
+    metersPerUnit = 1
+    startTimeCode = 0
+    timeCodesPerSecond = 60
+    upAxis = "Z"
+)
+
+def "Render" (
+    hide_in_stage_window = true
+    no_delete = true
+)
+{
+    def "OmniverseKit"
+    {
+        def "HydraTextures" (
+            hide_in_stage_window = true
+            no_delete = true
+        )
+        {
+            def RenderProduct "omni_kit_widget_viewport_ViewportTexture_0" (
+                prepend apiSchemas = ["OmniRtxSettingsCommonAdvancedAPI_1", "OmniRtxSettingsRtAdvancedAPI_1", "OmniRtxSettingsPtAdvancedAPI_1", "OmniRtxSettingsParticleFieldAPI_1", "OmniRtxPostColorGradingAPI_1", "OmniRtxPostChromaticAberrationAPI_1", "OmniRtxPostBloomPhysicalAPI_1", "OmniRtxPostMatteObjectAPI_1", "OmniRtxPostCompositingAPI_1", "OmniRtxPostDofAPI_1", "OmniRtxPostMotionBlurAPI_1", "OmniRtxPostTvNoiseAPI_1", "OmniRtxPostTonemapIrayReinhardAPI_1", "OmniRtxPostDebugSettingsAPI_1", "OmniRtxDebugSettingsAPI_1"]
+                hide_in_stage_window = true
+                no_delete = true
+            )
+            {
+                rel camera = </OmniverseKit_Persp>
+                token omni:rtx:ambientOcclusion:denoiserMode = "none"
+                token omni:rtx:background:source:texture:textureMode = "repeatMirrored"
+                token omni:rtx:background:source:type = "domeLight"
+                bool omni:rtx:debug:view:pixelDebug:enableFixedTextPos = 1
+                token omni:rtx:directLighting:sampledLighting:denoisingTechnique = "None"
+                bool omni:rtx:dlss:frameGeneration = 1
+                bool omni:rtx:indirectDiffuse:denoiser:enabled = 0
+                bool omni:rtx:material:db:syncLoads = 1
+                bool omni:rtx:post:registeredCompositing:invertColorCorrection = 1
+                bool omni:rtx:post:registeredCompositing:invertToneMap = 1
+                bool omni:rtx:pt:adaptiveSampling:filterError = 0
+                uint omni:rtx:pt:adaptiveSampling:fixedSppIterations = 2
+                int omni:rtx:pt:clampSpp = 64
+                uint omni:rtx:pt:limits:maxBounces = 3
+                uint omni:rtx:pt:limits:maxGlossyBounces = 3
+                uint omni:rtx:pt:maxSamplesPerLaunch = 2073600
+                uint omni:rtx:pt:mgpu:maxPixelsPerRegionExponent = 12
+                int omni:rtx:pt:samplesPerIteration = 64
+                uint omni:rtx:pt:samplesPerPixel = 64
+                bool omni:rtx:reflections:denoiser:enabled = 0
+                token omni:rtx:rendermode = "RealTimePathTracing"
+                color3f omni:rtx:rt:ambientLight:color = (0.1, 0.1, 0.1)
+                bool omni:rtx:rt:demoire = 0
+                bool omni:rtx:rt:ecoMode:enabled = 0
+                bool omni:rtx:rt:lightcache:spatialCache:dontResolveConflicts = 1
+                int omni:rtx:rt:sss:samples = 1
+                uint omni:rtx:rtpt:maxVolumeBounces = 15
+                float omni:rtx:rtpt:modulatingRoughnessThreshold = 0.08
+                bool omni:rtx:scene:hydra:materialSyncLoads = 1
+                rel orderedVars = </Render/Vars/LdrColor>
+                custom bool overrideClipRange = 0
+                uniform int2 resolution = (1280, 640)
+            }
+
+            def RenderProduct "camera_sensor_178909483790" (
+                prepend apiSchemas = ["OmniRtxSettingsCommonAdvancedAPI_1", "OmniRtxSettingsRtAdvancedAPI_1", "OmniRtxSettingsPtAdvancedAPI_1", "OmniRtxSettingsParticleFieldAPI_1", "OmniRtxPostColorGradingAPI_1", "OmniRtxPostChromaticAberrationAPI_1", "OmniRtxPostBloomPhysicalAPI_1", "OmniRtxPostMatteObjectAPI_1", "OmniRtxPostCompositingAPI_1", "OmniRtxPostDofAPI_1", "OmniRtxPostMotionBlurAPI_1", "OmniRtxPostTvNoiseAPI_1", "OmniRtxPostTonemapIrayReinhardAPI_1", "OmniRtxPostDebugSettingsAPI_1", "OmniRtxDebugSettingsAPI_1"]
+                hide_in_stage_window = true
+                no_delete = true
+            )
+            {
+                rel camera = </World/Cameras/media>
+                token omni:rtx:ambientOcclusion:denoiserMode = "none"
+                token omni:rtx:background:source:texture:textureMode = "repeatMirrored"
+                token omni:rtx:background:source:type = "domeLight"
+                bool omni:rtx:debug:view:pixelDebug:enableFixedTextPos = 1
+                token omni:rtx:directLighting:sampledLighting:denoisingTechnique = "None"
+                bool omni:rtx:dlss:frameGeneration = 1
+                bool omni:rtx:indirectDiffuse:denoiser:enabled = 0
+                bool omni:rtx:material:db:syncLoads = 1
+                bool omni:rtx:post:registeredCompositing:invertColorCorrection = 1
+                bool omni:rtx:post:registeredCompositing:invertToneMap = 1
+                bool omni:rtx:pt:adaptiveSampling:filterError = 0
+                uint omni:rtx:pt:adaptiveSampling:fixedSppIterations = 2
+                int omni:rtx:pt:clampSpp = 64
+                uint omni:rtx:pt:limits:maxBounces = 3
+                uint omni:rtx:pt:limits:maxGlossyBounces = 3
+                uint omni:rtx:pt:maxSamplesPerLaunch = 2073600
+                uint omni:rtx:pt:mgpu:maxPixelsPerRegionExponent = 12
+                int omni:rtx:pt:samplesPerIteration = 64
+                uint omni:rtx:pt:samplesPerPixel = 64
+                bool omni:rtx:reflections:denoiser:enabled = 0
+                token omni:rtx:rendermode = "RealTimePathTracing"
+                color3f omni:rtx:rt:ambientLight:color = (0.1, 0.1, 0.1)
+                bool omni:rtx:rt:demoire = 0
+                bool omni:rtx:rt:ecoMode:enabled = 0
+                bool omni:rtx:rt:lightcache:spatialCache:dontResolveConflicts = 1
+                int omni:rtx:rt:sss:samples = 1
+                uint omni:rtx:rtpt:maxVolumeBounces = 15
+                float omni:rtx:rtpt:modulatingRoughnessThreshold = 0.08
+                bool omni:rtx:scene:hydra:materialSyncLoads = 1
+                rel orderedVars = </Render/Vars/LdrColor>
+                custom bool overrideClipRange = 0
+                uniform int2 resolution = (1280, 640)
+            }
+        }
+    }
+
+    def RenderSettings "OmniverseGlobalRenderSettings" (
+        prepend apiSchemas = ["OmniRtxSettingsGlobalRtAdvancedAPI_1", "OmniRtxSettingsGlobalPtAdvancedAPI_1"]
+        no_delete = true
+    )
+    {
+        rel products = [
+            </Render/OmniverseKit/HydraTextures/omni_kit_widget_viewport_ViewportTexture_0>,
+            </Render/OmniverseKit/HydraTextures/camera_sensor_178909483790>,
+        ]
+    }
+
+    def "Vars" (
+        hide_in_stage_window = true
+        no_delete = true
+    )
+    {
+        def RenderVar "LdrColor" (
+            hide_in_stage_window = true
+            no_delete = true
+        )
+        {
+            uniform string sourceName = "LdrColor"
+            uniform token sourceType = "raw"
+        }
+    }
+}
+
+over "OmniverseKit_Persp"
+{
+    float exposure:fStop = 5
+    float exposure:responsivity = 1.1026709
+    float exposure:time = 0.02
+}
+
+def Xform "World" (
+    prepend references = @C:\Users\cch97\Desktop\코덱스\projects\pinky-omx-sim2real\outputs\smoke-005-raised-basket\scene.usda@</World>
+)
+{
+    def Xform "Pinky2" (
+        prepend references = @C:\Users\cch97\Desktop\코덱스\projects\pinky-omx-sim2real\outputs\smoke-005-raised-basket\scene.usda@</World/Pinky>
+    )
+    {
+        float xformOp:rotateZ:media = 0
+        double3 xformOp:translate:media = (0.46, -1.375, 0)
+        uniform token[] xformOpOrder = ["xformOp:translate:media", "xformOp:rotateZ:media"]
+
+        over "Geometry"
+        {
+            over "base_footprint"
+            {
+                over "base_link"
+                {
+                    bool physics:rigidBodyEnabled = 0
+
+                    over "l_wheel"
+                    {
+                        bool physics:rigidBodyEnabled = 0
+                    }
+
+                    over "r_wheel"
+                    {
+                        bool physics:rigidBodyEnabled = 0
+                    }
+
+                    over "caster_mount_link"
+                    {
+                        bool physics:rigidBodyEnabled = 0
+
+                        over "caster_roate_link"
+                        {
+                            bool physics:rigidBodyEnabled = 0
+
+                            over "caster_wheel"
+                            {
+                                bool physics:rigidBodyEnabled = 0
+                            }
+                        }
+                    }
+
+                    over "robot_lamp"
+                    {
+                        bool physics:rigidBodyEnabled = 0
+                    }
+
+                    over "rplidar_mount"
+                    {
+                        bool physics:rigidBodyEnabled = 0
+                    }
+
+                    over "front_camera_mount"
+                    {
+                        bool physics:rigidBodyEnabled = 0
+                    }
+
+                    over "screen_mount"
+                    {
+                        bool physics:rigidBodyEnabled = 0
+                    }
+
+                    over "Basket"
+                    {
+                        over "bottom"
+                        {
+                            color3f[] primvars:displayColor = [(0.18, 0.32, 0.86)]
+                        }
+
+                        over "back"
+                        {
+                            color3f[] primvars:displayColor = [(0.18, 0.32, 0.86)]
+                        }
+
+                        over "front"
+                        {
+                            color3f[] primvars:displayColor = [(0.18, 0.32, 0.86)]
+                        }
+
+                        over "left"
+                        {
+                            color3f[] primvars:displayColor = [(0.18, 0.32, 0.86)]
+                        }
+
+                        over "right"
+                        {
+                            color3f[] primvars:displayColor = [(0.18, 0.32, 0.86)]
+                        }
+                    }
+                }
+            }
+        }
+
+        over "Physics"
+        {
+            over "l_wheel_joint"
+            {
+                bool physics:jointEnabled = 0
+            }
+
+            over "r_wheel_joint"
+            {
+                bool physics:jointEnabled = 0
+            }
+
+            over "caster_mount_fixed_joint"
+            {
+                bool physics:jointEnabled = 0
+            }
+
+            over "caster_rotate_joint"
+            {
+                bool physics:jointEnabled = 0
+            }
+
+            over "caster_wheel_joint"
+            {
+                bool physics:jointEnabled = 0
+            }
+
+            over "robot_lamp_mount_fixed_joint"
+            {
+                bool physics:jointEnabled = 0
+            }
+
+            over "rplidar_mount_fixed_joint"
+            {
+                bool physics:jointEnabled = 0
+            }
+
+            over "front_camera_mount_fixed_joint"
+            {
+                bool physics:jointEnabled = 0
+            }
+
+            over "screen_mount_fixed_joint"
+            {
+                bool physics:jointEnabled = 0
+            }
+        }
+    }
+
+    over "Arms"
+    {
+        over "A"
+        {
+            over "Geometry"
+            {
+                over "world"
+                {
+                    over "link0"
+                    {
+                        bool physics:rigidBodyEnabled = 0
+
+                        over "link1"
+                        {
+                            bool physics:rigidBodyEnabled = 0
+
+                            over "link2"
+                            {
+                                bool physics:rigidBodyEnabled = 0
+
+                                over "link3"
+                                {
+                                    bool physics:rigidBodyEnabled = 0
+
+                                    over "link4"
+                                    {
+                                        bool physics:rigidBodyEnabled = 0
+
+                                        over "link5"
+                                        {
+                                            bool physics:rigidBodyEnabled = 0
+
+                                            over "end_effector_link"
+                                            {
+                                                bool physics:rigidBodyEnabled = 0
+                                            }
+
+                                            over "link6"
+                                            {
+                                                bool physics:rigidBodyEnabled = 0
+                                            }
+
+                                            over "link7"
+                                            {
+                                                bool physics:rigidBodyEnabled = 0
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+
+            over "Physics"
+            {
+                over "world_fixed"
+                {
+                    bool physics:jointEnabled = 0
+                }
+
+                over "end_effector_joint"
+                {
+                    bool physics:jointEnabled = 0
+                }
+
+                over "joint1"
+                {
+                    bool physics:jointEnabled = 0
+                }
+
+                over "joint2"
+                {
+                    bool physics:jointEnabled = 0
+                }
+
+                over "joint3"
+                {
+                    bool physics:jointEnabled = 0
+                }
+
+                over "joint4"
+                {
+                    bool physics:jointEnabled = 0
+                }
+
+                over "joint5"
+                {
+                    bool physics:jointEnabled = 0
+                }
+
+                over "gripper_joint_1"
+                {
+                    bool physics:jointEnabled = 0
+                }
+
+                over "gripper_joint_2"
+                {
+                    bool physics:jointEnabled = 0
+                }
+            }
+        }
+
+        over "B"
+        {
+            over "Geometry"
+            {
+                over "world"
+                {
+                    over "link0"
+                    {
+                        bool physics:rigidBodyEnabled = 0
+
+                        over "link1"
+                        {
+                            bool physics:rigidBodyEnabled = 0
+
+                            over "link2"
+                            {
+                                bool physics:rigidBodyEnabled = 0
+
+                                over "link3"
+                                {
+                                    bool physics:rigidBodyEnabled = 0
+
+                                    over "link4"
+                                    {
+                                        bool physics:rigidBodyEnabled = 0
+
+                                        over "link5"
+                                        {
+                                            bool physics:rigidBodyEnabled = 0
+
+                                            over "end_effector_link"
+                                            {
+                                                bool physics:rigidBodyEnabled = 0
+                                            }
+
+                                            over "link6"
+                                            {
+                                                bool physics:rigidBodyEnabled = 0
+                                            }
+
+                                            over "link7"
+                                            {
+                                                bool physics:rigidBodyEnabled = 0
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+
+            over "Physics"
+            {
+                over "world_fixed"
+                {
+                    bool physics:jointEnabled = 0
+                }
+
+                over "end_effector_joint"
+                {
+                    bool physics:jointEnabled = 0
+                }
+
+                over "joint1"
+                {
+                    bool physics:jointEnabled = 0
+                }
+
+                over "joint2"
+                {
+                    bool physics:jointEnabled = 0
+                }
+
+                over "joint3"
+                {
+                    bool physics:jointEnabled = 0
+                }
+
+                over "joint4"
+                {
+                    bool physics:jointEnabled = 0
+                }
+
+                over "joint5"
+                {
+                    bool physics:jointEnabled = 0
+                }
+
+                over "gripper_joint_1"
+                {
+                    bool physics:jointEnabled = 0
+                }
+
+                over "gripper_joint_2"
+                {
+                    bool physics:jointEnabled = 0
+                }
+            }
+        }
+
+        over "handoff"
+        {
+            over "Geometry"
+            {
+                over "world"
+                {
+                    over "link0"
+                    {
+                        bool physics:rigidBodyEnabled = 0
+
+                        over "link1"
+                        {
+                            bool physics:rigidBodyEnabled = 0
+
+                            over "link2"
+                            {
+                                bool physics:rigidBodyEnabled = 0
+
+                                over "link3"
+                                {
+                                    bool physics:rigidBodyEnabled = 0
+
+                                    over "link4"
+                                    {
+                                        bool physics:rigidBodyEnabled = 0
+
+                                        over "link5"
+                                        {
+                                            bool physics:rigidBodyEnabled = 0
+
+                                            over "end_effector_link"
+                                            {
+                                                bool physics:rigidBodyEnabled = 0
+                                            }
+
+                                            over "link6"
+                                            {
+                                                bool physics:rigidBodyEnabled = 0
+                                            }
+
+                                            over "link7"
+                                            {
+                                                bool physics:rigidBodyEnabled = 0
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+
+            over "Physics"
+            {
+                over "world_fixed"
+                {
+                    bool physics:jointEnabled = 0
+                }
+
+                over "end_effector_joint"
+                {
+                    bool physics:jointEnabled = 0
+                }
+
+                over "joint1"
+                {
+                    bool physics:jointEnabled = 0
+                }
+
+                over "joint2"
+                {
+                    bool physics:jointEnabled = 0
+                }
+
+                over "joint3"
+                {
+                    bool physics:jointEnabled = 0
+                }
+
+                over "joint4"
+                {
+                    bool physics:jointEnabled = 0
+                }
+
+                over "joint5"
+                {
+                    bool physics:jointEnabled = 0
+                }
+
+                over "gripper_joint_1"
+                {
+                    bool physics:jointEnabled = 0
+                }
+
+                over "gripper_joint_2"
+                {
+                    bool physics:jointEnabled = 0
+                }
+            }
+        }
+    }
+
+    over "Pinky"
+    {
+        float xformOp:rotateZ:media = 0
+        double3 xformOp:translate:media = (0.8, -1.375, 0)
+        uniform token[] xformOpOrder = ["xformOp:translate:media", "xformOp:rotateZ:media"]
+
+        over "Geometry"
+        {
+            over "base_footprint"
+            {
+                over "base_link"
+                {
+                    bool physics:rigidBodyEnabled = 0
+
+                    over "l_wheel"
+                    {
+                        bool physics:rigidBodyEnabled = 0
+                    }
+
+                    over "r_wheel"
+                    {
+                        bool physics:rigidBodyEnabled = 0
+                    }
+
+                    over "caster_mount_link"
+                    {
+                        bool physics:rigidBodyEnabled = 0
+
+                        over "caster_roate_link"
+                        {
+                            bool physics:rigidBodyEnabled = 0
+
+                            over "caster_wheel"
+                            {
+                                bool physics:rigidBodyEnabled = 0
+                            }
+                        }
+                    }
+
+                    over "robot_lamp"
+                    {
+                        bool physics:rigidBodyEnabled = 0
+                    }
+
+                    over "rplidar_mount"
+                    {
+                        bool physics:rigidBodyEnabled = 0
+                    }
+
+                    over "front_camera_mount"
+                    {
+                        bool physics:rigidBodyEnabled = 0
+                    }
+
+                    over "screen_mount"
+                    {
+                        bool physics:rigidBodyEnabled = 0
+                    }
+
+                    over "Basket"
+                    {
+                        over "bottom"
+                        {
+                            color3f[] primvars:displayColor = [(0.85, 0.16, 0.22)]
+                        }
+
+                        over "back"
+                        {
+                            color3f[] primvars:displayColor = [(0.85, 0.16, 0.22)]
+                        }
+
+                        over "front"
+                        {
+                            color3f[] primvars:displayColor = [(0.85, 0.16, 0.22)]
+                        }
+
+                        over "left"
+                        {
+                            color3f[] primvars:displayColor = [(0.85, 0.16, 0.22)]
+                        }
+
+                        over "right"
+                        {
+                            color3f[] primvars:displayColor = [(0.85, 0.16, 0.22)]
+                        }
+                    }
+                }
+            }
+        }
+
+        over "Physics"
+        {
+            over "l_wheel_joint"
+            {
+                bool physics:jointEnabled = 0
+            }
+
+            over "r_wheel_joint"
+            {
+                bool physics:jointEnabled = 0
+            }
+
+            over "caster_mount_fixed_joint"
+            {
+                bool physics:jointEnabled = 0
+            }
+
+            over "caster_rotate_joint"
+            {
+                bool physics:jointEnabled = 0
+            }
+
+            over "caster_wheel_joint"
+            {
+                bool physics:jointEnabled = 0
+            }
+
+            over "robot_lamp_mount_fixed_joint"
+            {
+                bool physics:jointEnabled = 0
+            }
+
+            over "rplidar_mount_fixed_joint"
+            {
+                bool physics:jointEnabled = 0
+            }
+
+            over "front_camera_mount_fixed_joint"
+            {
+                bool physics:jointEnabled = 0
+            }
+
+            over "screen_mount_fixed_joint"
+            {
+                bool physics:jointEnabled = 0
+            }
+        }
+    }
+
+    def "Roads"
+    {
+        def BasisCurves "loop"
+        {
+            int[] curveVertexCounts = [327]
+            point3f[] points = [(0.38, -1.19, 0.004), (0.38992, -1.19, 0.004), (0.39984, -1.19, 0.004), (0.40976, -1.19, 0.004), (0.41968, -1.19, 0.004), (0.4296, -1.19, 0.004), (0.43952, -1.19, 0.004), (0.44944, -1.19, 0.004), (0.45936, -1.19, 0.004), (0.46928, -1.19, 0.004), (0.4792, -1.19, 0.004), (0.48912, -1.19, 0.004), (0.49904, -1.19, 0.004), (0.50896, -1.19, 0.004), (0.51888, -1.19, 0.004), (0.5288, -1.19, 0.004), (0.53872, -1.19, 0.004), (0.54864, -1.19, 0.004), (0.55856, -1.19, 0.004), (0.56848, -1.19, 0.004), (0.5784, -1.19, 0.004), (0.58832, -1.19, 0.004), (0.59824, -1.19, 0.004), (0.60816, -1.19, 0.004), (0.61808, -1.19, 0.004), (0.628, -1.19, 0.004), (0.63792, -1.19, 0.004), (0.64784, -1.19, 0.004), (0.65776, -1.19, 0.004), (0.66768, -1.19, 0.004), (0.6776, -1.19, 0.004), (0.68752, -1.19, 0.004), (0.69744, -1.19, 0.004), (0.70736, -1.19, 0.004), (0.71728, -1.19, 0.004), (0.7272, -1.19, 0.004), (0.73712, -1.19, 0.004), (0.74704, -1.19, 0.004), (0.75696, -1.19, 0.004), (0.76688, -1.19, 0.004), (0.7768, -1.19, 0.004), (0.78672, -1.19, 0.004), (0.79664, -1.19, 0.004), (0.80656, -1.19, 0.004), (0.81648, -1.19, 0.004), (0.8264, -1.19, 0.004), (0.83632, -1.19, 0.004), (0.84624, -1.19, 0.004), (0.85616, -1.19, 0.004), (0.86608, -1.19, 0.004), (0.876, -1.19, 0.004), (0.88592, -1.19, 0.004), (0.89584, -1.19, 0.004), (0.90576, -1.19, 0.004), (0.91568, -1.19, 0.004), (0.9256, -1.19, 0.004), (0.93552, -1.19, 0.004), (0.94544, -1.19, 0.004), (0.95536, -1.19, 0.004), (0.96528, -1.19, 0.004), (0.9752, -1.19, 0.004), (0.98512, -1.19, 0.004), (0.99504, -1.19, 0.004), (1.00496, -1.19, 0.004), (1.01488, -1.19, 0.004), (1.0248, -1.19, 0.004), (1.03472, -1.19, 0.004), (1.04464, -1.19, 0.004), (1.05456, -1.19, 0.004), (1.06448, -1.19, 0.004), (1.0744, -1.19, 0.004), (1.08432, -1.19, 0.004), (1.09424, -1.19, 0.004), (1.10416, -1.19, 0.004), (1.11408, -1.19, 0.004), (1.124, -1.19, 0.004), (1.13392, -1.19, 0.004), (1.14384, -1.19, 0.004), (1.15376, -1.19, 0.004), (1.16368, -1.19, 0.004), (1.1736, -1.19, 0.004), (1.18352, -1.19, 0.004), (1.19344, -1.19, 0.004), (1.20336, -1.19, 0.004), (1.21328, -1.19, 0.004), (1.2232, -1.19, 0.004), (1.23312, -1.19, 0.004), (1.24304, -1.19, 0.004), (1.25296, -1.19, 0.004), (1.26288, -1.19, 0.004), (1.2728, -1.19, 0.004), (1.28272, -1.19, 0.004), (1.29264, -1.19, 0.004), (1.30256, -1.19, 0.004), (1.31248, -1.19, 0.004), (1.3224, -1.19, 0.004), (1.33232, -1.19, 0.004), (1.34224, -1.19, 0.004), (1.35216, -1.19, 0.004), (1.36208, -1.19, 0.004), (1.372, -1.19, 0.004), (1.38192, -1.19, 0.004), (1.39184, -1.19, 0.004), (1.40176, -1.19, 0.004), (1.41168, -1.19, 0.004), (1.4216, -1.19, 0.004), (1.43152, -1.19, 0.004), (1.44144, -1.19, 0.004), (1.45136, -1.19, 0.004), (1.46128, -1.19, 0.004), (1.4712, -1.19, 0.004), (1.48112, -1.19, 0.004), (1.49104, -1.19, 0.004), (1.50096, -1.19, 0.004), (1.51088, -1.19, 0.004), (1.5208, -1.19, 0.004), (1.53072, -1.19, 0.004), (1.54064, -1.19, 0.004), (1.55056, -1.19, 0.004), (1.56048, -1.19, 0.004), (1.5704, -1.19, 0.004), (1.58032, -1.19, 0.004), (1.59024, -1.19, 0.004), (1.60016, -1.19, 0.004), (1.61008, -1.19, 0.004), (1.62, -1.19, 0.004), (1.6299095, -1.1895901, 0.004), (1.6397513, -1.1883633, 0.004), (1.6494583, -1.186328, 0.004), (1.6589639, -1.183498, 0.004), (1.6682035, -1.1798928, 0.004), (1.6771137, -1.1755369, 0.004), (1.6856338, -1.17046, 0.004), (1.6937056, -1.1646968, 0.004), (1.7012738, -1.1582868, 0.004), (1.7082869, -1.1512738, 0.004), (1.7146969, -1.1437055, 0.004), (1.7204599, -1.1356338, 0.004), (1.7255368, -1.1271137, 0.004), (1.7298928, -1.1182034, 0.004), (1.7334981, -1.108964, 0.004), (1.736328, -1.0994582, 0.004), (1.7383634, -1.0897514, 0.004), (1.7395902, -1.0799096, 0.004), (1.74, -1.07, 0.004), (1.7395902, -1.0600904, 0.004), (1.7383634, -1.0502486, 0.004), (1.736328, -1.0405418, 0.004), (1.7334981, -1.031036, 0.004), (1.7298928, -1.0217966, 0.004), (1.7255368, -1.0128863, 0.004), (1.7204599, -1.0043663, 0.004), (1.7146969, -0.9962945, 0.004), (1.7082869, -0.9887262, 0.004), (1.7012738, -0.9817131, 0.004), (1.6937056, -0.9753031, 0.004), (1.6856338, -0.96954, 0.004), (1.6771137, -0.9644632, 0.004), (1.6682035, -0.9601072, 0.004), (1.6589639, -0.95650196, 0.004), (1.6494583, -0.953672, 0.004), (1.6397513, -0.9516367, 0.004), (1.6299095, -0.9504099, 0.004), (1.62, -0.95, 0.004), (1.61008, -0.95, 0.004), (1.60016, -0.95, 0.004), (1.59024, -0.95, 0.004), (1.58032, -0.95, 0.004), (1.5704, -0.95, 0.004), (1.56048, -0.95, 0.004), (1.55056, -0.95, 0.004), (1.54064, -0.95, 0.004), (1.53072, -0.95, 0.004), (1.5208, -0.95, 0.004), (1.51088, -0.95, 0.004), (1.50096, -0.95, 0.004), (1.49104, -0.95, 0.004), (1.48112, -0.95, 0.004), (1.4712, -0.95, 0.004), (1.46128, -0.95, 0.004), (1.45136, -0.95, 0.004), (1.44144, -0.95, 0.004), (1.43152, -0.95, 0.004), (1.4216, -0.95, 0.004), (1.41168, -0.95, 0.004), (1.40176, -0.95, 0.004), (1.39184, -0.95, 0.004), (1.38192, -0.95, 0.004), (1.372, -0.95, 0.004), (1.36208, -0.95, 0.004), (1.35216, -0.95, 0.004), (1.34224, -0.95, 0.004), (1.33232, -0.95, 0.004), (1.3224, -0.95, 0.004), (1.31248, -0.95, 0.004), (1.30256, -0.95, 0.004), (1.29264, -0.95, 0.004), (1.28272, -0.95, 0.004), (1.2728, -0.95, 0.004), (1.26288, -0.95, 0.004), (1.25296, -0.95, 0.004), (1.24304, -0.95, 0.004), (1.23312, -0.95, 0.004), (1.2232, -0.95, 0.004), (1.21328, -0.95, 0.004), (1.20336, -0.95, 0.004), (1.19344, -0.95, 0.004), (1.18352, -0.95, 0.004), (1.1736, -0.95, 0.004), (1.16368, -0.95, 0.004), (1.15376, -0.95, 0.004), (1.14384, -0.95, 0.004), (1.13392, -0.95, 0.004), (1.124, -0.95, 0.004), (1.11408, -0.95, 0.004), (1.10416, -0.95, 0.004), (1.09424, -0.95, 0.004), (1.08432, -0.95, 0.004), (1.0744, -0.95, 0.004), (1.06448, -0.95, 0.004), (1.05456, -0.95, 0.004), (1.04464, -0.95, 0.004), (1.03472, -0.95, 0.004), (1.0248, -0.95, 0.004), (1.01488, -0.95, 0.004), (1.00496, -0.95, 0.004), (0.99504, -0.95, 0.004), (0.98512, -0.95, 0.004), (0.9752, -0.95, 0.004), (0.96528, -0.95, 0.004), (0.95536, -0.95, 0.004), (0.94544, -0.95, 0.004), (0.93552, -0.95, 0.004), (0.9256, -0.95, 0.004), (0.91568, -0.95, 0.004), (0.90576, -0.95, 0.004), (0.89584, -0.95, 0.004), (0.88592, -0.95, 0.004), (0.876, -0.95, 0.004), (0.86608, -0.95, 0.004), (0.85616, -0.95, 0.004), (0.84624, -0.95, 0.004), (0.83632, -0.95, 0.004), (0.8264, -0.95, 0.004), (0.81648, -0.95, 0.004), (0.80656, -0.95, 0.004), (0.79664, -0.95, 0.004), (0.78672, -0.95, 0.004), (0.7768, -0.95, 0.004), (0.76688, -0.95, 0.004), (0.75696, -0.95, 0.004), (0.74704, -0.95, 0.004), (0.73712, -0.95, 0.004), (0.7272, -0.95, 0.004), (0.71728, -0.95, 0.004), (0.70736, -0.95, 0.004), (0.69744, -0.95, 0.004), (0.68752, -0.95, 0.004), (0.6776, -0.95, 0.004), (0.66768, -0.95, 0.004), (0.65776, -0.95, 0.004), (0.64784, -0.95, 0.004), (0.63792, -0.95, 0.004), (0.628, -0.95, 0.004), (0.61808, -0.95, 0.004), (0.60816, -0.95, 0.004), (0.59824, -0.95, 0.004), (0.58832, -0.95, 0.004), (0.5784, -0.95, 0.004), (0.56848, -0.95, 0.004), (0.55856, -0.95, 0.004), (0.54864, -0.95, 0.004), (0.53872, -0.95, 0.004), (0.5288, -0.95, 0.004), (0.51888, -0.95, 0.004), (0.50896, -0.95, 0.004), (0.49904, -0.95, 0.004), (0.48912, -0.95, 0.004), (0.4792, -0.95, 0.004), (0.46928, -0.95, 0.004), (0.45936, -0.95, 0.004), (0.44944, -0.95, 0.004), (0.43952, -0.95, 0.004), (0.4296, -0.95, 0.004), (0.41968, -0.95, 0.004), (0.40976, -0.95, 0.004), (0.39984, -0.95, 0.004), (0.38992, -0.95, 0.004), (0.38, -0.95, 0.004), (0.37009048, -0.9504099, 0.004), (0.36024866, -0.9516367, 0.004), (0.35054174, -0.953672, 0.004), (0.34103605, -0.95650196, 0.004), (0.33179656, -0.9601072, 0.004), (0.32288632, -0.9644632, 0.004), (0.31436622, -0.96954, 0.004), (0.30629447, -0.9753031, 0.004), (0.2987262, -0.9817131, 0.004), (0.29171312, -0.9887262, 0.004), (0.28530315, -0.9962945, 0.004), (0.27954003, -1.0043663, 0.004), (0.27446315, -1.0128863, 0.004), (0.2701072, -1.0217966, 0.004), (0.26650193, -1.031036, 0.004), (0.26367196, -1.0405418, 0.004), (0.26163664, -1.0502486, 0.004), (0.26040986, -1.0600904, 0.004), (0.26, -1.07, 0.004), (0.26040986, -1.0799096, 0.004), (0.26163664, -1.0897514, 0.004), (0.26367196, -1.0994582, 0.004), (0.26650193, -1.108964, 0.004), (0.2701072, -1.1182034, 0.004), (0.27446315, -1.1271137, 0.004), (0.27954003, -1.1356338, 0.004), (0.28530315, -1.1437055, 0.004), (0.29171312, -1.1512738, 0.004), (0.2987262, -1.1582868, 0.004), (0.30629447, -1.1646968, 0.004), (0.31436622, -1.17046, 0.004), (0.32288632, -1.1755369, 0.004), (0.33179656, -1.1798928, 0.004), (0.34103605, -1.183498, 0.004), (0.35054174, -1.186328, 0.004), (0.36024866, -1.1883633, 0.004), (0.37009048, -1.1895901, 0.004), (0.38, -1.19, 0.004)]
+            color3f[] primvars:displayColor = [(0.02, 0.44, 0.49)]
+            uniform token type = "linear"
+            float[] widths = [0.008] (
+                interpolation = "constant"
+            )
+        }
+
+        def BasisCurves "Aentry0"
+        {
+            int[] curveVertexCounts = [159]
+            point3f[] points = [(0.46, -0.95, 0.004), (0.45840934, -0.9499921, 0.004), (0.45681885, -0.9499684, 0.004), (0.45522866, -0.9499288, 0.004), (0.45363897, -0.9498735, 0.004), (0.45204988, -0.94980234, 0.004), (0.45046157, -0.94971544, 0.004), (0.44887424, -0.94961274, 0.004), (0.44728798, -0.94949424, 0.004), (0.44570297, -0.94935995, 0.004), (0.4441194, -0.9492099, 0.004), (0.44253737, -0.94904417, 0.004), (0.4409571, -0.94886273, 0.004), (0.43937868, -0.94866556, 0.004), (0.4378023, -0.9484527, 0.004), (0.43622813, -0.9482242, 0.004), (0.43465632, -0.94798005, 0.004), (0.433087, -0.9477203, 0.004), (0.43152034, -0.9474449, 0.004), (0.4299565, -0.94715405, 0.004), (0.42839563, -0.94684756, 0.004), (0.42683786, -0.94652563, 0.004), (0.4252834, -0.9461882, 0.004), (0.42373234, -0.94583535, 0.004), (0.42218488, -0.9454671, 0.004), (0.42064118, -0.9450835, 0.004), (0.41910133, -0.9446845, 0.004), (0.41756555, -0.94427025, 0.004), (0.41603395, -0.9438408, 0.004), (0.4145067, -0.9433961, 0.004), (0.41298395, -0.94293624, 0.004), (0.41146585, -0.94246125, 0.004), (0.40995255, -0.94197124, 0.004), (0.4084442, -0.94146615, 0.004), (0.4069409, -0.9409461, 0.004), (0.4054429, -0.94041115, 0.004), (0.40395027, -0.93986136, 0.004), (0.40246317, -0.9392967, 0.004), (0.40098178, -0.93871737, 0.004), (0.3995062, -0.9381233, 0.004), (0.3980366, -0.93751454, 0.004), (0.39657316, -0.93689126, 0.004), (0.39511594, -0.9362534, 0.004), (0.39366516, -0.9356011, 0.004), (0.39222094, -0.93493444, 0.004), (0.3907834, -0.93425345, 0.004), (0.3893527, -0.9335582, 0.004), (0.38792902, -0.93284875, 0.004), (0.38651243, -0.9321252, 0.004), (0.3851031, -0.9313876, 0.004), (0.3837012, -0.93063605, 0.004), (0.3823068, -0.92987055, 0.004), (0.38092014, -0.9290912, 0.004), (0.37954125, -0.9282982, 0.004), (0.3781703, -0.9274915, 0.004), (0.37680748, -0.92667115, 0.004), (0.37545288, -0.92583734, 0.004), (0.37410662, -0.9249901, 0.004), (0.37276885, -0.9241295, 0.004), (0.3714397, -0.9232557, 0.004), (0.3701193, -0.92236865, 0.004), (0.3688078, -0.92146856, 0.004), (0.36750528, -0.9205555, 0.004), (0.36621192, -0.91962945, 0.004), (0.36492783, -0.9186906, 0.004), (0.36365315, -0.9177391, 0.004), (0.36238798, -0.916775, 0.004), (0.36113244, -0.9157983, 0.004), (0.3598867, -0.91480917, 0.004), (0.35865086, -0.9138077, 0.004), (0.357425, -0.91279405, 0.004), (0.3562093, -0.9117682, 0.004), (0.3550039, -0.91073036, 0.004), (0.35380882, -0.90968055, 0.004), (0.35262424, -0.9086189, 0.004), (0.3514503, -0.90754557, 0.004), (0.35028708, -0.9064606, 0.004), (0.34913468, -0.90536416, 0.004), (0.34799325, -0.9042563, 0.004), (0.3468629, -0.9031371, 0.004), (0.34574375, -0.90200675, 0.004), (0.34463587, -0.9008653, 0.004), (0.3435394, -0.8997129, 0.004), (0.34245443, -0.8985497, 0.004), (0.34138107, -0.89737576, 0.004), (0.34031945, -0.8961912, 0.004), (0.33926967, -0.8949961, 0.004), (0.3382318, -0.89379066, 0.004), (0.33720598, -0.89257497, 0.004), (0.33619228, -0.89134914, 0.004), (0.33519083, -0.8901133, 0.004), (0.33420172, -0.88886756, 0.004), (0.33322504, -0.88761204, 0.004), (0.33226088, -0.8863469, 0.004), (0.33130935, -0.8850722, 0.004), (0.33037055, -0.88378805, 0.004), (0.32944456, -0.88249475, 0.004), (0.32853144, -0.8811922, 0.004), (0.32763135, -0.8798807, 0.004), (0.32674435, -0.8785603, 0.004), (0.32587048, -0.8772312, 0.004), (0.3250099, -0.8758934, 0.004), (0.32416266, -0.8745471, 0.004), (0.32332885, -0.8731925, 0.004), (0.32250854, -0.8718297, 0.004), (0.3217018, -0.8704587, 0.004), (0.32090876, -0.8690799, 0.004), (0.32012945, -0.8676932, 0.004), (0.31936398, -0.8662988, 0.004), (0.3186124, -0.8648969, 0.004), (0.3178748, -0.86348754, 0.004), (0.31715122, -0.862071, 0.004), (0.31644177, -0.86064726, 0.004), (0.31574652, -0.8592166, 0.004), (0.31506553, -0.8577791, 0.004), (0.31439885, -0.85633487, 0.004), (0.3137466, -0.854884, 0.004), (0.31310877, -0.8534269, 0.004), (0.31248546, -0.8519634, 0.004), (0.31187674, -0.8504938, 0.004), (0.31128266, -0.8490182, 0.004), (0.31070328, -0.8475368, 0.004), (0.31013864, -0.8460497, 0.004), (0.30958882, -0.8445571, 0.004), (0.30905387, -0.84305906, 0.004), (0.30853385, -0.84155583, 0.004), (0.3080288, -0.8400475, 0.004), (0.30753875, -0.8385342, 0.004), (0.30706376, -0.83701605, 0.004), (0.3066039, -0.83549327, 0.004), (0.30615923, -0.833966, 0.004), (0.30572972, -0.8324345, 0.004), (0.3053155, -0.83089864, 0.004), (0.30491653, -0.8293588, 0.004), (0.30453292, -0.8278151, 0.004), (0.30416465, -0.82626766, 0.004), (0.3038118, -0.8247166, 0.004), (0.30347437, -0.82316214, 0.004), (0.3031524, -0.8216044, 0.004), (0.30284598, -0.8200435, 0.004), (0.30255505, -0.81847966, 0.004), (0.3022797, -0.816913, 0.004), (0.30201995, -0.8153437, 0.004), (0.30177578, -0.81377184, 0.004), (0.3015473, -0.8121977, 0.004), (0.30133444, -0.8106213, 0.004), (0.30113727, -0.80904293, 0.004), (0.3009558, -0.80746263, 0.004), (0.30079004, -0.8058806, 0.004), (0.30064005, -0.80429703, 0.004), (0.3005058, -0.802712, 0.004), (0.3003873, -0.80112576, 0.004), (0.30028456, -0.79953843, 0.004), (0.30019763, -0.79795015, 0.004), (0.3001265, -0.796361, 0.004), (0.30007115, -0.7947713, 0.004), (0.30003163, -0.7931811, 0.004), (0.3000079, -0.79159063, 0.004), (0.3, -0.79, 0.004)]
+            color3f[] primvars:displayColor = [(0.16, 0.36, 0.85)]
+            uniform token type = "linear"
+            float[] widths = [0.006] (
+                interpolation = "constant"
+            )
+        }
+
+        def BasisCurves "Aentry2"
+        {
+            int[] curveVertexCounts = [96]
+            point3f[] points = [(0.3, -0.79, 0.004), (0.3, -0.7870103, 0.004), (0.3, -0.7840206, 0.004), (0.3, -0.7810309, 0.004), (0.3, -0.7780412, 0.004), (0.3, -0.7750515, 0.004), (0.3, -0.77206177, 0.004), (0.3, -0.76907206, 0.004), (0.3, -0.76608235, 0.004), (0.3, -0.76309264, 0.004), (0.3, -0.7601029, 0.004), (0.3, -0.7571132, 0.004), (0.3, -0.7541235, 0.004), (0.3, -0.7511338, 0.004), (0.3, -0.7481441, 0.004), (0.3, -0.7451544, 0.004), (0.3, -0.7421647, 0.004), (0.3, -0.73917496, 0.004), (0.3, -0.73618525, 0.004), (0.3, -0.73319554, 0.004), (0.3, -0.73020583, 0.004), (0.3, -0.7272161, 0.004), (0.3, -0.7242264, 0.004), (0.3, -0.7212367, 0.004), (0.3, -0.718247, 0.004), (0.3, -0.7152573, 0.004), (0.3, -0.71226764, 0.004), (0.3, -0.7092779, 0.004), (0.3, -0.7062882, 0.004), (0.3, -0.7032985, 0.004), (0.3, -0.7003088, 0.004), (0.3, -0.6973191, 0.004), (0.3, -0.6943294, 0.004), (0.3, -0.6913397, 0.004), (0.3, -0.68834996, 0.004), (0.3, -0.68536025, 0.004), (0.3, -0.68237054, 0.004), (0.3, -0.67938083, 0.004), (0.3, -0.6763911, 0.004), (0.3, -0.6734014, 0.004), (0.3, -0.6704117, 0.004), (0.3, -0.667422, 0.004), (0.3, -0.6644323, 0.004), (0.3, -0.6614426, 0.004), (0.3, -0.65845287, 0.004), (0.3, -0.65546316, 0.004), (0.3, -0.65247345, 0.004), (0.3, -0.64948374, 0.004), (0.3, -0.64649403, 0.004), (0.3, -0.6435043, 0.004), (0.3, -0.6405146, 0.004), (0.3, -0.6375249, 0.004), (0.3, -0.6345352, 0.004), (0.3, -0.6315455, 0.004), (0.3, -0.6285558, 0.004), (0.3, -0.62556607, 0.004), (0.3, -0.6225764, 0.004), (0.3, -0.6195867, 0.004), (0.3, -0.616597, 0.004), (0.3, -0.6136073, 0.004), (0.3, -0.6106176, 0.004), (0.3, -0.60762787, 0.004), (0.3, -0.60463816, 0.004), (0.3, -0.60164845, 0.004), (0.3, -0.59865874, 0.004), (0.3, -0.59566903, 0.004), (0.3, -0.5926793, 0.004), (0.3, -0.5896896, 0.004), (0.3, -0.5866999, 0.004), (0.3, -0.5837102, 0.004), (0.3, -0.5807205, 0.004), (0.3, -0.5777308, 0.004), (0.3, -0.57474107, 0.004), (0.3, -0.57175136, 0.004), (0.3, -0.56876165, 0.004), (0.3, -0.56577194, 0.004), (0.3, -0.5627822, 0.004), (0.3, -0.5597925, 0.004), (0.3, -0.5568028, 0.004), (0.3, -0.5538131, 0.004), (0.3, -0.5508234, 0.004), (0.3, -0.5478337, 0.004), (0.3, -0.544844, 0.004), (0.3, -0.54185426, 0.004), (0.3, -0.53886455, 0.004), (0.3, -0.53587484, 0.004), (0.3, -0.5328852, 0.004), (0.3, -0.5298955, 0.004), (0.3, -0.5269058, 0.004), (0.3, -0.52391607, 0.004), (0.3, -0.52092636, 0.004), (0.3, -0.51793665, 0.004), (0.3, -0.51494694, 0.004), (0.3, -0.5119572, 0.004), (0.3, -0.5089675, 0.004), (0.3, -0.5059778, 0.004)]
+            color3f[] primvars:displayColor = [(0.16, 0.36, 0.85)]
+            uniform token type = "linear"
+            float[] widths = [0.006] (
+                interpolation = "constant"
+            )
+        }
+
+        def BasisCurves "Aexit0"
+        {
+            int[] curveVertexCounts = [96]
+            point3f[] points = [(0.3, -0.5059778, 0.004), (0.3, -0.5089675, 0.004), (0.3, -0.5119572, 0.004), (0.3, -0.51494694, 0.004), (0.3, -0.51793665, 0.004), (0.3, -0.52092636, 0.004), (0.3, -0.52391607, 0.004), (0.3, -0.5269058, 0.004), (0.3, -0.5298955, 0.004), (0.3, -0.5328852, 0.004), (0.3, -0.53587484, 0.004), (0.3, -0.53886455, 0.004), (0.3, -0.54185426, 0.004), (0.3, -0.544844, 0.004), (0.3, -0.5478337, 0.004), (0.3, -0.5508234, 0.004), (0.3, -0.5538131, 0.004), (0.3, -0.5568028, 0.004), (0.3, -0.5597925, 0.004), (0.3, -0.5627822, 0.004), (0.3, -0.56577194, 0.004), (0.3, -0.56876165, 0.004), (0.3, -0.57175136, 0.004), (0.3, -0.57474107, 0.004), (0.3, -0.5777308, 0.004), (0.3, -0.5807205, 0.004), (0.3, -0.5837102, 0.004), (0.3, -0.5866999, 0.004), (0.3, -0.5896896, 0.004), (0.3, -0.5926793, 0.004), (0.3, -0.59566903, 0.004), (0.3, -0.59865874, 0.004), (0.3, -0.60164845, 0.004), (0.3, -0.60463816, 0.004), (0.3, -0.60762787, 0.004), (0.3, -0.6106176, 0.004), (0.3, -0.6136073, 0.004), (0.3, -0.616597, 0.004), (0.3, -0.6195867, 0.004), (0.3, -0.6225764, 0.004), (0.3, -0.62556607, 0.004), (0.3, -0.6285558, 0.004), (0.3, -0.6315455, 0.004), (0.3, -0.6345352, 0.004), (0.3, -0.6375249, 0.004), (0.3, -0.6405146, 0.004), (0.3, -0.6435043, 0.004), (0.3, -0.64649403, 0.004), (0.3, -0.64948374, 0.004), (0.3, -0.65247345, 0.004), (0.3, -0.65546316, 0.004), (0.3, -0.65845287, 0.004), (0.3, -0.6614426, 0.004), (0.3, -0.6644323, 0.004), (0.3, -0.667422, 0.004), (0.3, -0.6704117, 0.004), (0.3, -0.6734014, 0.004), (0.3, -0.6763911, 0.004), (0.3, -0.67938083, 0.004), (0.3, -0.68237054, 0.004), (0.3, -0.68536025, 0.004), (0.3, -0.68834996, 0.004), (0.3, -0.6913397, 0.004), (0.3, -0.6943294, 0.004), (0.3, -0.6973191, 0.004), (0.3, -0.7003088, 0.004), (0.3, -0.7032985, 0.004), (0.3, -0.7062882, 0.004), (0.3, -0.7092779, 0.004), (0.3, -0.71226764, 0.004), (0.3, -0.7152573, 0.004), (0.3, -0.718247, 0.004), (0.3, -0.7212367, 0.004), (0.3, -0.7242264, 0.004), (0.3, -0.7272161, 0.004), (0.3, -0.73020583, 0.004), (0.3, -0.73319554, 0.004), (0.3, -0.73618525, 0.004), (0.3, -0.73917496, 0.004), (0.3, -0.7421647, 0.004), (0.3, -0.7451544, 0.004), (0.3, -0.7481441, 0.004), (0.3, -0.7511338, 0.004), (0.3, -0.7541235, 0.004), (0.3, -0.7571132, 0.004), (0.3, -0.7601029, 0.004), (0.3, -0.76309264, 0.004), (0.3, -0.76608235, 0.004), (0.3, -0.76907206, 0.004), (0.3, -0.77206177, 0.004), (0.3, -0.7750515, 0.004), (0.3, -0.7780412, 0.004), (0.3, -0.7810309, 0.004), (0.3, -0.7840206, 0.004), (0.3, -0.7870103, 0.004), (0.3, -0.79, 0.004)]
+            color3f[] primvars:displayColor = [(0.87, 0.37, 0.1)]
+            uniform token type = "linear"
+            float[] widths = [0.006] (
+                interpolation = "constant"
+            )
+        }
+
+        def BasisCurves "Aexit1"
+        {
+            int[] curveVertexCounts = [401]
+            point3f[] points = [(0.3, -0.79, 0.004), (0.29999924, -0.7911229, 0.004), (0.299997, -0.79224175, 0.004), (0.29999328, -0.7933565, 0.004), (0.2999881, -0.79446715, 0.004), (0.29998142, -0.7955738, 0.004), (0.29997328, -0.7966763, 0.004), (0.29996368, -0.7977748, 0.004), (0.29995263, -0.79886925, 0.004), (0.29994017, -0.7999598, 0.004), (0.29992625, -0.80104625, 0.004), (0.2999109, -0.8021288, 0.004), (0.29989415, -0.80320734, 0.004), (0.299876, -0.80428195, 0.004), (0.29985642, -0.8053526, 0.004), (0.29983547, -0.8064194, 0.004), (0.29981312, -0.80748224, 0.004), (0.2997894, -0.80854124, 0.004), (0.29976428, -0.80959636, 0.004), (0.2997378, -0.8106476, 0.004), (0.29971, -0.811695, 0.004), (0.29968083, -0.8127386, 0.004), (0.2996503, -0.81377834, 0.004), (0.29961845, -0.8148143, 0.004), (0.29958528, -0.81584656, 0.004), (0.29955077, -0.816875, 0.004), (0.29951498, -0.8178997, 0.004), (0.29947785, -0.8189207, 0.004), (0.29943943, -0.8199379, 0.004), (0.29939973, -0.8209514, 0.004), (0.29935876, -0.8219612, 0.004), (0.2993165, -0.8229674, 0.004), (0.29927295, -0.8239699, 0.004), (0.29922816, -0.82496876, 0.004), (0.29918212, -0.82596403, 0.004), (0.29913485, -0.8269556, 0.004), (0.29908633, -0.8279436, 0.004), (0.29903656, -0.82892805, 0.004), (0.2989856, -0.8299089, 0.004), (0.2989334, -0.83088624, 0.004), (0.29888, -0.83186, 0.004), (0.2988254, -0.83283025, 0.004), (0.29876962, -0.833797, 0.004), (0.29871264, -0.8347602, 0.004), (0.29865447, -0.83571994, 0.004), (0.29859516, -0.83667624, 0.004), (0.29853466, -0.8376291, 0.004), (0.29847303, -0.8385785, 0.004), (0.29841024, -0.8395245, 0.004), (0.2983463, -0.84046704, 0.004), (0.29828125, -0.8414062, 0.004), (0.29821506, -0.8423421, 0.004), (0.29814777, -0.84327453, 0.004), (0.29807934, -0.84420365, 0.004), (0.29800984, -0.84512943, 0.004), (0.2979392, -0.8460519, 0.004), (0.2978675, -0.84697104, 0.004), (0.29779473, -0.8478869, 0.004), (0.29772088, -0.8487995, 0.004), (0.297646, -0.8497089, 0.004), (0.29757, -0.850615, 0.004), (0.29749298, -0.8515179, 0.004), (0.2974149, -0.8524176, 0.004), (0.2973358, -0.85331404, 0.004), (0.2972557, -0.85420734, 0.004), (0.29717454, -0.8550975, 0.004), (0.29709238, -0.8559845, 0.004), (0.2970092, -0.8568683, 0.004), (0.29692504, -0.8577491, 0.004), (0.2968399, -0.8586267, 0.004), (0.29675376, -0.85950124, 0.004), (0.29666665, -0.8603727, 0.004), (0.29657856, -0.8612411, 0.004), (0.2964895, -0.8621065, 0.004), (0.29639953, -0.8629688, 0.004), (0.2963086, -0.8638281, 0.004), (0.29621673, -0.86468446, 0.004), (0.29612392, -0.86553776, 0.004), (0.2960302, -0.86638814, 0.004), (0.29593554, -0.86723554, 0.004), (0.29584, -0.86808, 0.004), (0.29574355, -0.8689215, 0.004), (0.29564622, -0.86976016, 0.004), (0.295548, -0.87059593, 0.004), (0.29544887, -0.8714288, 0.004), (0.2953489, -0.8722587, 0.004), (0.29524806, -0.8730859, 0.004), (0.29514638, -0.8739102, 0.004), (0.29504383, -0.87473166, 0.004), (0.29494047, -0.8755504, 0.004), (0.29483625, -0.87636626, 0.004), (0.2947312, -0.8771794, 0.004), (0.29462537, -0.8779897, 0.004), (0.2945187, -0.87879735, 0.004), (0.29441124, -0.8796022, 0.004), (0.29430297, -0.88040435, 0.004), (0.29419392, -0.88120383, 0.004), (0.2940841, -0.8820006, 0.004), (0.29397348, -0.88279474, 0.004), (0.29386213, -0.88358617, 0.004), (0.29375, -0.884375, 0.004), (0.29363713, -0.88516116, 0.004), (0.29352352, -0.8859448, 0.004), (0.29340917, -0.8867258, 0.004), (0.29329407, -0.88750416, 0.004), (0.2931783, -0.88828, 0.004), (0.29306176, -0.8890533, 0.004), (0.29294455, -0.88982403, 0.004), (0.29282665, -0.8905923, 0.004), (0.29270804, -0.891358, 0.004), (0.29258874, -0.89212126, 0.004), (0.2924688, -0.892882, 0.004), (0.29234815, -0.89364034, 0.004), (0.29222688, -0.8943962, 0.004), (0.29210493, -0.8951496, 0.004), (0.29198235, -0.8959006, 0.004), (0.29185912, -0.89664924, 0.004), (0.29173526, -0.8973955, 0.004), (0.29161078, -0.89813936, 0.004), (0.2914857, -0.89888084, 0.004), (0.29136, -0.89962, 0.004), (0.2912337, -0.9003568, 0.004), (0.29110682, -0.9010914, 0.004), (0.29097933, -0.9018236, 0.004), (0.29085127, -0.90255356, 0.004), (0.29072267, -0.9032813, 0.004), (0.29059348, -0.9040067, 0.004), (0.29046372, -0.9047299, 0.004), (0.29033345, -0.9054509, 0.004), (0.29020262, -0.90616965, 0.004), (0.29007125, -0.9068863, 0.004), (0.28993937, -0.90760064, 0.004), (0.28980696, -0.9083129, 0.004), (0.28967404, -0.90902305, 0.004), (0.28954062, -0.90973103, 0.004), (0.28940672, -0.91043687, 0.004), (0.2892723, -0.9111406, 0.004), (0.28913745, -0.91184235, 0.004), (0.2890021, -0.9125419, 0.004), (0.28886628, -0.9132395, 0.004), (0.28873, -0.913935, 0.004), (0.28859326, -0.9146285, 0.004), (0.2884561, -0.91532, 0.004), (0.2883185, -0.9160094, 0.004), (0.28818047, -0.91669697, 0.004), (0.28804204, -0.9173825, 0.004), (0.28790316, -0.9180661, 0.004), (0.2877639, -0.9187477, 0.004), (0.28762424, -0.91942745, 0.004), (0.2874842, -0.92010534, 0.004), (0.28734374, -0.92078125, 0.004), (0.28720292, -0.9214553, 0.004), (0.28706175, -0.92212754, 0.004), (0.28692022, -0.92279786, 0.004), (0.28677833, -0.9234664, 0.004), (0.28663608, -0.9241331, 0.004), (0.2864935, -0.924798, 0.004), (0.2863506, -0.9254612, 0.004), (0.28620738, -0.92612255, 0.004), (0.28606385, -0.92678213, 0.004), (0.28592, -0.92744, 0.004), (0.28577584, -0.9280961, 0.004), (0.28563142, -0.9287506, 0.004), (0.2854867, -0.9294033, 0.004), (0.28534168, -0.93005437, 0.004), (0.2851964, -0.93070376, 0.004), (0.28505087, -0.9313515, 0.004), (0.28490508, -0.9319976, 0.004), (0.28475904, -0.9326421, 0.004), (0.28461277, -0.93328494, 0.004), (0.28446624, -0.9339262, 0.004), (0.28431952, -0.93456596, 0.004), (0.28417256, -0.93520415, 0.004), (0.2840254, -0.9358407, 0.004), (0.28387803, -0.9364758, 0.004), (0.28373048, -0.93710935, 0.004), (0.28358272, -0.93774146, 0.004), (0.28343478, -0.938372, 0.004), (0.2832867, -0.93900114, 0.004), (0.28313842, -0.9396288, 0.004), (0.28299, -0.940255, 0.004), (0.2828414, -0.94087976, 0.004), (0.2826927, -0.94150317, 0.004), (0.28254387, -0.94212514, 0.004), (0.2823949, -0.94274575, 0.004), (0.28224578, -0.943365, 0.004), (0.28209656, -0.9439829, 0.004), (0.28194726, -0.94459945, 0.004), (0.28179783, -0.9452147, 0.004), (0.28164834, -0.9458286, 0.004), (0.28149876, -0.94644123, 0.004), (0.2813491, -0.9470526, 0.004), (0.28119937, -0.9476627, 0.004), (0.28104958, -0.9482716, 0.004), (0.28089973, -0.9488792, 0.004), (0.28074986, -0.9494856, 0.004), (0.28059992, -0.9500908, 0.004), (0.28044996, -0.95069486, 0.004), (0.2803, -0.9512977, 0.004), (0.28015, -0.9518994, 0.004), (0.28, -0.9525, 0.004), (0.27985, -0.9530994, 0.004), (0.2797, -0.95369774, 0.004), (0.27955005, -0.954295, 0.004), (0.27940008, -0.95489115, 0.004), (0.27925014, -0.95548624, 0.004), (0.27910027, -0.9560803, 0.004), (0.27895042, -0.9566733, 0.004), (0.27880064, -0.95726526, 0.004), (0.2786509, -0.95785624, 0.004), (0.27850124, -0.95844626, 0.004), (0.27835166, -0.9590353, 0.004), (0.27820215, -0.95962334, 0.004), (0.27805275, -0.96021044, 0.004), (0.27790344, -0.9607966, 0.004), (0.27775422, -0.96138185, 0.004), (0.27760512, -0.9619662, 0.004), (0.27745613, -0.96254975, 0.004), (0.2773073, -0.9631323, 0.004), (0.2771586, -0.96371406, 0.004), (0.27701, -0.964295, 0.004), (0.27686158, -0.9648751, 0.004), (0.2767133, -0.9654544, 0.004), (0.2765652, -0.96603286, 0.004), (0.2764173, -0.96661055, 0.004), (0.27626953, -0.9671875, 0.004), (0.27612197, -0.96776366, 0.004), (0.2759746, -0.96833915, 0.004), (0.27582744, -0.96891385, 0.004), (0.27568048, -0.9694879, 0.004), (0.27553374, -0.97006124, 0.004), (0.27538723, -0.9706339, 0.004), (0.27524096, -0.97120595, 0.004), (0.27509493, -0.97177726, 0.004), (0.27494913, -0.97234803, 0.004), (0.27480358, -0.97291815, 0.004), (0.27465832, -0.9734876, 0.004), (0.2745133, -0.97405654, 0.004), (0.27436858, -0.97462493, 0.004), (0.27422416, -0.9751927, 0.004), (0.27408, -0.97576, 0.004), (0.27393615, -0.97632676, 0.004), (0.27379262, -0.97689295, 0.004), (0.2736494, -0.9774587, 0.004), (0.2735065, -0.97802395, 0.004), (0.27336392, -0.97858876, 0.004), (0.27322167, -0.9791531, 0.004), (0.27307978, -0.979717, 0.004), (0.27293825, -0.98028046, 0.004), (0.27279705, -0.98084354, 0.004), (0.27265626, -0.9814063, 0.004), (0.2725158, -0.9819686, 0.004), (0.27237576, -0.98253053, 0.004), (0.2722361, -0.9830921, 0.004), (0.27209684, -0.9836534, 0.004), (0.27195796, -0.98421437, 0.004), (0.27181953, -0.98477507, 0.004), (0.2716815, -0.9853354, 0.004), (0.2715439, -0.9858955, 0.004), (0.2714067, -0.9864554, 0.004), (0.27127, -0.987015, 0.004), (0.27113372, -0.9875744, 0.004), (0.2709979, -0.98813355, 0.004), (0.27086255, -0.9886926, 0.004), (0.2707277, -0.9892514, 0.004), (0.2705933, -0.98981, 0.004), (0.27045938, -0.9903685, 0.004), (0.27032596, -0.99092686, 0.004), (0.27019304, -0.99148506, 0.004), (0.27006063, -0.9920432, 0.004), (0.26992875, -0.9926013, 0.004), (0.26979738, -0.99315923, 0.004), (0.26966655, -0.99371713, 0.004), (0.26953626, -0.994275, 0.004), (0.26940653, -0.9948328, 0.004), (0.26927733, -0.99539065, 0.004), (0.2691487, -0.99594843, 0.004), (0.26902068, -0.9965063, 0.004), (0.26889318, -0.9970641, 0.004), (0.26876628, -0.997622, 0.004), (0.26864, -0.99818, 0.004), (0.2685143, -0.99873805, 0.004), (0.2683892, -0.9992962, 0.004), (0.26826474, -0.9998544, 0.004), (0.26814088, -1.0004127, 0.004), (0.26801765, -1.0009712, 0.004), (0.26789507, -1.0015299, 0.004), (0.26777312, -1.0020887, 0.004), (0.26765183, -1.0026476, 0.004), (0.26753122, -1.0032068, 0.004), (0.26741126, -1.0037663, 0.004), (0.26729196, -1.0043259, 0.004), (0.26717335, -1.0048857, 0.004), (0.26705545, -1.0054458, 0.004), (0.26693824, -1.0060062, 0.004), (0.2668217, -1.0065669, 0.004), (0.26670593, -1.0071279, 0.004), (0.26659083, -1.0076891, 0.004), (0.26647648, -1.0082507, 0.004), (0.26636288, -1.0088127, 0.004), (0.26625, -1.009375, 0.004), (0.26613787, -1.0099376, 0.004), (0.2660265, -1.0105008, 0.004), (0.2659159, -1.0110643, 0.004), (0.26580608, -1.0116282, 0.004), (0.26569703, -1.0121925, 0.004), (0.26558876, -1.0127573, 0.004), (0.2654813, -1.0133226, 0.004), (0.26537463, -1.0138882, 0.004), (0.26526877, -1.0144545, 0.004), (0.26516375, -1.0150212, 0.004), (0.26505953, -1.0155885, 0.004), (0.26495615, -1.0161563, 0.004), (0.26485363, -1.0167247, 0.004), (0.26475194, -1.0172936, 0.004), (0.2646511, -1.0178632, 0.004), (0.26455113, -1.0184332, 0.004), (0.264452, -1.019004, 0.004), (0.26435378, -1.0195754, 0.004), (0.26425645, -1.0201473, 0.004), (0.26416, -1.02072, 0.004), (0.26406446, -1.0212933, 0.004), (0.2639698, -1.0218674, 0.004), (0.26387608, -1.0224421, 0.004), (0.26378328, -1.0230175, 0.004), (0.2636914, -1.0235938, 0.004), (0.26360047, -1.0241706, 0.004), (0.26351047, -1.0247484, 0.004), (0.26342145, -1.0253268, 0.004), (0.26333335, -1.0259062, 0.004), (0.26324624, -1.0264863, 0.004), (0.2631601, -1.0270672, 0.004), (0.26307496, -1.0276489, 0.004), (0.2629908, -1.0282315, 0.004), (0.26290762, -1.028815, 0.004), (0.26282546, -1.0293994, 0.004), (0.2627443, -1.0299846, 0.004), (0.2626642, -1.0305709, 0.004), (0.2625851, -1.031158, 0.004), (0.26250702, -1.031746, 0.004), (0.26243, -1.032335, 0.004), (0.26235402, -1.032925, 0.004), (0.26227912, -1.0335159, 0.004), (0.26220527, -1.0341079, 0.004), (0.26213247, -1.034701, 0.004), (0.2620608, -1.035295, 0.004), (0.26199016, -1.0358901, 0.004), (0.26192066, -1.0364863, 0.004), (0.26185223, -1.0370835, 0.004), (0.26178494, -1.0376818, 0.004), (0.26171875, -1.0382812, 0.004), (0.2616537, -1.0388818, 0.004), (0.26158977, -1.0394835, 0.004), (0.26152697, -1.0400864, 0.004), (0.26146534, -1.0406904, 0.004), (0.26140484, -1.0412956, 0.004), (0.2613455, -1.0419021, 0.004), (0.26128736, -1.0425097, 0.004), (0.26123038, -1.0431185, 0.004), (0.2611746, -1.0437286, 0.004), (0.26112, -1.04434, 0.004), (0.26106662, -1.0449526, 0.004), (0.2610144, -1.0455666, 0.004), (0.26096344, -1.0461818, 0.004), (0.26091367, -1.0467983, 0.004), (0.26086515, -1.0474162, 0.004), (0.26081786, -1.0480355, 0.004), (0.26077184, -1.0486561, 0.004), (0.26072705, -1.049278, 0.004), (0.2606835, -1.0499015, 0.004), (0.26064125, -1.0505263, 0.004), (0.26060027, -1.0511525, 0.004), (0.26056057, -1.0517801, 0.004), (0.26052216, -1.0524092, 0.004), (0.26048502, -1.0530398, 0.004), (0.26044923, -1.0536718, 0.004), (0.26041472, -1.0543054, 0.004), (0.26038155, -1.0549405, 0.004), (0.2603497, -1.0555772, 0.004), (0.26031917, -1.0562153, 0.004), (0.26029, -1.056855, 0.004), (0.26026216, -1.0574963, 0.004), (0.2602357, -1.0581392, 0.004), (0.2602106, -1.0587837, 0.004), (0.26018688, -1.0594298, 0.004), (0.26016453, -1.0600775, 0.004), (0.26014358, -1.0607269, 0.004), (0.260124, -1.061378, 0.004), (0.26010585, -1.0620307, 0.004), (0.2600891, -1.0626851, 0.004), (0.26007375, -1.0633413, 0.004), (0.26005983, -1.063999, 0.004), (0.26004735, -1.0646588, 0.004), (0.26003632, -1.0653201, 0.004), (0.26002672, -1.0659832, 0.004), (0.2600186, -1.0666481, 0.004), (0.2600119, -1.0673149, 0.004), (0.26000673, -1.0679834, 0.004), (0.260003, -1.0686537, 0.004), (0.26000074, -1.0693259, 0.004), (0.26, -1.07, 0.004)]
+            color3f[] primvars:displayColor = [(0.87, 0.37, 0.1)]
+            uniform token type = "linear"
+            float[] widths = [0.006] (
+                interpolation = "constant"
+            )
+        }
+
+        def BasisCurves "Bentry0"
+        {
+            int[] curveVertexCounts = [159]
+            point3f[] points = [(1.06, -0.95, 0.004), (1.0584093, -0.9499921, 0.004), (1.0568188, -0.9499684, 0.004), (1.0552287, -0.9499288, 0.004), (1.0536389, -0.9498735, 0.004), (1.0520499, -0.94980234, 0.004), (1.0504615, -0.94971544, 0.004), (1.0488743, -0.94961274, 0.004), (1.047288, -0.94949424, 0.004), (1.0457029, -0.94935995, 0.004), (1.0441194, -0.9492099, 0.004), (1.0425373, -0.94904417, 0.004), (1.0409571, -0.94886273, 0.004), (1.0393786, -0.94866556, 0.004), (1.0378023, -0.9484527, 0.004), (1.0362282, -0.9482242, 0.004), (1.0346563, -0.94798005, 0.004), (1.033087, -0.9477203, 0.004), (1.0315204, -0.9474449, 0.004), (1.0299565, -0.94715405, 0.004), (1.0283957, -0.94684756, 0.004), (1.0268378, -0.94652563, 0.004), (1.0252833, -0.9461882, 0.004), (1.0237323, -0.94583535, 0.004), (1.0221848, -0.9454671, 0.004), (1.0206412, -0.9450835, 0.004), (1.0191014, -0.9446845, 0.004), (1.0175656, -0.94427025, 0.004), (1.016034, -0.9438408, 0.004), (1.0145067, -0.9433961, 0.004), (1.0129839, -0.94293624, 0.004), (1.0114659, -0.94246125, 0.004), (1.0099525, -0.94197124, 0.004), (1.0084442, -0.94146615, 0.004), (1.006941, -0.9409461, 0.004), (1.0054429, -0.94041115, 0.004), (1.0039502, -0.93986136, 0.004), (1.0024632, -0.9392967, 0.004), (1.0009818, -0.93871737, 0.004), (0.9995062, -0.9381233, 0.004), (0.9980366, -0.93751454, 0.004), (0.99657315, -0.93689126, 0.004), (0.99511594, -0.9362534, 0.004), (0.99366516, -0.9356011, 0.004), (0.99222094, -0.93493444, 0.004), (0.9907834, -0.93425345, 0.004), (0.9893527, -0.9335582, 0.004), (0.987929, -0.93284875, 0.004), (0.9865124, -0.9321252, 0.004), (0.98510313, -0.9313876, 0.004), (0.9837012, -0.93063605, 0.004), (0.98230684, -0.92987055, 0.004), (0.98092014, -0.9290912, 0.004), (0.97954124, -0.9282982, 0.004), (0.97817034, -0.9274915, 0.004), (0.9768075, -0.92667115, 0.004), (0.97545284, -0.92583734, 0.004), (0.9741066, -0.9249901, 0.004), (0.97276884, -0.9241295, 0.004), (0.97143966, -0.9232557, 0.004), (0.9701193, -0.92236865, 0.004), (0.96880776, -0.92146856, 0.004), (0.9675053, -0.9205555, 0.004), (0.9662119, -0.91962945, 0.004), (0.96492785, -0.9186906, 0.004), (0.96365315, -0.9177391, 0.004), (0.962388, -0.916775, 0.004), (0.96113247, -0.9157983, 0.004), (0.9598867, -0.91480917, 0.004), (0.9586508, -0.9138077, 0.004), (0.957425, -0.91279405, 0.004), (0.9562093, -0.9117682, 0.004), (0.95500386, -0.91073036, 0.004), (0.95380884, -0.90968055, 0.004), (0.95262426, -0.9086189, 0.004), (0.9514503, -0.90754557, 0.004), (0.95028704, -0.9064606, 0.004), (0.9491347, -0.90536416, 0.004), (0.9479933, -0.9042563, 0.004), (0.94686294, -0.9031371, 0.004), (0.94574374, -0.90200675, 0.004), (0.94463587, -0.9008653, 0.004), (0.9435394, -0.8997129, 0.004), (0.9424544, -0.8985497, 0.004), (0.9413811, -0.89737576, 0.004), (0.9403195, -0.8961912, 0.004), (0.93926966, -0.8949961, 0.004), (0.9382318, -0.89379066, 0.004), (0.937206, -0.89257497, 0.004), (0.9361923, -0.89134914, 0.004), (0.93519086, -0.8901133, 0.004), (0.9342017, -0.88886756, 0.004), (0.93322504, -0.88761204, 0.004), (0.9322609, -0.8863469, 0.004), (0.93130934, -0.8850722, 0.004), (0.93037057, -0.88378805, 0.004), (0.92944455, -0.88249475, 0.004), (0.92853147, -0.8811922, 0.004), (0.9276314, -0.8798807, 0.004), (0.92674434, -0.8785603, 0.004), (0.9258705, -0.8772312, 0.004), (0.9250099, -0.8758934, 0.004), (0.9241627, -0.8745471, 0.004), (0.9233288, -0.8731925, 0.004), (0.92250854, -0.8718297, 0.004), (0.9217018, -0.8704587, 0.004), (0.92090875, -0.8690799, 0.004), (0.9201295, -0.8676932, 0.004), (0.919364, -0.8662988, 0.004), (0.91861236, -0.8648969, 0.004), (0.91787475, -0.86348754, 0.004), (0.9171512, -0.862071, 0.004), (0.9164418, -0.86064726, 0.004), (0.9157465, -0.8592166, 0.004), (0.9150655, -0.8577791, 0.004), (0.91439885, -0.85633487, 0.004), (0.9137466, -0.854884, 0.004), (0.91310877, -0.8534269, 0.004), (0.9124855, -0.8519634, 0.004), (0.91187674, -0.8504938, 0.004), (0.91128266, -0.8490182, 0.004), (0.91070324, -0.8475368, 0.004), (0.91013867, -0.8460497, 0.004), (0.9095888, -0.8445571, 0.004), (0.90905386, -0.84305906, 0.004), (0.9085338, -0.84155583, 0.004), (0.9080288, -0.8400475, 0.004), (0.9075387, -0.8385342, 0.004), (0.9070638, -0.83701605, 0.004), (0.90660393, -0.83549327, 0.004), (0.9061592, -0.833966, 0.004), (0.9057297, -0.8324345, 0.004), (0.90531546, -0.83089864, 0.004), (0.9049165, -0.8293588, 0.004), (0.9045329, -0.8278151, 0.004), (0.9041647, -0.82626766, 0.004), (0.9038118, -0.8247166, 0.004), (0.9034744, -0.82316214, 0.004), (0.9031524, -0.8216044, 0.004), (0.902846, -0.8200435, 0.004), (0.90255505, -0.81847966, 0.004), (0.90227973, -0.816913, 0.004), (0.9020199, -0.8153437, 0.004), (0.9017758, -0.81377184, 0.004), (0.9015473, -0.8121977, 0.004), (0.90133446, -0.8106213, 0.004), (0.9011373, -0.80904293, 0.004), (0.9009558, -0.80746263, 0.004), (0.90079004, -0.8058806, 0.004), (0.9006401, -0.80429703, 0.004), (0.9005058, -0.802712, 0.004), (0.9003873, -0.80112576, 0.004), (0.9002846, -0.79953843, 0.004), (0.9001976, -0.79795015, 0.004), (0.9001265, -0.796361, 0.004), (0.90007114, -0.7947713, 0.004), (0.9000316, -0.7931811, 0.004), (0.9000079, -0.79159063, 0.004), (0.9, -0.79, 0.004)]
+            color3f[] primvars:displayColor = [(0.16, 0.36, 0.85)]
+            uniform token type = "linear"
+            float[] widths = [0.006] (
+                interpolation = "constant"
+            )
+        }
+
+        def BasisCurves "Bentry2"
+        {
+            int[] curveVertexCounts = [96]
+            point3f[] points = [(0.9, -0.79, 0.004), (0.9, -0.7870103, 0.004), (0.9, -0.7840206, 0.004), (0.9, -0.7810309, 0.004), (0.9, -0.7780412, 0.004), (0.9, -0.7750515, 0.004), (0.9, -0.77206177, 0.004), (0.9, -0.76907206, 0.004), (0.9, -0.76608235, 0.004), (0.9, -0.76309264, 0.004), (0.9, -0.7601029, 0.004), (0.9, -0.7571132, 0.004), (0.9, -0.7541235, 0.004), (0.9, -0.7511338, 0.004), (0.9, -0.7481441, 0.004), (0.9, -0.7451544, 0.004), (0.9, -0.7421647, 0.004), (0.9, -0.73917496, 0.004), (0.9, -0.73618525, 0.004), (0.9, -0.73319554, 0.004), (0.9, -0.73020583, 0.004), (0.9, -0.7272161, 0.004), (0.9, -0.7242264, 0.004), (0.9, -0.7212367, 0.004), (0.9, -0.718247, 0.004), (0.9, -0.7152573, 0.004), (0.9, -0.71226764, 0.004), (0.9, -0.7092779, 0.004), (0.9, -0.7062882, 0.004), (0.9, -0.7032985, 0.004), (0.9, -0.7003088, 0.004), (0.9, -0.6973191, 0.004), (0.9, -0.6943294, 0.004), (0.9, -0.6913397, 0.004), (0.9, -0.68834996, 0.004), (0.9, -0.68536025, 0.004), (0.9, -0.68237054, 0.004), (0.9, -0.67938083, 0.004), (0.9, -0.6763911, 0.004), (0.9, -0.6734014, 0.004), (0.9, -0.6704117, 0.004), (0.9, -0.667422, 0.004), (0.9, -0.6644323, 0.004), (0.9, -0.6614426, 0.004), (0.9, -0.65845287, 0.004), (0.9, -0.65546316, 0.004), (0.9, -0.65247345, 0.004), (0.9, -0.64948374, 0.004), (0.9, -0.64649403, 0.004), (0.9, -0.6435043, 0.004), (0.9, -0.6405146, 0.004), (0.9, -0.6375249, 0.004), (0.9, -0.6345352, 0.004), (0.9, -0.6315455, 0.004), (0.9, -0.6285558, 0.004), (0.9, -0.62556607, 0.004), (0.9, -0.6225764, 0.004), (0.9, -0.6195867, 0.004), (0.9, -0.616597, 0.004), (0.9, -0.6136073, 0.004), (0.9, -0.6106176, 0.004), (0.9, -0.60762787, 0.004), (0.9, -0.60463816, 0.004), (0.9, -0.60164845, 0.004), (0.9, -0.59865874, 0.004), (0.9, -0.59566903, 0.004), (0.9, -0.5926793, 0.004), (0.9, -0.5896896, 0.004), (0.9, -0.5866999, 0.004), (0.9, -0.5837102, 0.004), (0.9, -0.5807205, 0.004), (0.9, -0.5777308, 0.004), (0.9, -0.57474107, 0.004), (0.9, -0.57175136, 0.004), (0.9, -0.56876165, 0.004), (0.9, -0.56577194, 0.004), (0.9, -0.5627822, 0.004), (0.9, -0.5597925, 0.004), (0.9, -0.5568028, 0.004), (0.9, -0.5538131, 0.004), (0.9, -0.5508234, 0.004), (0.9, -0.5478337, 0.004), (0.9, -0.544844, 0.004), (0.9, -0.54185426, 0.004), (0.9, -0.53886455, 0.004), (0.9, -0.53587484, 0.004), (0.9, -0.5328852, 0.004), (0.9, -0.5298955, 0.004), (0.9, -0.5269058, 0.004), (0.9, -0.52391607, 0.004), (0.9, -0.52092636, 0.004), (0.9, -0.51793665, 0.004), (0.9, -0.51494694, 0.004), (0.9, -0.5119572, 0.004), (0.9, -0.5089675, 0.004), (0.9, -0.5059778, 0.004)]
+            color3f[] primvars:displayColor = [(0.16, 0.36, 0.85)]
+            uniform token type = "linear"
+            float[] widths = [0.006] (
+                interpolation = "constant"
+            )
+        }
+
+        def BasisCurves "Bexit0"
+        {
+            int[] curveVertexCounts = [96]
+            point3f[] points = [(0.9, -0.5059778, 0.004), (0.9, -0.5089675, 0.004), (0.9, -0.5119572, 0.004), (0.9, -0.51494694, 0.004), (0.9, -0.51793665, 0.004), (0.9, -0.52092636, 0.004), (0.9, -0.52391607, 0.004), (0.9, -0.5269058, 0.004), (0.9, -0.5298955, 0.004), (0.9, -0.5328852, 0.004), (0.9, -0.53587484, 0.004), (0.9, -0.53886455, 0.004), (0.9, -0.54185426, 0.004), (0.9, -0.544844, 0.004), (0.9, -0.5478337, 0.004), (0.9, -0.5508234, 0.004), (0.9, -0.5538131, 0.004), (0.9, -0.5568028, 0.004), (0.9, -0.5597925, 0.004), (0.9, -0.5627822, 0.004), (0.9, -0.56577194, 0.004), (0.9, -0.56876165, 0.004), (0.9, -0.57175136, 0.004), (0.9, -0.57474107, 0.004), (0.9, -0.5777308, 0.004), (0.9, -0.5807205, 0.004), (0.9, -0.5837102, 0.004), (0.9, -0.5866999, 0.004), (0.9, -0.5896896, 0.004), (0.9, -0.5926793, 0.004), (0.9, -0.59566903, 0.004), (0.9, -0.59865874, 0.004), (0.9, -0.60164845, 0.004), (0.9, -0.60463816, 0.004), (0.9, -0.60762787, 0.004), (0.9, -0.6106176, 0.004), (0.9, -0.6136073, 0.004), (0.9, -0.616597, 0.004), (0.9, -0.6195867, 0.004), (0.9, -0.6225764, 0.004), (0.9, -0.62556607, 0.004), (0.9, -0.6285558, 0.004), (0.9, -0.6315455, 0.004), (0.9, -0.6345352, 0.004), (0.9, -0.6375249, 0.004), (0.9, -0.6405146, 0.004), (0.9, -0.6435043, 0.004), (0.9, -0.64649403, 0.004), (0.9, -0.64948374, 0.004), (0.9, -0.65247345, 0.004), (0.9, -0.65546316, 0.004), (0.9, -0.65845287, 0.004), (0.9, -0.6614426, 0.004), (0.9, -0.6644323, 0.004), (0.9, -0.667422, 0.004), (0.9, -0.6704117, 0.004), (0.9, -0.6734014, 0.004), (0.9, -0.6763911, 0.004), (0.9, -0.67938083, 0.004), (0.9, -0.68237054, 0.004), (0.9, -0.68536025, 0.004), (0.9, -0.68834996, 0.004), (0.9, -0.6913397, 0.004), (0.9, -0.6943294, 0.004), (0.9, -0.6973191, 0.004), (0.9, -0.7003088, 0.004), (0.9, -0.7032985, 0.004), (0.9, -0.7062882, 0.004), (0.9, -0.7092779, 0.004), (0.9, -0.71226764, 0.004), (0.9, -0.7152573, 0.004), (0.9, -0.718247, 0.004), (0.9, -0.7212367, 0.004), (0.9, -0.7242264, 0.004), (0.9, -0.7272161, 0.004), (0.9, -0.73020583, 0.004), (0.9, -0.73319554, 0.004), (0.9, -0.73618525, 0.004), (0.9, -0.73917496, 0.004), (0.9, -0.7421647, 0.004), (0.9, -0.7451544, 0.004), (0.9, -0.7481441, 0.004), (0.9, -0.7511338, 0.004), (0.9, -0.7541235, 0.004), (0.9, -0.7571132, 0.004), (0.9, -0.7601029, 0.004), (0.9, -0.76309264, 0.004), (0.9, -0.76608235, 0.004), (0.9, -0.76907206, 0.004), (0.9, -0.77206177, 0.004), (0.9, -0.7750515, 0.004), (0.9, -0.7780412, 0.004), (0.9, -0.7810309, 0.004), (0.9, -0.7840206, 0.004), (0.9, -0.7870103, 0.004), (0.9, -0.79, 0.004)]
+            color3f[] primvars:displayColor = [(0.87, 0.37, 0.1)]
+            uniform token type = "linear"
+            float[] widths = [0.006] (
+                interpolation = "constant"
+            )
+        }
+
+        def BasisCurves "Bexit1"
+        {
+            int[] curveVertexCounts = [159]
+            point3f[] points = [(0.9, -0.79, 0.004), (0.8999921, -0.79159063, 0.004), (0.8999684, -0.7931811, 0.004), (0.89992887, -0.7947713, 0.004), (0.8998735, -0.796361, 0.004), (0.8998024, -0.79795015, 0.004), (0.8997154, -0.79953843, 0.004), (0.8996127, -0.80112576, 0.004), (0.89949423, -0.802712, 0.004), (0.89935994, -0.80429703, 0.004), (0.8992099, -0.8058806, 0.004), (0.8990442, -0.80746263, 0.004), (0.8988627, -0.80904293, 0.004), (0.89866555, -0.8106213, 0.004), (0.8984527, -0.8121977, 0.004), (0.8982242, -0.81377184, 0.004), (0.89798003, -0.8153437, 0.004), (0.8977203, -0.816913, 0.004), (0.89744496, -0.81847966, 0.004), (0.89715403, -0.8200435, 0.004), (0.8968476, -0.8216044, 0.004), (0.8965256, -0.82316214, 0.004), (0.8961882, -0.8247166, 0.004), (0.89583534, -0.82626766, 0.004), (0.8954671, -0.8278151, 0.004), (0.8950835, -0.8293588, 0.004), (0.8946845, -0.83089864, 0.004), (0.8942703, -0.8324345, 0.004), (0.8938408, -0.833966, 0.004), (0.8933961, -0.83549327, 0.004), (0.8929362, -0.83701605, 0.004), (0.89246124, -0.8385342, 0.004), (0.89197123, -0.8400475, 0.004), (0.89146614, -0.84155583, 0.004), (0.89094615, -0.84305906, 0.004), (0.8904112, -0.8445571, 0.004), (0.88986135, -0.8460497, 0.004), (0.8892967, -0.8475368, 0.004), (0.88871735, -0.8490182, 0.004), (0.8881233, -0.8504938, 0.004), (0.88751453, -0.8519634, 0.004), (0.88689125, -0.8534269, 0.004), (0.8862534, -0.854884, 0.004), (0.8856011, -0.85633487, 0.004), (0.8849345, -0.8577791, 0.004), (0.88425344, -0.8592166, 0.004), (0.8835582, -0.86064726, 0.004), (0.8828488, -0.862071, 0.004), (0.8821252, -0.86348754, 0.004), (0.8813876, -0.8648969, 0.004), (0.88063604, -0.8662988, 0.004), (0.87987053, -0.8676932, 0.004), (0.87909126, -0.8690799, 0.004), (0.87829816, -0.8704587, 0.004), (0.8774915, -0.8718297, 0.004), (0.87667114, -0.8731925, 0.004), (0.8758373, -0.8745471, 0.004), (0.8749901, -0.8758934, 0.004), (0.87412953, -0.8772312, 0.004), (0.87325567, -0.8785603, 0.004), (0.87236863, -0.8798807, 0.004), (0.87146854, -0.8811922, 0.004), (0.87055546, -0.88249475, 0.004), (0.86962944, -0.88378805, 0.004), (0.86869067, -0.8850722, 0.004), (0.86773914, -0.8863469, 0.004), (0.866775, -0.88761204, 0.004), (0.8657983, -0.88886756, 0.004), (0.86480916, -0.8901133, 0.004), (0.86380774, -0.89134914, 0.004), (0.86279404, -0.89257497, 0.004), (0.8617682, -0.89379066, 0.004), (0.86073035, -0.8949961, 0.004), (0.85968053, -0.8961912, 0.004), (0.8586189, -0.89737576, 0.004), (0.85754555, -0.8985497, 0.004), (0.85646063, -0.8997129, 0.004), (0.85536414, -0.9008653, 0.004), (0.8542563, -0.90200675, 0.004), (0.8531371, -0.9031371, 0.004), (0.85200673, -0.9042563, 0.004), (0.8508653, -0.90536416, 0.004), (0.8497129, -0.9064606, 0.004), (0.8485497, -0.90754557, 0.004), (0.84737575, -0.9086189, 0.004), (0.84619117, -0.90968055, 0.004), (0.8449961, -0.91073036, 0.004), (0.84379065, -0.9117682, 0.004), (0.84257495, -0.91279405, 0.004), (0.8413491, -0.9138077, 0.004), (0.8401133, -0.91480917, 0.004), (0.83886755, -0.9157983, 0.004), (0.83761203, -0.916775, 0.004), (0.83634686, -0.9177391, 0.004), (0.83507216, -0.9186906, 0.004), (0.8337881, -0.91962945, 0.004), (0.83249474, -0.9205555, 0.004), (0.8311922, -0.92146856, 0.004), (0.8298807, -0.92236865, 0.004), (0.8285603, -0.9232557, 0.004), (0.82723117, -0.9241295, 0.004), (0.8258934, -0.9249901, 0.004), (0.8245471, -0.92583734, 0.004), (0.82319254, -0.92667115, 0.004), (0.8218297, -0.9274915, 0.004), (0.82045877, -0.9282982, 0.004), (0.8190799, -0.9290912, 0.004), (0.8176932, -0.92987055, 0.004), (0.8162988, -0.93063605, 0.004), (0.8148969, -0.9313876, 0.004), (0.8134876, -0.9321252, 0.004), (0.81207097, -0.93284875, 0.004), (0.8106473, -0.9335582, 0.004), (0.8092166, -0.93425345, 0.004), (0.8077791, -0.93493444, 0.004), (0.80633485, -0.9356011, 0.004), (0.8048841, -0.9362534, 0.004), (0.80342686, -0.93689126, 0.004), (0.8019634, -0.93751454, 0.004), (0.8004938, -0.9381233, 0.004), (0.7990182, -0.93871737, 0.004), (0.79753685, -0.9392967, 0.004), (0.7960497, -0.93986136, 0.004), (0.7945571, -0.94041115, 0.004), (0.7930591, -0.9409461, 0.004), (0.7915558, -0.94146615, 0.004), (0.79004747, -0.94197124, 0.004), (0.78853416, -0.94246125, 0.004), (0.78701603, -0.94293624, 0.004), (0.7854933, -0.9433961, 0.004), (0.78396606, -0.9438408, 0.004), (0.78243446, -0.94427025, 0.004), (0.7808987, -0.9446845, 0.004), (0.7793588, -0.9450835, 0.004), (0.7778151, -0.9454671, 0.004), (0.77626765, -0.94583535, 0.004), (0.7747166, -0.9461882, 0.004), (0.7731621, -0.94652563, 0.004), (0.77160436, -0.94684756, 0.004), (0.7700435, -0.94715405, 0.004), (0.76847965, -0.9474449, 0.004), (0.766913, -0.9477203, 0.004), (0.76534367, -0.94798005, 0.004), (0.76377183, -0.9482242, 0.004), (0.7621977, -0.9484527, 0.004), (0.7606213, -0.94866556, 0.004), (0.7590429, -0.94886273, 0.004), (0.7574626, -0.94904417, 0.004), (0.7558806, -0.9492099, 0.004), (0.754297, -0.94935995, 0.004), (0.752712, -0.94949424, 0.004), (0.75112575, -0.94961274, 0.004), (0.7495384, -0.94971544, 0.004), (0.74795014, -0.94980234, 0.004), (0.746361, -0.9498735, 0.004), (0.74477136, -0.9499288, 0.004), (0.74318117, -0.9499684, 0.004), (0.7415907, -0.9499921, 0.004), (0.74, -0.95, 0.004)]
+            color3f[] primvars:displayColor = [(0.87, 0.37, 0.1)]
+            uniform token type = "linear"
+            float[] widths = [0.006] (
+                interpolation = "constant"
+            )
+        }
+
+        def BasisCurves "handoffentry0"
+        {
+            int[] curveVertexCounts = [401]
+            point3f[] points = [(1.74, -1.07, 0.004), (1.7399974, -1.0693258, 0.004), (1.7399895, -1.068653, 0.004), (1.7399765, -1.0679817, 0.004), (1.7399583, -1.0673119, 0.004), (1.7399349, -1.0666435, 0.004), (1.7399064, -1.0659766, 0.004), (1.7398729, -1.0653111, 0.004), (1.7398342, -1.064647, 0.004), (1.7397906, -1.0639843, 0.004), (1.7397419, -1.063323, 0.004), (1.7396882, -1.0626631, 0.004), (1.7396295, -1.0620044, 0.004), (1.739566, -1.0613472, 0.004), (1.7394975, -1.0606915, 0.004), (1.7394241, -1.0600369, 0.004), (1.7393459, -1.0593836, 0.004), (1.7392628, -1.0587318, 0.004), (1.739175, -1.0580812, 0.004), (1.7390823, -1.0574318, 0.004), (1.738985, -1.0567838, 0.004), (1.7388829, -1.056137, 0.004), (1.7387761, -1.0554913, 0.004), (1.7386646, -1.054847, 0.004), (1.7385485, -1.0542039, 0.004), (1.7384278, -1.053562, 0.004), (1.7383024, -1.0529213, 0.004), (1.7381725, -1.0522817, 0.004), (1.7380381, -1.0516434, 0.004), (1.7378991, -1.0510062, 0.004), (1.7377557, -1.0503701, 0.004), (1.7376077, -1.0497352, 0.004), (1.7374554, -1.0491015, 0.004), (1.7372986, -1.0484687, 0.004), (1.7371374, -1.0478371, 0.004), (1.736972, -1.0472066, 0.004), (1.7368021, -1.0465772, 0.004), (1.7366279, -1.0459489, 0.004), (1.7364496, -1.0453216, 0.004), (1.7362669, -1.0446953, 0.004), (1.73608, -1.04407, 0.004), (1.735889, -1.0434457, 0.004), (1.7356937, -1.0428225, 0.004), (1.7354943, -1.0422002, 0.004), (1.7352906, -1.041579, 0.004), (1.7350831, -1.0409586, 0.004), (1.7348714, -1.0403392, 0.004), (1.7346556, -1.0397209, 0.004), (1.7344358, -1.0391034, 0.004), (1.734212, -1.0384867, 0.004), (1.7339844, -1.0378711, 0.004), (1.7337527, -1.0372564, 0.004), (1.7335172, -1.0366424, 0.004), (1.7332777, -1.0360293, 0.004), (1.7330344, -1.0354172, 0.004), (1.7327873, -1.0348058, 0.004), (1.7325363, -1.0341953, 0.004), (1.7322816, -1.0335855, 0.004), (1.7320231, -1.0329766, 0.004), (1.7317609, -1.0323685, 0.004), (1.731495, -1.0317613, 0.004), (1.7312254, -1.0311548, 0.004), (1.7309521, -1.0305489, 0.004), (1.7306753, -1.0299438, 0.004), (1.7303948, -1.0293396, 0.004), (1.7301109, -1.0287359, 0.004), (1.7298234, -1.028133, 0.004), (1.7295322, -1.0275308, 0.004), (1.7292377, -1.0269293, 0.004), (1.7289397, -1.0263284, 0.004), (1.7286382, -1.0257282, 0.004), (1.7283332, -1.0251287, 0.004), (1.728025, -1.0245298, 0.004), (1.7277133, -1.0239315, 0.004), (1.7273984, -1.0233339, 0.004), (1.7270801, -1.0227368, 0.004), (1.7267585, -1.0221404, 0.004), (1.7264338, -1.0215445, 0.004), (1.7261057, -1.0209491, 0.004), (1.7257744, -1.0203543, 0.004), (1.72544, -1.01976, 0.004), (1.7251024, -1.0191662, 0.004), (1.7247617, -1.018573, 0.004), (1.7244179, -1.0179803, 0.004), (1.724071, -1.0173881, 0.004), (1.7237211, -1.0167964, 0.004), (1.7233683, -1.016205, 0.004), (1.7230123, -1.0156142, 0.004), (1.7226534, -1.0150237, 0.004), (1.7222916, -1.0144337, 0.004), (1.7219269, -1.0138443, 0.004), (1.7215593, -1.013255, 0.004), (1.7211888, -1.0126663, 0.004), (1.7208154, -1.0120779, 0.004), (1.7204393, -1.0114899, 0.004), (1.7200603, -1.0109022, 0.004), (1.7196788, -1.0103148, 0.004), (1.7192943, -1.0097278, 0.004), (1.7189072, -1.0091412, 0.004), (1.7185174, -1.0085548, 0.004), (1.718125, -1.0079688, 0.004), (1.7177299, -1.007383, 0.004), (1.7173322, -1.0067974, 0.004), (1.716932, -1.0062121, 0.004), (1.7165293, -1.0056272, 0.004), (1.7161239, -1.0050423, 0.004), (1.7157162, -1.0044577, 0.004), (1.7153059, -1.0038733, 0.004), (1.7148932, -1.0032892, 0.004), (1.7144781, -1.0027052, 0.004), (1.7140607, -1.0021214, 0.004), (1.7136408, -1.0015378, 0.004), (1.7132186, -1.0009543, 0.004), (1.7127941, -1.0003709, 0.004), (1.7123673, -0.9997876, 0.004), (1.7119383, -0.99920446, 0.004), (1.711507, -0.9986214, 0.004), (1.7110734, -0.9980385, 0.004), (1.7106378, -0.9974556, 0.004), (1.7102, -0.9968728, 0.004), (1.70976, -0.99629, 0.004), (1.7093179, -0.9957073, 0.004), (1.7088739, -0.9951246, 0.004), (1.7084277, -0.9945419, 0.004), (1.7079794, -0.9939592, 0.004), (1.7075293, -0.9933765, 0.004), (1.7070771, -0.99279374, 0.004), (1.7066231, -0.992211, 0.004), (1.706167, -0.99162817, 0.004), (1.7057091, -0.9910453, 0.004), (1.7052494, -0.99046236, 0.004), (1.7047877, -0.9898793, 0.004), (1.7043244, -0.9892962, 0.004), (1.7038592, -0.98871297, 0.004), (1.7033921, -0.9881296, 0.004), (1.7029235, -0.9875461, 0.004), (1.7024531, -0.9869625, 0.004), (1.7019811, -0.98637867, 0.004), (1.7015073, -0.9857947, 0.004), (1.7010319, -0.9852106, 0.004), (1.700555, -0.98462623, 0.004), (1.7000765, -0.9840417, 0.004), (1.6995964, -0.98345697, 0.004), (1.6991148, -0.98287195, 0.004), (1.6986316, -0.9822867, 0.004), (1.698147, -0.98170125, 0.004), (1.697661, -0.98111546, 0.004), (1.6971737, -0.9805294, 0.004), (1.6966848, -0.9799431, 0.004), (1.6961946, -0.97935647, 0.004), (1.6957031, -0.97876954, 0.004), (1.6952103, -0.97818226, 0.004), (1.6947162, -0.9775946, 0.004), (1.6942208, -0.9770067, 0.004), (1.6937242, -0.9764183, 0.004), (1.6932263, -0.9758296, 0.004), (1.6927273, -0.9752405, 0.004), (1.6922271, -0.97465104, 0.004), (1.6917259, -0.97406113, 0.004), (1.6912235, -0.97347075, 0.004), (1.69072, -0.97288, 0.004), (1.6902155, -0.9722888, 0.004), (1.6897099, -0.9716971, 0.004), (1.6892034, -0.9711049, 0.004), (1.6886959, -0.9705123, 0.004), (1.6881875, -0.96991915, 0.004), (1.6876781, -0.9693255, 0.004), (1.6871678, -0.9687313, 0.004), (1.6866566, -0.96813655, 0.004), (1.6861447, -0.9675413, 0.004), (1.6856319, -0.96694547, 0.004), (1.6851183, -0.96634907, 0.004), (1.6846039, -0.96575207, 0.004), (1.684089, -0.9651545, 0.004), (1.6835731, -0.96455634, 0.004), (1.6830566, -0.96395755, 0.004), (1.6825395, -0.9633581, 0.004), (1.6820217, -0.962758, 0.004), (1.6815034, -0.96215725, 0.004), (1.6809845, -0.96155584, 0.004), (1.680465, -0.9609538, 0.004), (1.679945, -0.960351, 0.004), (1.6794245, -0.9597475, 0.004), (1.6789035, -0.9591433, 0.004), (1.678382, -0.9585383, 0.004), (1.6778603, -0.95793265, 0.004), (1.677338, -0.9573262, 0.004), (1.6768154, -0.956719, 0.004), (1.6762924, -0.956111, 0.004), (1.6757692, -0.9555022, 0.004), (1.6752456, -0.95489264, 0.004), (1.6747218, -0.9542823, 0.004), (1.6741978, -0.95367104, 0.004), (1.6736735, -0.95305896, 0.004), (1.6731491, -0.95244604, 0.004), (1.6726245, -0.9518323, 0.004), (1.6720997, -0.95121765, 0.004), (1.6715748, -0.9506021, 0.004), (1.67105, -0.9499856, 0.004), (1.670525, -0.9493683, 0.004), (1.67, -0.94875, 0.004), (1.669475, -0.9481308, 0.004), (1.6689501, -0.9475106, 0.004), (1.6684251, -0.94688946, 0.004), (1.6679003, -0.94626737, 0.004), (1.6673756, -0.94564426, 0.004), (1.6668509, -0.9450202, 0.004), (1.6663265, -0.94439507, 0.004), (1.6658022, -0.943769, 0.004), (1.6652782, -0.9431418, 0.004), (1.6647544, -0.9425136, 0.004), (1.6642308, -0.94188434, 0.004), (1.6637076, -0.941254, 0.004), (1.6631846, -0.94062257, 0.004), (1.662662, -0.93999004, 0.004), (1.6621398, -0.93935645, 0.004), (1.6616179, -0.93872166, 0.004), (1.6610965, -0.9380858, 0.004), (1.6605755, -0.9374488, 0.004), (1.660055, -0.9368106, 0.004), (1.659535, -0.93617123, 0.004), (1.6590155, -0.9355307, 0.004), (1.6584966, -0.934889, 0.004), (1.6579782, -0.93424606, 0.004), (1.6574605, -0.9336019, 0.004), (1.6569433, -0.9329565, 0.004), (1.6564269, -0.9323099, 0.004), (1.6559111, -0.931662, 0.004), (1.655396, -0.9310129, 0.004), (1.6548817, -0.93036246, 0.004), (1.6543682, -0.9297108, 0.004), (1.6538553, -0.9290578, 0.004), (1.6533433, -0.92840344, 0.004), (1.6528323, -0.9277478, 0.004), (1.6523219, -0.92709076, 0.004), (1.6518126, -0.92643243, 0.004), (1.6513041, -0.9257727, 0.004), (1.6507967, -0.92511165, 0.004), (1.65029, -0.92444915, 0.004), (1.6497846, -0.92378527, 0.004), (1.64928, -0.92312, 0.004), (1.6487765, -0.9224533, 0.004), (1.6482742, -0.9217851, 0.004), (1.6477728, -0.9211155, 0.004), (1.6472727, -0.9204445, 0.004), (1.6467737, -0.9197719, 0.004), (1.6462759, -0.9190979, 0.004), (1.6457793, -0.9184224, 0.004), (1.6452838, -0.91774535, 0.004), (1.6447897, -0.9170668, 0.004), (1.6442969, -0.9163867, 0.004), (1.6438054, -0.9157051, 0.004), (1.6433152, -0.9150219, 0.004), (1.6428263, -0.9143371, 0.004), (1.6423389, -0.91365075, 0.004), (1.6418529, -0.91296285, 0.004), (1.6413683, -0.9122733, 0.004), (1.6408852, -0.9115821, 0.004), (1.6404036, -0.9108893, 0.004), (1.6399236, -0.9101949, 0.004), (1.639445, -0.90949875, 0.004), (1.638968, -0.90880096, 0.004), (1.6384927, -0.9081015, 0.004), (1.638019, -0.90740037, 0.004), (1.6375469, -0.9066975, 0.004), (1.6370765, -0.9059929, 0.004), (1.6366078, -0.90528667, 0.004), (1.6361408, -0.9045786, 0.004), (1.6356757, -0.9038688, 0.004), (1.6352122, -0.90315723, 0.004), (1.6347506, -0.9024439, 0.004), (1.6342908, -0.90172875, 0.004), (1.6338329, -0.9010118, 0.004), (1.633377, -0.9002931, 0.004), (1.6329229, -0.8995725, 0.004), (1.6324707, -0.8988501, 0.004), (1.6320205, -0.8981258, 0.004), (1.6315724, -0.8973997, 0.004), (1.6311262, -0.8966717, 0.004), (1.630682, -0.8959418, 0.004), (1.63024, -0.89521, 0.004), (1.6298001, -0.8944763, 0.004), (1.6293622, -0.89374065, 0.004), (1.6289265, -0.8930031, 0.004), (1.6284931, -0.8922636, 0.004), (1.6280618, -0.8915221, 0.004), (1.6276327, -0.89077866, 0.004), (1.627206, -0.8900332, 0.004), (1.6267815, -0.88928574, 0.004), (1.6263592, -0.88853633, 0.004), (1.6259394, -0.88778484, 0.004), (1.6255219, -0.8870313, 0.004), (1.6251068, -0.88627577, 0.004), (1.6246941, -0.8855182, 0.004), (1.6242838, -0.8847585, 0.004), (1.623876, -0.8839967, 0.004), (1.6234707, -0.8832329, 0.004), (1.623068, -0.8824669, 0.004), (1.6226677, -0.88169885, 0.004), (1.6222701, -0.88092864, 0.004), (1.621875, -0.8801563, 0.004), (1.6214826, -0.8793817, 0.004), (1.6210928, -0.87860507, 0.004), (1.6207057, -0.87782615, 0.004), (1.6203213, -0.8770451, 0.004), (1.6199396, -0.87626183, 0.004), (1.6195607, -0.87547636, 0.004), (1.6191846, -0.8746887, 0.004), (1.6188112, -0.8738987, 0.004), (1.6184407, -0.8731065, 0.004), (1.6180731, -0.872312, 0.004), (1.6177084, -0.8715153, 0.004), (1.6173465, -0.8707162, 0.004), (1.6169877, -0.8699149, 0.004), (1.6166317, -0.86911124, 0.004), (1.6162789, -0.86830527, 0.004), (1.6159289, -0.8674969, 0.004), (1.6155821, -0.8666863, 0.004), (1.6152383, -0.8658732, 0.004), (1.6148976, -0.8650578, 0.004), (1.61456, -0.86424, 0.004), (1.6142256, -0.8634198, 0.004), (1.6138943, -0.86259717, 0.004), (1.6135663, -0.8617721, 0.004), (1.6132414, -0.8609447, 0.004), (1.6129199, -0.86011475, 0.004), (1.6126016, -0.8592824, 0.004), (1.6122867, -0.8584475, 0.004), (1.6119751, -0.85761017, 0.004), (1.6116668, -0.85677034, 0.004), (1.6113619, -0.85592794, 0.004), (1.6110604, -0.8550831, 0.004), (1.6107624, -0.8542357, 0.004), (1.6104678, -0.85338575, 0.004), (1.6101767, -0.8525332, 0.004), (1.6098891, -0.85167813, 0.004), (1.6096051, -0.8508205, 0.004), (1.6093247, -0.8499602, 0.004), (1.6090478, -0.8490974, 0.004), (1.6087745, -0.84823185, 0.004), (1.608505, -0.84736377, 0.004), (1.608239, -0.846493, 0.004), (1.6079769, -0.84561956, 0.004), (1.6077183, -0.8447435, 0.004), (1.6074637, -0.84386474, 0.004), (1.6072128, -0.84298325, 0.004), (1.6069655, -0.8420991, 0.004), (1.6067222, -0.8412122, 0.004), (1.6064829, -0.8403226, 0.004), (1.6062473, -0.8394303, 0.004), (1.6060157, -0.83853513, 0.004), (1.6057879, -0.8376373, 0.004), (1.6055641, -0.8367366, 0.004), (1.6053444, -0.8358332, 0.004), (1.6051286, -0.83492696, 0.004), (1.6049169, -0.83401793, 0.004), (1.6047093, -0.83310604, 0.004), (1.6045058, -0.8321913, 0.004), (1.6043063, -0.83127373, 0.004), (1.6041111, -0.8303533, 0.004), (1.60392, -0.82943, 0.004), (1.6037331, -0.8285038, 0.004), (1.6035504, -0.82757473, 0.004), (1.603372, -0.8266427, 0.004), (1.6031979, -0.8257078, 0.004), (1.603028, -0.8247699, 0.004), (1.6028626, -0.8238291, 0.004), (1.6027014, -0.82288533, 0.004), (1.6025447, -0.8219386, 0.004), (1.6023923, -0.82098883, 0.004), (1.6022444, -0.8200361, 0.004), (1.602101, -0.81908035, 0.004), (1.601962, -0.8181216, 0.004), (1.6018275, -0.8171598, 0.004), (1.6016976, -0.81619495, 0.004), (1.6015723, -0.81522703, 0.004), (1.6014515, -0.8142561, 0.004), (1.6013354, -0.813282, 0.004), (1.601224, -0.81230485, 0.004), (1.6011171, -0.8113246, 0.004), (1.601015, -0.81034124, 0.004), (1.6009176, -0.8093547, 0.004), (1.600825, -0.8083651, 0.004), (1.6007371, -0.8073723, 0.004), (1.6006541, -0.80637634, 0.004), (1.6005758, -0.8053772, 0.004), (1.6005025, -0.8043748, 0.004), (1.6004341, -0.8033693, 0.004), (1.6003704, -0.80236053, 0.004), (1.6003118, -0.8013485, 0.004), (1.6002581, -0.80033326, 0.004), (1.6002095, -0.7993148, 0.004), (1.6001657, -0.79829305, 0.004), (1.6001271, -0.79726803, 0.004), (1.6000936, -0.7962397, 0.004), (1.6000651, -0.79520804, 0.004), (1.6000417, -0.7941731, 0.004), (1.6000235, -0.79313487, 0.004), (1.6000105, -0.7920933, 0.004), (1.6000026, -0.7910483, 0.004), (1.6, -0.79, 0.004)]
+            color3f[] primvars:displayColor = [(0.16, 0.36, 0.85)]
+            uniform token type = "linear"
+            float[] widths = [0.006] (
+                interpolation = "constant"
+            )
+        }
+
+        def BasisCurves "handoffentry2"
+        {
+            int[] curveVertexCounts = [100]
+            point3f[] points = [(1.6, -0.79, 0.004), (1.6, -0.7870301, 0.004), (1.6, -0.7840602, 0.004), (1.6, -0.78109026, 0.004), (1.6, -0.77812034, 0.004), (1.6, -0.7751504, 0.004), (1.6, -0.7721805, 0.004), (1.6, -0.7692106, 0.004), (1.6, -0.76624066, 0.004), (1.6, -0.76327074, 0.004), (1.6, -0.7603008, 0.004), (1.6, -0.7573309, 0.004), (1.6, -0.754361, 0.004), (1.6, -0.75139105, 0.004), (1.6, -0.74842113, 0.004), (1.6, -0.74545115, 0.004), (1.6, -0.74248123, 0.004), (1.6, -0.7395113, 0.004), (1.6, -0.7365414, 0.004), (1.6, -0.73357147, 0.004), (1.6, -0.73060155, 0.004), (1.6, -0.7276316, 0.004), (1.6, -0.7246617, 0.004), (1.6, -0.7216918, 0.004), (1.6, -0.71872187, 0.004), (1.6, -0.71575195, 0.004), (1.6, -0.712782, 0.004), (1.6, -0.7098121, 0.004), (1.6, -0.7068422, 0.004), (1.6, -0.70387226, 0.004), (1.6, -0.70090234, 0.004), (1.6, -0.6979324, 0.004), (1.6, -0.6949625, 0.004), (1.6, -0.6919926, 0.004), (1.6, -0.68902266, 0.004), (1.6, -0.68605274, 0.004), (1.6, -0.6830828, 0.004), (1.6, -0.6801129, 0.004), (1.6, -0.677143, 0.004), (1.6, -0.67417306, 0.004), (1.6, -0.67120314, 0.004), (1.6, -0.6682332, 0.004), (1.6, -0.6652633, 0.004), (1.6, -0.6622934, 0.004), (1.6, -0.65932345, 0.004), (1.6, -0.65635353, 0.004), (1.6, -0.6533836, 0.004), (1.6, -0.6504137, 0.004), (1.6, -0.6474438, 0.004), (1.6, -0.64447385, 0.004), (1.6, -0.64150393, 0.004), (1.6, -0.638534, 0.004), (1.6, -0.6355641, 0.004), (1.6, -0.63259417, 0.004), (1.6, -0.62962425, 0.004), (1.6, -0.6266543, 0.004), (1.6, -0.6236844, 0.004), (1.6, -0.6207145, 0.004), (1.6, -0.61774457, 0.004), (1.6, -0.61477464, 0.004), (1.6, -0.6118047, 0.004), (1.6, -0.6088348, 0.004), (1.6, -0.6058649, 0.004), (1.6, -0.60289496, 0.004), (1.6, -0.59992504, 0.004), (1.6, -0.5969551, 0.004), (1.6, -0.5939852, 0.004), (1.6, -0.5910153, 0.004), (1.6, -0.58804536, 0.004), (1.6, -0.58507544, 0.004), (1.6, -0.5821055, 0.004), (1.6, -0.5791356, 0.004), (1.6, -0.5761657, 0.004), (1.6, -0.57319576, 0.004), (1.6, -0.57022583, 0.004), (1.6, -0.5672559, 0.004), (1.6, -0.564286, 0.004), (1.6, -0.5613161, 0.004), (1.6, -0.55834615, 0.004), (1.6, -0.55537623, 0.004), (1.6, -0.5524063, 0.004), (1.6, -0.5494364, 0.004), (1.6, -0.54646647, 0.004), (1.6, -0.54349655, 0.004), (1.6, -0.5405266, 0.004), (1.6, -0.5375567, 0.004), (1.6, -0.5345868, 0.004), (1.6, -0.53161687, 0.004), (1.6, -0.52864695, 0.004), (1.6, -0.525677, 0.004), (1.6, -0.5227071, 0.004), (1.6, -0.5197372, 0.004), (1.6, -0.51676726, 0.004), (1.6, -0.51379734, 0.004), (1.6, -0.5108274, 0.004), (1.6, -0.5078575, 0.004), (1.6, -0.5048876, 0.004), (1.6, -0.50191766, 0.004), (1.6, -0.4989477, 0.004), (1.6, -0.4959778, 0.004)]
+            color3f[] primvars:displayColor = [(0.16, 0.36, 0.85)]
+            uniform token type = "linear"
+            float[] widths = [0.006] (
+                interpolation = "constant"
+            )
+        }
+
+        def BasisCurves "handoffexit0"
+        {
+            int[] curveVertexCounts = [100]
+            point3f[] points = [(1.6, -0.4959778, 0.004), (1.6, -0.4989477, 0.004), (1.6, -0.50191766, 0.004), (1.6, -0.5048876, 0.004), (1.6, -0.5078575, 0.004), (1.6, -0.5108274, 0.004), (1.6, -0.51379734, 0.004), (1.6, -0.51676726, 0.004), (1.6, -0.5197372, 0.004), (1.6, -0.5227071, 0.004), (1.6, -0.525677, 0.004), (1.6, -0.52864695, 0.004), (1.6, -0.53161687, 0.004), (1.6, -0.5345868, 0.004), (1.6, -0.5375567, 0.004), (1.6, -0.5405266, 0.004), (1.6, -0.54349655, 0.004), (1.6, -0.54646647, 0.004), (1.6, -0.5494364, 0.004), (1.6, -0.5524063, 0.004), (1.6, -0.55537623, 0.004), (1.6, -0.55834615, 0.004), (1.6, -0.5613161, 0.004), (1.6, -0.564286, 0.004), (1.6, -0.5672559, 0.004), (1.6, -0.57022583, 0.004), (1.6, -0.57319576, 0.004), (1.6, -0.5761657, 0.004), (1.6, -0.5791356, 0.004), (1.6, -0.5821055, 0.004), (1.6, -0.58507544, 0.004), (1.6, -0.58804536, 0.004), (1.6, -0.5910153, 0.004), (1.6, -0.5939852, 0.004), (1.6, -0.5969551, 0.004), (1.6, -0.59992504, 0.004), (1.6, -0.60289496, 0.004), (1.6, -0.6058649, 0.004), (1.6, -0.6088348, 0.004), (1.6, -0.6118047, 0.004), (1.6, -0.61477464, 0.004), (1.6, -0.61774457, 0.004), (1.6, -0.6207145, 0.004), (1.6, -0.6236844, 0.004), (1.6, -0.6266543, 0.004), (1.6, -0.62962425, 0.004), (1.6, -0.63259417, 0.004), (1.6, -0.6355641, 0.004), (1.6, -0.638534, 0.004), (1.6, -0.64150393, 0.004), (1.6, -0.64447385, 0.004), (1.6, -0.6474438, 0.004), (1.6, -0.6504137, 0.004), (1.6, -0.6533836, 0.004), (1.6, -0.65635353, 0.004), (1.6, -0.65932345, 0.004), (1.6, -0.6622934, 0.004), (1.6, -0.6652633, 0.004), (1.6, -0.6682332, 0.004), (1.6, -0.67120314, 0.004), (1.6, -0.67417306, 0.004), (1.6, -0.677143, 0.004), (1.6, -0.6801129, 0.004), (1.6, -0.6830828, 0.004), (1.6, -0.68605274, 0.004), (1.6, -0.68902266, 0.004), (1.6, -0.6919926, 0.004), (1.6, -0.6949625, 0.004), (1.6, -0.6979324, 0.004), (1.6, -0.70090234, 0.004), (1.6, -0.70387226, 0.004), (1.6, -0.7068422, 0.004), (1.6, -0.7098121, 0.004), (1.6, -0.712782, 0.004), (1.6, -0.71575195, 0.004), (1.6, -0.71872187, 0.004), (1.6, -0.7216918, 0.004), (1.6, -0.7246617, 0.004), (1.6, -0.7276316, 0.004), (1.6, -0.73060155, 0.004), (1.6, -0.73357147, 0.004), (1.6, -0.7365414, 0.004), (1.6, -0.7395113, 0.004), (1.6, -0.74248123, 0.004), (1.6, -0.74545115, 0.004), (1.6, -0.74842113, 0.004), (1.6, -0.75139105, 0.004), (1.6, -0.754361, 0.004), (1.6, -0.7573309, 0.004), (1.6, -0.7603008, 0.004), (1.6, -0.76327074, 0.004), (1.6, -0.76624066, 0.004), (1.6, -0.7692106, 0.004), (1.6, -0.7721805, 0.004), (1.6, -0.7751504, 0.004), (1.6, -0.77812034, 0.004), (1.6, -0.78109026, 0.004), (1.6, -0.7840602, 0.004), (1.6, -0.7870301, 0.004), (1.6, -0.79, 0.004)]
+            color3f[] primvars:displayColor = [(0.87, 0.37, 0.1)]
+            uniform token type = "linear"
+            float[] widths = [0.006] (
+                interpolation = "constant"
+            )
+        }
+
+        def BasisCurves "handoffexit1"
+        {
+            int[] curveVertexCounts = [159]
+            point3f[] points = [(1.6, -0.79, 0.004), (1.599992, -0.79159063, 0.004), (1.5999683, -0.7931811, 0.004), (1.5999289, -0.7947713, 0.004), (1.5998735, -0.796361, 0.004), (1.5998024, -0.79795015, 0.004), (1.5997155, -0.79953843, 0.004), (1.5996127, -0.80112576, 0.004), (1.5994942, -0.802712, 0.004), (1.59936, -0.80429703, 0.004), (1.5992099, -0.8058806, 0.004), (1.5990442, -0.80746263, 0.004), (1.5988628, -0.80904293, 0.004), (1.5986656, -0.8106213, 0.004), (1.5984527, -0.8121977, 0.004), (1.5982242, -0.81377184, 0.004), (1.59798, -0.8153437, 0.004), (1.5977203, -0.816913, 0.004), (1.5974449, -0.81847966, 0.004), (1.597154, -0.8200435, 0.004), (1.5968475, -0.8216044, 0.004), (1.5965257, -0.82316214, 0.004), (1.5961882, -0.8247166, 0.004), (1.5958353, -0.82626766, 0.004), (1.5954671, -0.8278151, 0.004), (1.5950835, -0.8293588, 0.004), (1.5946845, -0.83089864, 0.004), (1.5942702, -0.8324345, 0.004), (1.5938408, -0.833966, 0.004), (1.5933961, -0.83549327, 0.004), (1.5929363, -0.83701605, 0.004), (1.5924612, -0.8385342, 0.004), (1.5919713, -0.8400475, 0.004), (1.5914662, -0.84155583, 0.004), (1.5909461, -0.84305906, 0.004), (1.5904112, -0.8445571, 0.004), (1.5898614, -0.8460497, 0.004), (1.5892967, -0.8475368, 0.004), (1.5887173, -0.8490182, 0.004), (1.5881232, -0.8504938, 0.004), (1.5875145, -0.8519634, 0.004), (1.5868912, -0.8534269, 0.004), (1.5862534, -0.854884, 0.004), (1.5856011, -0.85633487, 0.004), (1.5849345, -0.8577791, 0.004), (1.5842534, -0.8592166, 0.004), (1.5835582, -0.86064726, 0.004), (1.5828488, -0.862071, 0.004), (1.5821252, -0.86348754, 0.004), (1.5813876, -0.8648969, 0.004), (1.580636, -0.8662988, 0.004), (1.5798706, -0.8676932, 0.004), (1.5790912, -0.8690799, 0.004), (1.5782982, -0.8704587, 0.004), (1.5774915, -0.8718297, 0.004), (1.5766711, -0.8731925, 0.004), (1.5758374, -0.8745471, 0.004), (1.57499, -0.8758934, 0.004), (1.5741295, -0.8772312, 0.004), (1.5732557, -0.8785603, 0.004), (1.5723686, -0.8798807, 0.004), (1.5714686, -0.8811922, 0.004), (1.5705554, -0.88249475, 0.004), (1.5696294, -0.88378805, 0.004), (1.5686907, -0.8850722, 0.004), (1.5677391, -0.8863469, 0.004), (1.566775, -0.88761204, 0.004), (1.5657983, -0.88886756, 0.004), (1.5648092, -0.8901133, 0.004), (1.5638077, -0.89134914, 0.004), (1.562794, -0.89257497, 0.004), (1.5617682, -0.89379066, 0.004), (1.5607303, -0.8949961, 0.004), (1.5596806, -0.8961912, 0.004), (1.5586189, -0.89737576, 0.004), (1.5575455, -0.8985497, 0.004), (1.5564606, -0.8997129, 0.004), (1.5553641, -0.9008653, 0.004), (1.5542562, -0.90200675, 0.004), (1.5531371, -0.9031371, 0.004), (1.5520067, -0.9042563, 0.004), (1.5508653, -0.90536416, 0.004), (1.5497129, -0.9064606, 0.004), (1.5485497, -0.90754557, 0.004), (1.5473758, -0.9086189, 0.004), (1.5461912, -0.90968055, 0.004), (1.5449961, -0.91073036, 0.004), (1.5437907, -0.9117682, 0.004), (1.542575, -0.91279405, 0.004), (1.5413492, -0.9138077, 0.004), (1.5401133, -0.91480917, 0.004), (1.5388676, -0.9157983, 0.004), (1.5376121, -0.916775, 0.004), (1.5363469, -0.9177391, 0.004), (1.5350722, -0.9186906, 0.004), (1.5337881, -0.91962945, 0.004), (1.5324947, -0.9205555, 0.004), (1.5311922, -0.92146856, 0.004), (1.5298808, -0.92236865, 0.004), (1.5285603, -0.9232557, 0.004), (1.5272312, -0.9241295, 0.004), (1.5258934, -0.9249901, 0.004), (1.5245471, -0.92583734, 0.004), (1.5231925, -0.92667115, 0.004), (1.5218297, -0.9274915, 0.004), (1.5204587, -0.9282982, 0.004), (1.5190799, -0.9290912, 0.004), (1.5176932, -0.92987055, 0.004), (1.5162988, -0.93063605, 0.004), (1.5148969, -0.9313876, 0.004), (1.5134876, -0.9321252, 0.004), (1.512071, -0.93284875, 0.004), (1.5106473, -0.9335582, 0.004), (1.5092165, -0.93425345, 0.004), (1.5077791, -0.93493444, 0.004), (1.5063348, -0.9356011, 0.004), (1.504884, -0.9362534, 0.004), (1.5034269, -0.93689126, 0.004), (1.5019634, -0.93751454, 0.004), (1.5004938, -0.9381233, 0.004), (1.4990182, -0.93871737, 0.004), (1.4975368, -0.9392967, 0.004), (1.4960498, -0.93986136, 0.004), (1.4945571, -0.94041115, 0.004), (1.493059, -0.9409461, 0.004), (1.4915558, -0.94146615, 0.004), (1.4900475, -0.94197124, 0.004), (1.4885341, -0.94246125, 0.004), (1.4870161, -0.94293624, 0.004), (1.4854933, -0.9433961, 0.004), (1.483966, -0.9438408, 0.004), (1.4824344, -0.94427025, 0.004), (1.4808986, -0.9446845, 0.004), (1.4793588, -0.9450835, 0.004), (1.4778152, -0.9454671, 0.004), (1.4762677, -0.94583535, 0.004), (1.4747167, -0.9461882, 0.004), (1.4731622, -0.94652563, 0.004), (1.4716043, -0.94684756, 0.004), (1.4700435, -0.94715405, 0.004), (1.4684796, -0.9474449, 0.004), (1.466913, -0.9477203, 0.004), (1.4653437, -0.94798005, 0.004), (1.4637718, -0.9482242, 0.004), (1.4621977, -0.9484527, 0.004), (1.4606214, -0.94866556, 0.004), (1.4590429, -0.94886273, 0.004), (1.4574627, -0.94904417, 0.004), (1.4558806, -0.9492099, 0.004), (1.4542971, -0.94935995, 0.004), (1.452712, -0.94949424, 0.004), (1.4511257, -0.94961274, 0.004), (1.4495385, -0.94971544, 0.004), (1.4479501, -0.94980234, 0.004), (1.4463611, -0.9498735, 0.004), (1.4447713, -0.9499288, 0.004), (1.4431812, -0.9499684, 0.004), (1.4415907, -0.9499921, 0.004), (1.44, -0.95, 0.004)]
+            color3f[] primvars:displayColor = [(0.87, 0.37, 0.1)]
+            uniform token type = "linear"
+            float[] widths = [0.006] (
+                interpolation = "constant"
+            )
+        }
+
+        def BasisCurves "home0"
+        {
+            int[] curveVertexCounts = [316]
+            point3f[] points = [(0.45, -0.95, 0.004), (0.44788072, -0.9500106, 0.004), (0.44576162, -0.95004225, 0.004), (0.44364297, -0.9500951, 0.004), (0.44152492, -0.9501691, 0.004), (0.43940774, -0.95026416, 0.004), (0.43729162, -0.9503803, 0.004), (0.43517676, -0.95051765, 0.004), (0.43306336, -0.950676, 0.004), (0.43095165, -0.95085543, 0.004), (0.42884183, -0.95105594, 0.004), (0.42673412, -0.9512775, 0.004), (0.42462873, -0.95152, 0.004), (0.42252585, -0.95178354, 0.004), (0.4204257, -0.95206803, 0.004), (0.41832852, -0.95237345, 0.004), (0.41623446, -0.9526998, 0.004), (0.41414377, -0.9530469, 0.004), (0.41205665, -0.953415, 0.004), (0.40997332, -0.9538038, 0.004), (0.40789396, -0.9542133, 0.004), (0.40581876, -0.9546436, 0.004), (0.40374798, -0.9550946, 0.004), (0.4016818, -0.95556617, 0.004), (0.3996204, -0.9560584, 0.004), (0.39756405, -0.9565711, 0.004), (0.3955129, -0.95710427, 0.004), (0.39346716, -0.9576579, 0.004), (0.39142707, -0.95823187, 0.004), (0.3893928, -0.9588262, 0.004), (0.38736454, -0.95944077, 0.004), (0.3853425, -0.96007556, 0.004), (0.38332692, -0.96073043, 0.004), (0.38131794, -0.96140546, 0.004), (0.37931582, -0.9621004, 0.004), (0.3773207, -0.96281534, 0.004), (0.37533286, -0.9635501, 0.004), (0.3733524, -0.9643046, 0.004), (0.37137958, -0.96507895, 0.004), (0.3694146, -0.9658728, 0.004), (0.3674576, -0.9666863, 0.004), (0.36550882, -0.9675192, 0.004), (0.36356845, -0.96837157, 0.004), (0.3616367, -0.9692432, 0.004), (0.3597137, -0.97013414, 0.004), (0.3577997, -0.9710441, 0.004), (0.35589486, -0.9719732, 0.004), (0.3539994, -0.9729212, 0.004), (0.3521135, -0.97388804, 0.004), (0.35023728, -0.97487366, 0.004), (0.34837103, -0.97587794, 0.004), (0.34651488, -0.97690076, 0.004), (0.344669, -0.97794205, 0.004), (0.34283364, -0.9790017, 0.004), (0.3410089, -0.98007965, 0.004), (0.339195, -0.98117566, 0.004), (0.33739215, -0.9822898, 0.004), (0.3356005, -0.9834218, 0.004), (0.33382022, -0.98457164, 0.004), (0.3320515, -0.9857392, 0.004), (0.3302945, -0.98692423, 0.004), (0.32854939, -0.9881268, 0.004), (0.32681638, -0.98934674, 0.004), (0.32509562, -0.9905839, 0.004), (0.3233873, -0.99183816, 0.004), (0.32169157, -0.99310935, 0.004), (0.32000858, -0.9943974, 0.004), (0.31833854, -0.9957022, 0.004), (0.3166816, -0.9970236, 0.004), (0.3150379, -0.9983614, 0.004), (0.31340763, -0.99971557, 0.004), (0.31179094, -1.0010859, 0.004), (0.31018803, -1.0024723, 0.004), (0.308599, -1.0038747, 0.004), (0.30702403, -1.0052928, 0.004), (0.30546328, -1.0067265, 0.004), (0.30391693, -1.0081757, 0.004), (0.3023851, -1.0096403, 0.004), (0.30086794, -1.0111201, 0.004), (0.29936564, -1.012615, 0.004), (0.2978783, -1.0141246, 0.004), (0.2964061, -1.0156492, 0.004), (0.29494917, -1.0171883, 0.004), (0.29350767, -1.0187418, 0.004), (0.2920817, -1.0203097, 0.004), (0.2906715, -1.0218917, 0.004), (0.2892771, -1.0234878, 0.004), (0.28789872, -1.0250976, 0.004), (0.28653646, -1.0267211, 0.004), (0.28519043, -1.0283581, 0.004), (0.2838608, -1.0300084, 0.004), (0.2825477, -1.0316719, 0.004), (0.28125128, -1.0333484, 0.004), (0.27997163, -1.0350379, 0.004), (0.27870888, -1.03674, 0.004), (0.27746317, -1.0384544, 0.004), (0.27623463, -1.0401814, 0.004), (0.27502337, -1.0419204, 0.004), (0.27382952, -1.0436715, 0.004), (0.2726532, -1.0454344, 0.004), (0.27149448, -1.0472089, 0.004), (0.27035356, -1.0489949, 0.004), (0.26923048, -1.0507922, 0.004), (0.26812539, -1.0526006, 0.004), (0.2670384, -1.0544199, 0.004), (0.2659696, -1.05625, 0.004), (0.2649191, -1.0580907, 0.004), (0.26388702, -1.0599416, 0.004), (0.26287344, -1.0618029, 0.004), (0.2618785, -1.0636742, 0.004), (0.26090223, -1.0655552, 0.004), (0.2599448, -1.067446, 0.004), (0.25900626, -1.0693462, 0.004), (0.25808674, -1.0712556, 0.004), (0.25718626, -1.0731741, 0.004), (0.256305, -1.0751015, 0.004), (0.255443, -1.0770376, 0.004), (0.25460035, -1.0789822, 0.004), (0.25377712, -1.0809351, 0.004), (0.25297344, -1.0828961, 0.004), (0.25218934, -1.084865, 0.004), (0.2514249, -1.0868417, 0.004), (0.25068024, -1.0888258, 0.004), (0.24995537, -1.0908173, 0.004), (0.24925043, -1.092816, 0.004), (0.24856544, -1.0948216, 0.004), (0.24790049, -1.096834, 0.004), (0.24725564, -1.0988528, 0.004), (0.24663097, -1.1008779, 0.004), (0.24602652, -1.1029092, 0.004), (0.24544235, -1.1049464, 0.004), (0.24487853, -1.1069894, 0.004), (0.24433511, -1.1090378, 0.004), (0.24381216, -1.1110916, 0.004), (0.2433097, -1.1131505, 0.004), (0.24282782, -1.1152143, 0.004), (0.24236654, -1.1172829, 0.004), (0.24192591, -1.1193558, 0.004), (0.24150597, -1.1214331, 0.004), (0.24110678, -1.1235145, 0.004), (0.24072835, -1.1255997, 0.004), (0.24037075, -1.1276886, 0.004), (0.240034, -1.1297811, 0.004), (0.23971812, -1.1318767, 0.004), (0.23942317, -1.1339754, 0.004), (0.23914917, -1.1360769, 0.004), (0.23889613, -1.1381811, 0.004), (0.23866409, -1.1402878, 0.004), (0.23845308, -1.1423965, 0.004), (0.2382631, -1.1445073, 0.004), (0.2380942, -1.1466198, 0.004), (0.23794636, -1.148734, 0.004), (0.23781961, -1.1508496, 0.004), (0.23771398, -1.1529663, 0.004), (0.23762944, -1.1550839, 0.004), (0.23756605, -1.1572022, 0.004), (0.23752378, -1.1593211, 0.004), (0.23750265, -1.1614404, 0.004), (0.23750265, -1.1635597, 0.004), (0.23752378, -1.1656789, 0.004), (0.23756605, -1.1677978, 0.004), (0.23762944, -1.1699162, 0.004), (0.23771398, -1.1720338, 0.004), (0.23781961, -1.1741505, 0.004), (0.23794636, -1.176266, 0.004), (0.2380942, -1.1783801, 0.004), (0.2382631, -1.1804928, 0.004), (0.23845308, -1.1826035, 0.004), (0.23866409, -1.1847123, 0.004), (0.23889613, -1.1868188, 0.004), (0.23914917, -1.188923, 0.004), (0.23942317, -1.1910245, 0.004), (0.23971812, -1.1931232, 0.004), (0.240034, -1.1952189, 0.004), (0.24037075, -1.1973113, 0.004), (0.24072835, -1.1994002, 0.004), (0.24110678, -1.2014855, 0.004), (0.24150597, -1.2035669, 0.004), (0.24192591, -1.2056441, 0.004), (0.24236654, -1.2077172, 0.004), (0.24282782, -1.2097857, 0.004), (0.2433097, -1.2118495, 0.004), (0.24381216, -1.2139084, 0.004), (0.24433511, -1.2159622, 0.004), (0.24487853, -1.2180107, 0.004), (0.24544235, -1.2200536, 0.004), (0.24602652, -1.2220908, 0.004), (0.24663097, -1.2241222, 0.004), (0.24725564, -1.2261473, 0.004), (0.24790049, -1.2281661, 0.004), (0.24856544, -1.2301784, 0.004), (0.24925043, -1.2321839, 0.004), (0.24995537, -1.2341826, 0.004), (0.25068024, -1.2361741, 0.004), (0.2514249, -1.2381583, 0.004), (0.25218934, -1.240135, 0.004), (0.25297344, -1.2421039, 0.004), (0.25377712, -1.2440649, 0.004), (0.25460035, -1.2460178, 0.004), (0.255443, -1.2479624, 0.004), (0.256305, -1.2498986, 0.004), (0.25718626, -1.2518259, 0.004), (0.25808674, -1.2537445, 0.004), (0.25900626, -1.2556539, 0.004), (0.2599448, -1.257554, 0.004), (0.26090223, -1.2594447, 0.004), (0.2618785, -1.2613258, 0.004), (0.26287344, -1.2631971, 0.004), (0.26388702, -1.2650583, 0.004), (0.2649191, -1.2669094, 0.004), (0.2659696, -1.26875, 0.004), (0.2670384, -1.27058, 0.004), (0.26812539, -1.2723994, 0.004), (0.26923048, -1.2742078, 0.004), (0.27035356, -1.276005, 0.004), (0.27149448, -1.277791, 0.004), (0.2726532, -1.2795656, 0.004), (0.27382952, -1.2813284, 0.004), (0.27502337, -1.2830795, 0.004), (0.27623463, -1.2848186, 0.004), (0.27746317, -1.2865455, 0.004), (0.27870888, -1.2882601, 0.004), (0.27997163, -1.2899622, 0.004), (0.28125128, -1.2916515, 0.004), (0.2825477, -1.293328, 0.004), (0.2838608, -1.2949916, 0.004), (0.28519043, -1.296642, 0.004), (0.28653646, -1.2982789, 0.004), (0.28789872, -1.2999024, 0.004), (0.2892771, -1.3015122, 0.004), (0.2906715, -1.3031082, 0.004), (0.2920817, -1.3046902, 0.004), (0.29350767, -1.3062581, 0.004), (0.29494917, -1.3078117, 0.004), (0.2964061, -1.3093508, 0.004), (0.2978783, -1.3108753, 0.004), (0.29936564, -1.3123851, 0.004), (0.30086794, -1.31388, 0.004), (0.3023851, -1.3153597, 0.004), (0.30391693, -1.3168243, 0.004), (0.30546328, -1.3182735, 0.004), (0.30702403, -1.3197073, 0.004), (0.308599, -1.3211254, 0.004), (0.31018803, -1.3225276, 0.004), (0.31179094, -1.323914, 0.004), (0.31340763, -1.3252845, 0.004), (0.3150379, -1.3266386, 0.004), (0.3166816, -1.3279765, 0.004), (0.31833854, -1.3292978, 0.004), (0.32000858, -1.3306026, 0.004), (0.32169157, -1.3318907, 0.004), (0.3233873, -1.3331618, 0.004), (0.32509562, -1.3344162, 0.004), (0.32681638, -1.3356533, 0.004), (0.32854939, -1.3368732, 0.004), (0.3302945, -1.3380758, 0.004), (0.3320515, -1.3392608, 0.004), (0.33382022, -1.3404284, 0.004), (0.3356005, -1.3415782, 0.004), (0.33739215, -1.3427103, 0.004), (0.339195, -1.3438243, 0.004), (0.3410089, -1.3449204, 0.004), (0.34283364, -1.3459983, 0.004), (0.344669, -1.3470579, 0.004), (0.34651488, -1.3480992, 0.004), (0.34837103, -1.349122, 0.004), (0.35023728, -1.3501264, 0.004), (0.3521135, -1.351112, 0.004), (0.3539994, -1.3520788, 0.004), (0.35589486, -1.3530269, 0.004), (0.3577997, -1.3539559, 0.004), (0.3597137, -1.3548659, 0.004), (0.3616367, -1.3557568, 0.004), (0.36356845, -1.3566284, 0.004), (0.36550882, -1.3574808, 0.004), (0.3674576, -1.3583137, 0.004), (0.3694146, -1.3591272, 0.004), (0.37137958, -1.3599211, 0.004), (0.3733524, -1.3606954, 0.004), (0.37533286, -1.36145, 0.004), (0.3773207, -1.3621846, 0.004), (0.37931582, -1.3628995, 0.004), (0.38131794, -1.3635945, 0.004), (0.38332692, -1.3642695, 0.004), (0.3853425, -1.3649244, 0.004), (0.38736454, -1.3655592, 0.004), (0.3893928, -1.3661737, 0.004), (0.39142707, -1.3667681, 0.004), (0.39346716, -1.3673421, 0.004), (0.3955129, -1.3678957, 0.004), (0.39756405, -1.368429, 0.004), (0.3996204, -1.3689417, 0.004), (0.4016818, -1.3694338, 0.004), (0.40374798, -1.3699054, 0.004), (0.40581876, -1.3703563, 0.004), (0.40789396, -1.3707867, 0.004), (0.40997332, -1.3711963, 0.004), (0.41205665, -1.371585, 0.004), (0.41414377, -1.371953, 0.004), (0.41623446, -1.3723003, 0.004), (0.41832852, -1.3726265, 0.004), (0.4204257, -1.372932, 0.004), (0.42252585, -1.3732164, 0.004), (0.42462873, -1.37348, 0.004), (0.42673412, -1.3737226, 0.004), (0.42884183, -1.373944, 0.004), (0.43095165, -1.3741446, 0.004), (0.43306336, -1.374324, 0.004), (0.43517676, -1.3744824, 0.004), (0.43729162, -1.3746196, 0.004), (0.43940774, -1.3747358, 0.004), (0.44152492, -1.374831, 0.004), (0.44364297, -1.3749049, 0.004), (0.44576162, -1.3749577, 0.004), (0.44788072, -1.3749894, 0.004), (0.45, -1.375, 0.004)]
+            color3f[] primvars:displayColor = [(0.53, 0.18, 0.72)]
+            uniform token type = "linear"
+            float[] widths = [0.007] (
+                interpolation = "constant"
+            )
+        }
+
+        def BasisCurves "home1"
+        {
+            int[] curveVertexCounts = [5]
+            point3f[] points = [(0.45, -1.375, 0.004), (0.4525, -1.375, 0.004), (0.455, -1.375, 0.004), (0.4575, -1.375, 0.004), (0.46, -1.375, 0.004)]
+            color3f[] primvars:displayColor = [(0.53, 0.18, 0.72)]
+            uniform token type = "linear"
+            float[] widths = [0.007] (
+                interpolation = "constant"
+            )
+        }
+
+        def BasisCurves "home2"
+        {
+            int[] curveVertexCounts = [115]
+            point3f[] points = [(0.46, -1.375, 0.004), (0.46298245, -1.375, 0.004), (0.4659649, -1.375, 0.004), (0.46894738, -1.375, 0.004), (0.47192982, -1.375, 0.004), (0.4749123, -1.375, 0.004), (0.47789472, -1.375, 0.004), (0.4808772, -1.375, 0.004), (0.48385966, -1.375, 0.004), (0.4868421, -1.375, 0.004), (0.48982456, -1.375, 0.004), (0.49280703, -1.375, 0.004), (0.49578947, -1.375, 0.004), (0.49877194, -1.375, 0.004), (0.5017544, -1.375, 0.004), (0.50473684, -1.375, 0.004), (0.5077193, -1.375, 0.004), (0.5107018, -1.375, 0.004), (0.5136842, -1.375, 0.004), (0.51666665, -1.375, 0.004), (0.51964915, -1.375, 0.004), (0.5226316, -1.375, 0.004), (0.525614, -1.375, 0.004), (0.5285965, -1.375, 0.004), (0.53157896, -1.375, 0.004), (0.5345614, -1.375, 0.004), (0.53754383, -1.375, 0.004), (0.54052633, -1.375, 0.004), (0.54350877, -1.375, 0.004), (0.5464912, -1.375, 0.004), (0.5494737, -1.375, 0.004), (0.55245614, -1.375, 0.004), (0.5554386, -1.375, 0.004), (0.5584211, -1.375, 0.004), (0.5614035, -1.375, 0.004), (0.56438595, -1.375, 0.004), (0.56736845, -1.375, 0.004), (0.5703509, -1.375, 0.004), (0.5733333, -1.375, 0.004), (0.57631576, -1.375, 0.004), (0.57929826, -1.375, 0.004), (0.5822807, -1.375, 0.004), (0.58526313, -1.375, 0.004), (0.58824563, -1.375, 0.004), (0.59122807, -1.375, 0.004), (0.5942105, -1.375, 0.004), (0.597193, -1.375, 0.004), (0.60017544, -1.375, 0.004), (0.6031579, -1.375, 0.004), (0.6061404, -1.375, 0.004), (0.6091228, -1.375, 0.004), (0.61210525, -1.375, 0.004), (0.61508775, -1.375, 0.004), (0.6180702, -1.375, 0.004), (0.6210526, -1.375, 0.004), (0.62403506, -1.375, 0.004), (0.62701756, -1.375, 0.004), (0.63, -1.375, 0.004), (0.63298243, -1.375, 0.004), (0.63596493, -1.375, 0.004), (0.63894737, -1.375, 0.004), (0.6419298, -1.375, 0.004), (0.6449123, -1.375, 0.004), (0.64789474, -1.375, 0.004), (0.6508772, -1.375, 0.004), (0.6538597, -1.375, 0.004), (0.6568421, -1.375, 0.004), (0.65982455, -1.375, 0.004), (0.662807, -1.375, 0.004), (0.6657895, -1.375, 0.004), (0.6687719, -1.375, 0.004), (0.67175436, -1.375, 0.004), (0.67473686, -1.375, 0.004), (0.6777193, -1.375, 0.004), (0.68070173, -1.375, 0.004), (0.68368423, -1.375, 0.004), (0.68666667, -1.375, 0.004), (0.6896491, -1.375, 0.004), (0.6926316, -1.375, 0.004), (0.69561404, -1.375, 0.004), (0.6985965, -1.375, 0.004), (0.701579, -1.375, 0.004), (0.7045614, -1.375, 0.004), (0.70754385, -1.375, 0.004), (0.7105263, -1.375, 0.004), (0.7135088, -1.375, 0.004), (0.7164912, -1.375, 0.004), (0.71947366, -1.375, 0.004), (0.72245616, -1.375, 0.004), (0.7254386, -1.375, 0.004), (0.72842103, -1.375, 0.004), (0.7314035, -1.375, 0.004), (0.73438597, -1.375, 0.004), (0.7373684, -1.375, 0.004), (0.7403509, -1.375, 0.004), (0.74333334, -1.375, 0.004), (0.7463158, -1.375, 0.004), (0.7492983, -1.375, 0.004), (0.7522807, -1.375, 0.004), (0.75526315, -1.375, 0.004), (0.7582456, -1.375, 0.004), (0.7612281, -1.375, 0.004), (0.7642105, -1.375, 0.004), (0.76719296, -1.375, 0.004), (0.77017546, -1.375, 0.004), (0.7731579, -1.375, 0.004), (0.77614033, -1.375, 0.004), (0.7791228, -1.375, 0.004), (0.78210527, -1.375, 0.004), (0.7850877, -1.375, 0.004), (0.7880702, -1.375, 0.004), (0.79105264, -1.375, 0.004), (0.7940351, -1.375, 0.004), (0.7970175, -1.375, 0.004), (0.8, -1.375, 0.004)]
+            color3f[] primvars:displayColor = [(0.53, 0.18, 0.72)]
+            uniform token type = "linear"
+            float[] widths = [0.007] (
+                interpolation = "constant"
+            )
+        }
+
+        def BasisCurves "home3"
+        {
+            int[] curveVertexCounts = [139]
+            point3f[] points = [(0.8, -1.375, 0.004), (0.80298275, -1.3749951, 0.004), (0.8059655, -1.3749802, 0.004), (0.80894816, -1.3749555, 0.004), (0.8119307, -1.374921, 0.004), (0.81491315, -1.3748764, 0.004), (0.8178955, -1.374822, 0.004), (0.8208775, -1.3747578, 0.004), (0.8238594, -1.3746837, 0.004), (0.82684094, -1.3745997, 0.004), (0.82982224, -1.3745058, 0.004), (0.8328032, -1.374402, 0.004), (0.83578384, -1.3742883, 0.004), (0.838764, -1.3741648, 0.004), (0.8417438, -1.3740314, 0.004), (0.8447231, -1.3738881, 0.004), (0.84770197, -1.373735, 0.004), (0.8506803, -1.3735719, 0.004), (0.853658, -1.373399, 0.004), (0.8566352, -1.3732163, 0.004), (0.85961175, -1.3730236, 0.004), (0.86258763, -1.3728211, 0.004), (0.8655628, -1.3726088, 0.004), (0.8685373, -1.3723866, 0.004), (0.87151104, -1.3721545, 0.004), (0.87448394, -1.3719126, 0.004), (0.87745607, -1.3716608, 0.004), (0.88042736, -1.3713992, 0.004), (0.88339776, -1.3711277, 0.004), (0.8863672, -1.3708464, 0.004), (0.88933575, -1.3705552, 0.004), (0.8923033, -1.3702542, 0.004), (0.8952698, -1.3699434, 0.004), (0.8982353, -1.3696227, 0.004), (0.9011997, -1.3692923, 0.004), (0.904163, -1.3689519, 0.004), (0.9071252, -1.3686018, 0.004), (0.91008615, -1.3682419, 0.004), (0.9130459, -1.3678721, 0.004), (0.9160044, -1.3674926, 0.004), (0.91896164, -1.3671032, 0.004), (0.9219176, -1.366704, 0.004), (0.9248722, -1.3662951, 0.004), (0.92782545, -1.3658763, 0.004), (0.93077725, -1.3654478, 0.004), (0.9337276, -1.3650095, 0.004), (0.93667656, -1.3645614, 0.004), (0.939624, -1.3641036, 0.004), (0.94256985, -1.3636359, 0.004), (0.9455142, -1.3631586, 0.004), (0.9484569, -1.3626714, 0.004), (0.951398, -1.3621745, 0.004), (0.9543374, -1.3616679, 0.004), (0.95727515, -1.3611516, 0.004), (0.96021116, -1.3606254, 0.004), (0.96314543, -1.3600895, 0.004), (0.96607786, -1.359544, 0.004), (0.9690085, -1.3589888, 0.004), (0.97193724, -1.3584238, 0.004), (0.9748641, -1.3578491, 0.004), (0.9777891, -1.3572648, 0.004), (0.9807121, -1.3566706, 0.004), (0.98363316, -1.356067, 0.004), (0.9865522, -1.3554535, 0.004), (0.9894691, -1.3548304, 0.004), (0.992384, -1.3541976, 0.004), (0.9952968, -1.3535552, 0.004), (0.9982074, -1.3529031, 0.004), (1.0011158, -1.3522414, 0.004), (1.004022, -1.35157, 0.004), (1.0069261, -1.3508891, 0.004), (1.0098277, -1.3501984, 0.004), (1.0127271, -1.3494983, 0.004), (1.0156243, -1.3487884, 0.004), (1.0185189, -1.348069, 0.004), (1.0214113, -1.34734, 0.004), (1.0243012, -1.3466014, 0.004), (1.0271885, -1.3458532, 0.004), (1.0300735, -1.3450955, 0.004), (1.0329559, -1.3443282, 0.004), (1.0358357, -1.3435514, 0.004), (1.038713, -1.342765, 0.004), (1.0415876, -1.3419691, 0.004), (1.0444596, -1.3411636, 0.004), (1.0473288, -1.3403487, 0.004), (1.0501955, -1.3395243, 0.004), (1.0530592, -1.3386904, 0.004), (1.0559202, -1.3378469, 0.004), (1.0587785, -1.336994, 0.004), (1.0616338, -1.3361317, 0.004), (1.0644864, -1.3352598, 0.004), (1.067336, -1.3343785, 0.004), (1.0701827, -1.3334879, 0.004), (1.0730264, -1.3325877, 0.004), (1.075867, -1.3316782, 0.004), (1.0787047, -1.3307592, 0.004), (1.0815394, -1.3298308, 0.004), (1.0843709, -1.328893, 0.004), (1.0871992, -1.3279458, 0.004), (1.0900245, -1.3269893, 0.004), (1.0928465, -1.3260235, 0.004), (1.0956655, -1.3250482, 0.004), (1.0984809, -1.3240637, 0.004), (1.1012933, -1.3230698, 0.004), (1.1041024, -1.3220665, 0.004), (1.106908, -1.3210541, 0.004), (1.1097102, -1.3200322, 0.004), (1.1125091, -1.3190012, 0.004), (1.1153046, -1.3179609, 0.004), (1.1180966, -1.3169112, 0.004), (1.1208851, -1.3158524, 0.004), (1.1236701, -1.3147843, 0.004), (1.1264515, -1.313707, 0.004), (1.1292293, -1.3126204, 0.004), (1.1320035, -1.3115247, 0.004), (1.1347741, -1.3104198, 0.004), (1.137541, -1.3093057, 0.004), (1.1403042, -1.3081825, 0.004), (1.1430637, -1.3070501, 0.004), (1.1458193, -1.3059086, 0.004), (1.1485713, -1.3047578, 0.004), (1.1513193, -1.303598, 0.004), (1.1540635, -1.3024292, 0.004), (1.1568038, -1.3012512, 0.004), (1.1595402, -1.3000642, 0.004), (1.1622726, -1.2988681, 0.004), (1.165001, -1.2976629, 0.004), (1.1677256, -1.2964487, 0.004), (1.1704459, -1.2952255, 0.004), (1.1731623, -1.2939932, 0.004), (1.1758746, -1.292752, 0.004), (1.1785827, -1.2915018, 0.004), (1.1812866, -1.2902426, 0.004), (1.1839864, -1.2889745, 0.004), (1.186682, -1.2876974, 0.004), (1.1893733, -1.2864114, 0.004), (1.1920602, -1.2851166, 0.004), (1.194743, -1.2838126, 0.004), (1.1974214, -1.2825, 0.004)]
+            color3f[] primvars:displayColor = [(0.53, 0.18, 0.72)]
+            uniform token type = "linear"
+            float[] widths = [0.007] (
+                interpolation = "constant"
+            )
+        }
+
+        def BasisCurves "home4"
+        {
+            int[] curveVertexCounts = [139]
+            point3f[] points = [(1.1974214, -1.2825, 0.004), (1.2000997, -1.2811873, 0.004), (1.2027825, -1.2798835, 0.004), (1.2054695, -1.2785885, 0.004), (1.2081608, -1.2773026, 0.004), (1.2108563, -1.2760255, 0.004), (1.2135562, -1.2747574, 0.004), (1.2162601, -1.2734982, 0.004), (1.2189682, -1.272248, 0.004), (1.2216804, -1.2710068, 0.004), (1.2243968, -1.2697746, 0.004), (1.2271172, -1.2685513, 0.004), (1.2298417, -1.2673371, 0.004), (1.2325702, -1.266132, 0.004), (1.2353026, -1.2649359, 0.004), (1.2380389, -1.2637488, 0.004), (1.2407793, -1.2625709, 0.004), (1.2435235, -1.2614019, 0.004), (1.2462715, -1.2602421, 0.004), (1.2490234, -1.2590915, 0.004), (1.2517791, -1.25795, 0.004), (1.2545385, -1.2568176, 0.004), (1.2573017, -1.2556943, 0.004), (1.2600687, -1.2545801, 0.004), (1.2628392, -1.2534753, 0.004), (1.2656134, -1.2523795, 0.004), (1.2683913, -1.2512931, 0.004), (1.2711726, -1.2502156, 0.004), (1.2739576, -1.2491477, 0.004), (1.2767462, -1.2480887, 0.004), (1.2795382, -1.2470392, 0.004), (1.2823336, -1.2459989, 0.004), (1.2851325, -1.2449677, 0.004), (1.2879348, -1.243946, 0.004), (1.2907405, -1.2429334, 0.004), (1.2935494, -1.2419302, 0.004), (1.2963618, -1.2409364, 0.004), (1.2991773, -1.2399517, 0.004), (1.3019962, -1.2389766, 0.004), (1.3048183, -1.2380106, 0.004), (1.3076435, -1.2370542, 0.004), (1.3104719, -1.236107, 0.004), (1.3133034, -1.2351693, 0.004), (1.316138, -1.2342409, 0.004), (1.3189757, -1.2333219, 0.004), (1.3218164, -1.2324123, 0.004), (1.3246601, -1.2315122, 0.004), (1.3275068, -1.2306215, 0.004), (1.3303564, -1.2297401, 0.004), (1.3332089, -1.2288684, 0.004), (1.3360642, -1.228006, 0.004), (1.3389225, -1.2271531, 0.004), (1.3417835, -1.2263097, 0.004), (1.3446473, -1.2254757, 0.004), (1.3475139, -1.2246512, 0.004), (1.3503832, -1.2238363, 0.004), (1.3532552, -1.2230309, 0.004), (1.3561298, -1.222235, 0.004), (1.359007, -1.2214487, 0.004), (1.3618869, -1.2206718, 0.004), (1.3647692, -1.2199045, 0.004), (1.3676542, -1.2191467, 0.004), (1.3705416, -1.2183986, 0.004), (1.3734314, -1.2176601, 0.004), (1.3763238, -1.216931, 0.004), (1.3792185, -1.2162116, 0.004), (1.3821156, -1.2155018, 0.004), (1.385015, -1.2148015, 0.004), (1.3879167, -1.214111, 0.004), (1.3908207, -1.2134299, 0.004), (1.393727, -1.2127587, 0.004), (1.3966354, -1.2120969, 0.004), (1.399546, -1.2114449, 0.004), (1.4024588, -1.2108024, 0.004), (1.4053737, -1.2101697, 0.004), (1.4082906, -1.2095466, 0.004), (1.4112096, -1.2089331, 0.004), (1.4141307, -1.2083293, 0.004), (1.4170537, -1.2077353, 0.004), (1.4199786, -1.2071509, 0.004), (1.4229054, -1.2065762, 0.004), (1.4258343, -1.2060113, 0.004), (1.4287649, -1.205456, 0.004), (1.4316974, -1.2049104, 0.004), (1.4346316, -1.2043746, 0.004), (1.4375676, -1.2038485, 0.004), (1.4405053, -1.2033321, 0.004), (1.4434447, -1.2028254, 0.004), (1.4463859, -1.2023286, 0.004), (1.4493285, -1.2018415, 0.004), (1.4522729, -1.201364, 0.004), (1.4552188, -1.2008964, 0.004), (1.4581662, -1.2004386, 0.004), (1.4611151, -1.1999905, 0.004), (1.4640656, -1.1995522, 0.004), (1.4670173, -1.1991236, 0.004), (1.4699706, -1.198705, 0.004), (1.4729252, -1.198296, 0.004), (1.4758811, -1.1978968, 0.004), (1.4788383, -1.1975074, 0.004), (1.4817969, -1.1971278, 0.004), (1.4847566, -1.1967582, 0.004), (1.4877176, -1.1963981, 0.004), (1.4906797, -1.196048, 0.004), (1.493643, -1.1957078, 0.004), (1.4966074, -1.1953772, 0.004), (1.4995729, -1.1950566, 0.004), (1.5025394, -1.1947458, 0.004), (1.505507, -1.1944448, 0.004), (1.5084755, -1.1941537, 0.004), (1.511445, -1.1938723, 0.004), (1.5144154, -1.1936009, 0.004), (1.5173867, -1.1933392, 0.004), (1.5203588, -1.1930875, 0.004), (1.5233318, -1.1928455, 0.004), (1.5263054, -1.1926135, 0.004), (1.52928, -1.1923913, 0.004), (1.5322552, -1.1921788, 0.004), (1.535231, -1.1919764, 0.004), (1.5382075, -1.1917838, 0.004), (1.5411848, -1.1916009, 0.004), (1.5441625, -1.1914281, 0.004), (1.5471408, -1.191265, 0.004), (1.5501196, -1.1911119, 0.004), (1.5530989, -1.1909686, 0.004), (1.5560787, -1.1908352, 0.004), (1.5590589, -1.1907116, 0.004), (1.5620395, -1.190598, 0.004), (1.5650206, -1.1904942, 0.004), (1.5680017, -1.1904004, 0.004), (1.5709834, -1.1903163, 0.004), (1.5739652, -1.1902422, 0.004), (1.5769473, -1.1901779, 0.004), (1.5799296, -1.1901236, 0.004), (1.582912, -1.1900791, 0.004), (1.5858946, -1.1900445, 0.004), (1.5888772, -1.1900197, 0.004), (1.5918599, -1.190005, 0.004), (1.5948428, -1.19, 0.004)]
+            color3f[] primvars:displayColor = [(0.53, 0.18, 0.72)]
+            uniform token type = "linear"
+            float[] widths = [0.007] (
+                interpolation = "constant"
+            )
+        }
+    }
+
+    over "Cameras"
+    {
+        def Camera "media" (
+            prepend apiSchemas = ["OmniSensorAPI", "OmniRtxCameraAutoExposureAPI_1", "OmniRtxCameraExposureAPI_1"]
+        )
+        {
+            float2 clippingRange = (0.01, 20)
+            float exposure:fStop = 5
+            float exposure:responsivity = 1.1026709
+            float exposure:time = 0.02
+            float focalLength = 0.18040478
+            float horizontalAperture = 0.2
+            float omni:sensor:tickRate = 0
+            float verticalAperture = 0.1
+            quatd xformOp:orient = (0.9523537158966064, 0.30499574542045593, 0, 0)
+            double3 xformOp:scale = (1, 1, 1)
+            double3 xformOp:translate = (1, -2.5, 2.5)
+            uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient", "xformOp:scale"]
+        }
+    }
+}
+
