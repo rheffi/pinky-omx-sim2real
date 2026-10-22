@@ -1,0 +1,43 @@
+# Local environments and caches
+.venv/
+venv/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.runtime/
+.cache/
+
+# ROS build outputs
+build/
+install/
+log/
+
+# Generated evidence and captures
+outputs/
+artifacts/
+rosbags/
+*.bag
+*.db3
+*.mcap
+*.log
+
+# Credentials and machine-local configuration
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+*.p12
+*.pfx
+
+# Editor / OS
+.idea/
+.vscode/
+Thumbs.db
+Desktop.ini
+.DS_Store
+
+# USD and mesh files are intentionally NOT globally ignored.
+# Their inclusion, redistribution and large-file policy require review.
