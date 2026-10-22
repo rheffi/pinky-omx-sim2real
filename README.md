@@ -57,7 +57,7 @@ python -B tools/launch_sim.py --basket-sweep --output outputs/basket-sweep-next 
 - `../kernel-robot-repo-3` / `rheffi/cartrina-control`: 최종 Vue/FastAPI 관제. 주문·재고·고객 배정·YOLO/ACT를 재구현하지 않는다. 이번에 수정하지 않았다.
 - 이 저장소: 동적 주행·도로/예약·도킹 비교·관제 이동 어댑터를 개발하고 검증 결과를 옮긴다.
 
-개인 비공개 원격은 `https://github.com/rheffi/pinky-omx-sim2real`이다. 코드·설정·문서·선별한 인계 자료를 Git으로 백업하며 `outputs/`와 `.runtime/`은 제외한다. Isaac 원본 USD·변환 자산과 설치 환경은 별도 경로에 있으므로 이 저장소만 clone해서 모든 물리 시뮬을 바로 실행할 수 있다고 보지 않는다. 관제용으로 가져온 기준 경로는 팀 저장소에서 별도로 버전을 관리한다.
+개인 공개 원격은 `https://github.com/rheffi/pinky-omx-sim2real`이다. 코드·설정·문서·선별한 인계 자료를 Git으로 백업하며 `outputs/`와 `.runtime/`은 제외한다. Isaac 원본 USD·변환 자산과 설치 환경은 별도 경로에 있으므로 이 저장소만 clone해서 모든 물리 시뮬을 바로 실행할 수 있다고 보지 않는다. 관제용으로 가져온 기준 경로는 팀 저장소에서 별도로 버전을 관리한다.
 
 ## 다음 순서
 
